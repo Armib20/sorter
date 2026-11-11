@@ -1,0 +1,18 @@
+# secrets
+api-key.json
+.env
+
+# python
+.venv/
+__pycache__/
+*.pyc
+
+# data and model outputs (too large for git)
+datasets/
+results/
+*.bin
+*.xml
+*.ckpt
+
+# mac
+.DS_Store
