@@ -1,6 +1,7 @@
 """Read-only health check of the SO-101 leader's serial bus: N joint + gripper reads, count failures.
 
     python leader_check.py            # 150 reads at ~20 Hz
+    python leader_check.py --gripper  # live leader-gripper % for 30 s (open it fully, then squeeze)
 Healthy: 0 failures, steady read times. Failures / missing gripper = power or a loose servo cable.
 """
 import asyncio
@@ -50,5 +51,29 @@ async def main(n=150):
         await m.close()
 
 
+async def watch_gripper(seconds=30):
+    """What teleop sees: open_close opens the follower above 60 %, grabs below 40 %, holds in between."""
+    c = load_credentials()
+    m = await RobotClient.at_address(c["address"], RobotClient.Options.with_api_key(
+        api_key=c["api_key"], api_key_id=c["api_key_id"]))
+    lo, hi = 100.0, 0.0
+    try:
+        g = Gripper.from_robot(m, "leader-gripper")
+        t_end = time.time() + seconds
+        while time.time() < t_end:
+            pct = (await g.do_command({"command": "get_position"}))["position_percentage"]
+            lo, hi = min(lo, pct), max(hi, pct)
+            zone = "OPEN  (>60)" if pct > 60 else "GRAB  (<40)" if pct < 40 else "hold  (40-60)"
+            bar = "#" * int(pct / 2.5)
+            print(f"\r{pct:6.1f}% {zone}  |{bar:<40}|  seen {lo:.0f}-{hi:.0f}%", end="", flush=True)
+            await asyncio.sleep(0.2)
+        print(f"\nrange seen: {lo:.1f}% .. {hi:.1f}%  -> needs to cross both 40 and 60 for open_close to toggle")
+    finally:
+        await m.close()
+
+
 if __name__ == "__main__":
-    asyncio.run(main(int(sys.argv[1]) if len(sys.argv) > 1 else 150))
+    if "--gripper" in sys.argv:
+        asyncio.run(watch_gripper())
+    else:
+        asyncio.run(main(int(sys.argv[1]) if len(sys.argv) > 1 else 150))
