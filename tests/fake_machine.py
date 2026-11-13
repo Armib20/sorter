@@ -38,7 +38,10 @@ def _make_fake(base, name, calls, overrides):
 
 
 @asynccontextmanager
-async def fake_machine(images=None, arm="arm", gripper="gripper", camera="camera"):
+async def fake_machine(images=None, arm=None, gripper=None, camera=None):
+    import settings
+
+    arm, gripper, camera = arm or settings.ARM_NAME, gripper or settings.GRIPPER_NAME, camera or settings.CAMERA_NAME
     from grpclib.testing import ChannelFor
     from viam.components.arm import Arm
     from viam.components.camera import Camera

@@ -37,7 +37,8 @@ async def main():
     det = Detector()
     good = Image.open(settings.TEST_IMAGES / "good" / "000.png").convert("RGB")
     rows = await run(good, det)
-    for k in ("arm 'arm'", "gripper 'gripper'", "camera 'camera'", "arm pose", "camera frame", "frame vs training"):
+    for k in (f"arm '{settings.ARM_NAME}'", f"gripper '{settings.GRIPPER_NAME}'", f"camera '{settings.CAMERA_NAME}'",
+              "arm pose", "camera frame", "frame vs training"):
         assert [r["status"] for r in rows[k]] == ["ok"], (k, rows[k])
     dark = ImageEnhance.Brightness(good).enhance(0.5)
     rows = await run(dark, det)
