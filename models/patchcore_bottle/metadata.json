@@ -1,0 +1,20 @@
+{
+  "model": "patchcore",
+  "dataset": "/Users/alirizwan/Projects/Misc/sorter/datasets/MVTecAD/bottle",
+  "layout": "mvtec",
+  "image_size": [
+    256,
+    256
+  ],
+  "coreset_ratio": 0.1,
+  "compression": "none",
+  "fit_seconds": 1175.8,
+  "metrics": {
+    "image_AUROC": 1.0,
+    "image_F1Score": 0.9919999837875366,
+    "pixel_AUROC": 0.9855888485908508,
+    "pixel_F1Score": 0.7270236611366272
+  },
+  "created": "2026-11-12 22:35:35",
+  "note": "pred_score is normalized: 0.5 == threshold fitted on the validation split"
+}

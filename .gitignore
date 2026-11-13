@@ -16,3 +16,7 @@ results/
 
 # mac
 .DS_Store
+
+# runtime caches / outputs
+openvino_cache/
+logs/
