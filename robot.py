@@ -197,6 +197,10 @@ class Robot:
             await self.arm.stop()
 
     # ----------------------------------------------------------------- camera
+    def set_frames(self, frames):
+        """Offline mode: frames that get_image() serves (cycled) when there is no camera."""
+        self._frames = itertools.cycle(list(frames))
+
     async def get_image(self) -> Image.Image:
         if self.camera is None:
             if self._frames is None:
