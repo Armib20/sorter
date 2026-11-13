@@ -1,5 +1,7 @@
 # Track 3 architecture
 
+**Team decisions (day 1, late morning):** an inspection move counts as the arm's response (latency stops at the first motion toward the item); **reject bin = hold area**, so there are two destinations, box and reject; our script may run on the station.
+
 What the station really is (probed read-only on 2026-11-13 ~11:10 through the SDK and app API), what Viam gives us, and the architecture we're building. Team split and timeline: `PLAN.md`.
 
 ## 1. The station, as measured
@@ -69,12 +71,13 @@ What the station really is (probed read-only on 2026-11-13 ~11:10 through the SD
 
 **The decision layer.** The anomaly model can catch defects it has never seen; a known-defect check names the ones it has:
 
-| Anomaly score | Tape check | Destination |
-|---|---|---|
-| clearly below threshold | — | **box** |
-| clearly above | tape-blue present | **reject** (known defect) |
-| clearly above | no tape | **hold** (novel defect for a person), or reject if staff say hold means something else |
-| near threshold | — | take a second, closer view; still unsure → **hold** |
+| Anomaly score | Destination |
+|---|---|
+| clearly below threshold | **box** |
+| clearly above (tape or anything new) | **reject** |
+| near threshold | second, closer view; still unsure → **reject** |
+
+The tape-hue check stays as an explanation and a confidence boost ("known defect: tape"), not a separate destination.
 
 Confidence = distance from the threshold, scaled by the spread of good-item scores on the validation set. Calibrate on the deploy device (f32 GPU).
 
@@ -89,6 +92,39 @@ Confidence = distance from the threshold, scaled by the spread of good-item scor
 - The motion service with `stop_on_error`-style handling of our own: any failed move → stop, home, re-survey.
 
 **Multiple views.** Tape can be on the hidden side. The first view decides when confident. The uncertain band triggers a second view: a lower, closer pose, or an oblique pose from the side. Optional: while carrying the part, show it to `overview-cam` for a bottom view. That only helps if the staff confirm the logged decision can be the final one after a second look.
+
+## 3b. How the arm gets to the item and picks it (no learning involved)
+
+The camera measures where the part is; the motion service computes the joints. No RL, no demonstrations.
+
+1. **Pixel → camera 3D:** `X = (u − cx)·d/fx`, `Y = (v − cy)·d/fy`, `Z = d` (d = depth in mm at that pixel; intrinsics from `cam.get_properties()`).
+2. **Camera → world:** `machine.transform_pose(PoseInFrame("cam", pose), "world")`. The frame system chains the camera mount on the arm with the arm's current joints.
+   - **Verified:** 31 table pixels across an oblique view (33–47 cm) map to world z = −4 ± 5 mm. The table top is at ≈ −4 mm, not the −23 mm the disabled `table` obstacle implies (set `table-translation` z ≈ −104 when enabling it).
+3. **Grasp pose:** straight down (`o = (0, 0, −1)`), position = part center, fingertips a few mm above the table. `theta` = jaws across the part's short side (bolt: across the shank; nut: across the flats). Pin down the theta ↔ jaw direction convention once with a hover test.
+4. **Motion:** `motion.move(component_name="gripper", destination=PoseInFrame("world", pre_grasp), world_state=obstacles)`. The planner solves the arm's joint angles for the gripper tip (the 150 mm tool offset is in the frame config). Then a straight 60–80 mm descent, `gripper.grab()`, `is_holding_something()`, lift, place.
+
+State machine per item:
+
+```
+SURVEY (parked high, wide view) ──part seen──▶ INSPECT: move straight above it at fixed height   ← t_first_motion (latency stops here)
+   ▲                                              │ close-up frame: canonical crop → score → decide; refined XY + yaw
+   │                                              ▼
+   │                                          PRE-GRASP 80 mm above ─▶ DESCEND ─▶ GRAB ─▶ holding? ──no──▶ back to INSPECT (part moved) ×2
+   │                                                                                      │ yes
+   └──────────────────────────────── PLACE (box | reject, taught poses) ◀── LIFT ◀───────┘
+```
+
+- **Latency is cheap now:** the response is the inspect move, which needs only "a part is there and where" (frame + ~5 ms of segmentation), not the model.
+- **Two looks:** the survey view gives XY to roughly ±5–10 mm; the close-up from the inspect pose gives ±2 mm and the high-resolution crop for the anomaly model.
+- **Bring-up order (safe progression):**
+  1. Table obstacle on.
+  2. Theta convention test.
+  3. Hover 50 mm above a located part, measure the XY error.
+  4. Hover 10 mm above.
+  5. Grasp.
+  6. Full loop.
+- **Teleop's role:** teaching the survey / box / reject poses and jogging during calibration. Nothing is learned from it.
+- **Plan B:** `obstacles-depth` → `grasp-pose` gives the same grasp pose turnkey, if our 2D locate struggles.
 
 ## 4. Where code runs
 
@@ -134,8 +170,8 @@ Timestamps in ms, with time zone. Keep the rich per-item run folder (`logs/<run>
 
 ## Open questions for staff (also in PLAN.md)
 
-1. What is the hold area for (uncertain? novel defect?) — decides the table in §3.
-2. How items arrive and what "enters view" means; is a pre-pick inspection move part of the "response"?
-3. Is the log read from the station; is JSON lines fine; which timestamp do they use for latency?
-4. Is running our script on the station through the shell service allowed?
-5. Should the obstacles be enabled (and is the table height in the fragment right)?
+Answered: hold = reject; inspection move = response; running on the station is allowed. Still open:
+
+1. How items arrive and what "enters view" means.
+2. Is the log read from the station; is JSON lines fine; which timestamp do they use for latency?
+3. Should the obstacles be enabled? The fragment's table height is ~19 mm too low.

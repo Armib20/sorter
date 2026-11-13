@@ -57,6 +57,10 @@ Team of 4. Sources: the event slides, the reference sheet (version 2026-11-13 08
 
 ## Questions for Viam staff
 
+**Answered:** inspection move counts as the response; reject bin = hold area (two destinations: box, reject); our script may run on the station. Picking is classical perception + motion planning, no RL or demonstrations (see `ARCHITECTURE.md` §3b).
+
+Original list:
+
 1. **What is the hold area for?** Uncertain items? Defects needing a person? Drives the decision policy (30%).
 2. **How are items presented?** One at a time or all at once, and where? What counts as "entering view" for latency?
 3. **Is the log read from our station, and in what format?** Is JSON lines fine?
