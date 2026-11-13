@@ -231,7 +231,8 @@ async def run_loop(verb, args, robot, items=None, pick=True, recheck=True):
                 if getattr(args, "step", False):
                     recorder.status(state="running", item=i + 1, stage="waiting for operator",
                                     stage_started=time.time())
-                    await asyncio.to_thread(input, f"[item {i + 1}] place an item and press Enter (Ctrl-C stops) ")
+                    # plain input(): nothing else runs meanwhile, and Ctrl-C can't hang on a blocked thread
+                    input(f"[item {i + 1}] place an item and press Enter (Ctrl-C stops) ")
                 await sorter.process_item(views=args.views)
     except (KeyboardInterrupt, asyncio.CancelledError):
         state = "stopped"
