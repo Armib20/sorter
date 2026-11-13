@@ -63,6 +63,8 @@ box and defective ones into the reject bin. Everything is driven by `settings.py
 - EfficientAD needs imagenette (1.5 GB) + teacher weights: already in `datasets/imagenette` and the anomalib weights dir. Train it with batch 1, many epochs (3 epochs → AUROC 0.94).
 - VLMs tile large images (InternVL: up to 12 tiles) → downscale to 448 first: 25 s → 3 s.
 - Small VLMs (1B) can't see subtle defects; even 4B misses contamination. The anomaly model is the detector.
+  In `--decider hybrid` with InternVL2-1B the VLM flipped 2 correct uncertain *good* calls to reject: only let a
+  VLM override the score after `evaluate.py` shows it helps; otherwise use it to name the defect / choose the response.
 - Linux `pip install torch` pulls CUDA; `setup_nuc.sh --train` uses CPU wheels. Runtime on the NUC needs no torch at all.
 
 ## What to bring
