@@ -1,0 +1,92 @@
+{
+ "pairs": {
+  "main": {
+   "align_poses": {
+    "leader_inputs_deg": [
+     4.0,
+     -17.2,
+     23.8,
+     39.6,
+     46.4
+    ],
+    "leader_actual": {
+     "z": 178.0,
+     "theta": -46.4,
+     "oy": -0.0,
+     "x": 239.1,
+     "oz": -0.7,
+     "y": -14.3,
+     "ox": 0.7
+    },
+    "mapped": {
+     "z": 264.8,
+     "theta": -136.4,
+     "oy": -0.0,
+     "x": 770.4,
+     "oz": -0.7,
+     "ox": 0.7,
+     "y": -48.0
+    },
+    "position_error_mm": 656.3,
+    "aligned": true,
+    "leader_target": {
+     "x": 136.3,
+     "theta": -90.1,
+     "oy": 0.0,
+     "z": 118.4,
+     "oz": -0.5,
+     "y": 0.0,
+     "ox": -0.9
+    },
+    "residual": {
+     "oy": 0.7,
+     "ox": -0.7,
+     "translation_mm": 656.3,
+     "z": -90.1,
+     "theta": -2.9,
+     "x": -648.3,
+     "rotation_deg": 150.0,
+     "oz": -0.3,
+     "y": 48.3
+    },
+    "follower_pose": {
+     "x": 122.1,
+     "theta": 179.9,
+     "oy": 0.0,
+     "z": 174.7,
+     "oz": -0.5,
+     "y": 0.3,
+     "ox": -0.9
+    },
+    "orientation_error_deg": 150.0
+   },
+   "gripper_read_ms": 1.594322,
+   "pipeline_plan_ms": 0.0,
+   "gripper_writes": 1.0,
+   "leader_read_ms": 1.773759,
+   "stopped_reason": "pipeline_error",
+   "session_id": "1794585006-4",
+   "last_error_at": "2026-11-13T08:50:10-07:00",
+   "consecutive_errors": 0.0,
+   "pipeline_error": "",
+   "last_error": "teleop pipeline error: all IK solutions failed constraints. Failures: { self-collision constraint: violation between arm:link_base and gripper:claws geometries: 100.00% }, ",
+   "rejected": 0.0,
+   "sends": 16.0,
+   "errors_total": 1.0,
+   "gripper_pct": 0.16666666666666669,
+   "align_position_error_mm": 656.3283032775378,
+   "cycles": 36.0,
+   "running": false,
+   "dropped": 0.0,
+   "leader_held": true,
+   "last_hold_error": "",
+   "speed_limited": 199.0,
+   "align_orientation_error_deg": 150.0421333879178,
+   "deadzoned": 20.0,
+   "rate_hz": 60.0,
+   "tick_overruns": 0.0,
+   "last_rpc_ms": 0.436973
+  }
+ },
+ "running": false
+}

@@ -1,0 +1,206 @@
+{
+  "verb": "offline",
+  "started": "2026-11-13T00:01:01",
+  "argv": [
+    "sorter.py",
+    "offline"
+  ],
+  "host": "Mac",
+  "pid": 49246,
+  "versions": {
+    "python": "3.11.11",
+    "platform": "macOS-15.0-arm64-arm-64bit",
+    "openvino": "2026.4.1",
+    "openvino-genai": "2026.4.1.0",
+    "viam-sdk": "0.85.2",
+    "anomalib": "2.7.0",
+    "numpy": "2.4.6",
+    "pillow": "13.0.0"
+  },
+  "git": {
+    "commit": "ac90520",
+    "dirty": true
+  },
+  "artifacts": true,
+  "settings": {
+    "ACTIONS": [
+      "box",
+      "reject"
+    ],
+    "ACTION_FOR": {
+      "good": "box",
+      "defect": "reject"
+    },
+    "API_KEY_FILE": "/Users/alirizwan/Projects/Misc/sorter/api-key.json",
+    "APPROACH_MM": 80,
+    "ARM_NAME": "arm",
+    "CACHE_DIR": "/Users/alirizwan/Projects/Misc/sorter/openvino_cache",
+    "CAMERA_NAME": "camera",
+    "CAMERA_SOURCE": "color",
+    "CROP": null,
+    "DASHBOARD_PORT": 8765,
+    "DATASET_DIR": "/Users/alirizwan/Projects/Misc/sorter/datasets/custom",
+    "DECIDER": "rule",
+    "DEVICE": "CPU",
+    "DRIFT_Z": 4.0,
+    "GRIPPER_NAME": "gripper",
+    "INFERENCE_PRECISION": "",
+    "LOG_DIR": "/Users/alirizwan/Projects/Misc/sorter/logs",
+    "MODEL_PATH": "/Users/alirizwan/Projects/Misc/sorter/models/patchcore_bottle_c001/model.xml",
+    "MOTION_NAME": "builtin",
+    "NUM_VIEWS": 1,
+    "PERFORMANCE_HINT": "LATENCY",
+    "POSES": {
+      "home": {
+        "x": 250,
+        "y": 0,
+        "z": 300,
+        "o_x": 0,
+        "o_y": 0,
+        "o_z": -1,
+        "theta": 0
+      },
+      "pick": {
+        "x": 350,
+        "y": 0,
+        "z": 60,
+        "o_x": 0,
+        "o_y": 0,
+        "o_z": -1,
+        "theta": 0
+      },
+      "inspect": {
+        "x": 300,
+        "y": 150,
+        "z": 200,
+        "o_x": 0,
+        "o_y": 0,
+        "o_z": -1,
+        "theta": 0
+      },
+      "box": {
+        "x": 200,
+        "y": -250,
+        "z": 150,
+        "o_x": 0,
+        "o_y": 0,
+        "o_z": -1,
+        "theta": 0
+      },
+      "reject": {
+        "x": 200,
+        "y": 250,
+        "z": 150,
+        "o_x": 0,
+        "o_y": 0,
+        "o_z": -1,
+        "theta": 0
+      }
+    },
+    "POSE_FRAME": "world",
+    "ROBOT_ADDRESS": "",
+    "ROOT": "/Users/alirizwan/Projects/Misc/sorter",
+    "SAVE_ARTIFACTS": true,
+    "SETTLE_S": 0.3,
+    "TEST_IMAGES": "/Users/alirizwan/Projects/Misc/sorter/datasets/MVTecAD/bottle/test",
+    "THRESHOLD": 0.5,
+    "UNCERTAIN_MARGIN": 0.1,
+    "USE_MOTION_SERVICE": false,
+    "VIEW_AGGREGATE": "max",
+    "VIEW_OFFSETS": [
+      {},
+      {
+        "theta": 90
+      },
+      {
+        "theta": 180
+      },
+      {
+        "theta": 270
+      }
+    ],
+    "VLM_DEFECT_HINT": "",
+    "VLM_DEVICE": "GPU",
+    "VLM_MODE": "yesno",
+    "VLM_PATH": "/Users/alirizwan/Projects/Misc/sorter/models/vlm-internvl2-1b"
+  },
+  "args": {
+    "verb": "offline",
+    "address": null,
+    "model_path": null,
+    "device": null,
+    "decider": "rule",
+    "no_artifacts": false,
+    "views": null,
+    "images": "/Users/alirizwan/Projects/Misc/sorter/datasets/MVTecAD/bottle/test",
+    "limit": null,
+    "recheck": false
+  },
+  "detector": {
+    "model_path": "/Users/alirizwan/Projects/Misc/sorter/models/patchcore_bottle_c001/model.xml",
+    "device": "CPU",
+    "precision": "default",
+    "input_hw": [
+      256,
+      256
+    ],
+    "compile_ms": 124,
+    "metadata": {
+      "model": "patchcore",
+      "dataset": "/Users/alirizwan/Projects/Misc/sorter/datasets/MVTecAD/bottle",
+      "layout": "mvtec",
+      "image_size": [
+        256,
+        256
+      ],
+      "coreset_ratio": 0.01,
+      "compression": "none",
+      "fit_seconds": 0.0,
+      "metrics": {},
+      "checkpoint": "results/Patchcore/MVTecAD/bottle/v1/weights/lightning/model.ckpt",
+      "created": "2026-11-12 22:51:27",
+      "note": "pred_score is normalized: 0.5 == threshold fitted on the validation split",
+      "image_stats": {
+        "n": 209,
+        "brightness": {
+          "mean": 0.53466,
+          "std": 0.00542,
+          "min": 0.523,
+          "max": 0.5472
+        },
+        "contrast": {
+          "mean": 0.36359,
+          "std": 0.00208,
+          "min": 0.3568,
+          "max": 0.3692
+        },
+        "sharpness": {
+          "mean": 1.92062,
+          "std": 0.31829,
+          "min": 1.2787,
+          "max": 2.9658
+        },
+        "clipped": {
+          "mean": 0.34959,
+          "std": 0.00357,
+          "min": 0.3423,
+          "max": 0.3599
+        },
+        "source": "/Users/alirizwan/Projects/Misc/sorter/datasets/MVTecAD/bottle/train/good"
+      }
+    }
+  },
+  "decider": {
+    "type": "RuleDecider",
+    "threshold": 0.5,
+    "uncertain_margin": 0.1
+  },
+  "robot": {
+    "connected": false,
+    "dry_run": true,
+    "address": ""
+  },
+  "openvino_devices": {
+    "CPU": "Apple M2"
+  }
+}

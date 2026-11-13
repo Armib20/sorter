@@ -19,6 +19,5 @@ results/
 
 # runtime caches / outputs
 openvino_cache/
-logs/
 models/vlm-*/
 config_backups/

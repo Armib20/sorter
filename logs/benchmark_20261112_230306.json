@@ -1,0 +1,95 @@
+{
+  "openvino": "2026.4.1-22982-e213a147257-releases/2026/4",
+  "devices": [
+    [
+      "CPU",
+      "Apple M2"
+    ]
+  ],
+  "rows": [
+    {
+      "model": "patchcore_bottle_c001",
+      "device": "CPU",
+      "precision": "f16",
+      "compile_cold_ms": 1393,
+      "compile_warm_ms": 1375,
+      "exec_precision": "<Type: 'float16'>",
+      "infer_p50_ms": 97.58,
+      "infer_p95_ms": 113.7,
+      "e2e_p50_ms": 216.07,
+      "score": 0.9941,
+      "fps": 4.8,
+      "nireq": 6,
+      "status": "ok"
+    },
+    {
+      "model": "patchcore_bottle_c001",
+      "device": "CPU",
+      "precision": "f32",
+      "compile_cold_ms": 1301,
+      "compile_warm_ms": 1021,
+      "exec_precision": "<Type: 'float32'>",
+      "infer_p50_ms": 385.98,
+      "infer_p95_ms": 453.04,
+      "e2e_p50_ms": 403.3,
+      "score": 0.956,
+      "fps": 2.7,
+      "nireq": 6,
+      "status": "ok"
+    },
+    {
+      "model": "patchcore_bottle_c001",
+      "device": "NPU",
+      "precision": "f16",
+      "status": "FAILED: Exception from src/inference/src/cpp/core.cpp:120:"
+    },
+    {
+      "model": "patchcore_bottle_c001",
+      "device": "NPU",
+      "precision": "f32",
+      "status": "FAILED: Exception from src/inference/src/cpp/core.cpp:120:"
+    },
+    {
+      "model": "patchcore_bottlef",
+      "device": "CPU",
+      "precision": "f16",
+      "compile_cold_ms": 248,
+      "compile_warm_ms": 234,
+      "exec_precision": "<Type: 'float16'>",
+      "infer_p50_ms": 109.67,
+      "infer_p95_ms": 133.34,
+      "e2e_p50_ms": 128.79,
+      "score": 0.9609,
+      "fps": 10.2,
+      "nireq": 6,
+      "status": "ok"
+    },
+    {
+      "model": "patchcore_bottlef",
+      "device": "CPU",
+      "precision": "f32",
+      "compile_cold_ms": 173,
+      "compile_warm_ms": 212,
+      "exec_precision": "<Type: 'float32'>",
+      "infer_p50_ms": 135.82,
+      "infer_p95_ms": 162.01,
+      "e2e_p50_ms": 150.99,
+      "score": 0.9565,
+      "fps": 8.2,
+      "nireq": 4,
+      "status": "ok"
+    },
+    {
+      "model": "patchcore_bottlef",
+      "device": "NPU",
+      "precision": "f16",
+      "status": "FAILED: Exception from src/inference/src/cpp/core.cpp:120:"
+    },
+    {
+      "model": "patchcore_bottlef",
+      "device": "NPU",
+      "precision": "f32",
+      "status": "FAILED: Exception from src/inference/src/cpp/core.cpp:120:"
+    }
+  ]
+}

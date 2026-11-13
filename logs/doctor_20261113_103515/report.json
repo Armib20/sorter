@@ -1,0 +1,224 @@
+[
+  {
+    "section": "env",
+    "check": "python",
+    "status": "ok",
+    "detail": "3.11.11"
+  },
+  {
+    "section": "env",
+    "check": "openvino",
+    "status": "ok",
+    "detail": "2026.4.1"
+  },
+  {
+    "section": "env",
+    "check": "viam-sdk",
+    "status": "ok",
+    "detail": "0.85.2"
+  },
+  {
+    "section": "env",
+    "check": "numpy",
+    "status": "ok",
+    "detail": "2.4.6"
+  },
+  {
+    "section": "env",
+    "check": "pillow",
+    "status": "ok",
+    "detail": "13.0.0"
+  },
+  {
+    "section": "env",
+    "check": "openvino-genai",
+    "status": "ok",
+    "detail": "2026.4.1.0"
+  },
+  {
+    "section": "env",
+    "check": "anomalib",
+    "status": "ok",
+    "detail": "2.7.0"
+  },
+  {
+    "section": "env",
+    "check": "torch",
+    "status": "ok",
+    "detail": "2.15.0"
+  },
+  {
+    "section": "env",
+    "check": "disk free",
+    "status": "ok",
+    "detail": "8.4 GB"
+  },
+  {
+    "section": "env",
+    "check": "git",
+    "status": "warn",
+    "detail": "c4d18f9 (uncommitted changes)"
+  },
+  {
+    "section": "settings",
+    "check": "settings.check()",
+    "status": "ok",
+    "detail": "actions ['box', 'reject'], views 1"
+  },
+  {
+    "section": "settings",
+    "check": "required poses",
+    "status": "ok",
+    "detail": "box, home, inspect, pick, reject"
+  },
+  {
+    "section": "settings",
+    "check": "poses taught",
+    "status": "warn",
+    "detail": "POSES look like the placeholders: teach real ones (sorter.py resources)"
+  },
+  {
+    "section": "settings",
+    "check": "threshold",
+    "status": "info",
+    "detail": "0.5 \u00b1 0.1 uncertain, decider rule, aggregate max"
+  },
+  {
+    "section": "openvino",
+    "check": "CPU",
+    "status": "ok",
+    "detail": "Apple M2"
+  },
+  {
+    "section": "openvino",
+    "check": "GPU",
+    "status": "warn",
+    "detail": "not available (driver missing, or not this machine)"
+  },
+  {
+    "section": "openvino",
+    "check": "NPU",
+    "status": "warn",
+    "detail": "not available (driver missing, or not this machine)"
+  },
+  {
+    "section": "model",
+    "check": "model files",
+    "status": "ok",
+    "detail": "patchcore_bottle_c001: patchcore [256, 256] 113 MB"
+  },
+  {
+    "section": "model",
+    "check": "training-image stats",
+    "status": "ok",
+    "detail": "n=209 from /Users/alirizwan/Projects/Misc/sorter/datasets/MVTecAD/bottle/train/good"
+  },
+  {
+    "section": "model",
+    "check": "compile on CPU",
+    "status": "ok",
+    "detail": "1314 ms, input (256, 256), precision device default"
+  },
+  {
+    "section": "model",
+    "check": "sample good",
+    "status": "ok",
+    "detail": "score 0.361 in 104 ms (pre 32 + infer 72)"
+  },
+  {
+    "section": "model",
+    "check": "sample broken_large",
+    "status": "ok",
+    "detail": "score 0.994 in 103 ms (pre 22 + infer 81)"
+  },
+  {
+    "section": "decider",
+    "check": "rule",
+    "status": "ok",
+    "detail": "threshold 0.5"
+  },
+  {
+    "section": "robot",
+    "check": "connect",
+    "status": "ok",
+    "detail": "armfarm04b-main.310sld03v2.viam.cloud in 1267 ms"
+  },
+  {
+    "section": "robot",
+    "check": "resources",
+    "status": "info",
+    "detail": "arm:arm, arm:leader-arm, camera:cam, camera:overview-cam, data_manager:data_manager, discovery:discovery-arm, discovery:discovery-cam, generic:capture-webapp, g"
+  },
+  {
+    "section": "robot",
+    "check": "arm 'arm'",
+    "status": "ok",
+    "detail": "found"
+  },
+  {
+    "section": "robot",
+    "check": "gripper 'gripper'",
+    "status": "ok",
+    "detail": "found"
+  },
+  {
+    "section": "robot",
+    "check": "camera 'cam'",
+    "status": "ok",
+    "detail": "found"
+  },
+  {
+    "section": "robot",
+    "check": "arm pose",
+    "status": "ok",
+    "detail": "{\"x\": 250.69, \"y\": -28.89, \"z\": 245.61, \"o_x\": -0.88, \"o_y\": 0.01, \"o_z\": -0.48, \"theta\": 5.26}"
+  },
+  {
+    "section": "robot",
+    "check": "arm joints",
+    "status": "ok",
+    "detail": "[-5.2, -26.63, -27.46, -4.36, -62.1, 5.18]"
+  },
+  {
+    "section": "robot",
+    "check": "arm idle",
+    "status": "ok",
+    "detail": "not moving"
+  },
+  {
+    "section": "robot",
+    "check": "camera sources",
+    "status": "ok",
+    "detail": "color:image/jpeg"
+  },
+  {
+    "section": "robot",
+    "check": "camera frame",
+    "status": "ok",
+    "detail": "color [640, 480] -> [640, 480] after crop, 23 kB, 40 ms avg (rpc 14.4, decode 2.22)"
+  },
+  {
+    "section": "robot",
+    "check": "aspect ratio",
+    "status": "warn",
+    "detail": "frame 640x480 is squashed to (256, 256): fine if the training photos came from this camera too, else set CROP to a square region"
+  },
+  {
+    "section": "robot",
+    "check": "live frame score",
+    "status": "info",
+    "detail": "1.000 in 83 ms (whatever is in view now)"
+  },
+  {
+    "section": "robot",
+    "check": "frame vs training",
+    "status": "warn",
+    "detail": "contrast 0.237 vs train 0.364\u00b10.0021 (z=-7.0): flatter than training: lighting or background changed?"
+  },
+  {
+    "section": "robot",
+    "check": "frame vs training",
+    "status": "warn",
+    "detail": "clipped 0.0253 vs train 0.35\u00b10.0036 (z=-18.6): fewer clipped pixels than training"
+  }
+]

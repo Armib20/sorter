@@ -1,0 +1,586 @@
+15:26:50.491 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.209µs, plan took: 1.276981ms, traj size: 2, components: 1 
+15:26:50.493 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.652911ms, execute: 1.615864ms, cycle: 17.269654ms, avg cycle: 15.791639ms (n=31) 
+15:26:50.508 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.419µs, plan took: 1.223826ms, traj size: 2, components: 1 
+15:26:50.509 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.142941ms, execute: 1.197346ms, cycle: 16.341665ms, avg cycle: 15.808827ms (n=32) 
+15:26:50.524 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 3.379µs, plan took: 1.040723ms, traj size: 2, components: 1 
+15:26:50.525 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 14.599708ms, execute: 1.032214ms, cycle: 15.632924ms, avg cycle: 15.803496ms (n=33) 
+15:26:50.543 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 2.101µs, plan took: 1.385139ms, traj size: 2, components: 1 
+15:26:50.545 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 18.573002ms, execute: 1.545792ms, cycle: 20.1197ms, avg cycle: 15.930444ms (n=34) 
+15:26:50.561 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 942ns, plan took: 1.207966ms, traj size: 2, components: 1 
+15:26:50.562 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.709977ms, execute: 1.161988ms, cycle: 16.873625ms, avg cycle: 15.957392ms (n=35) 
+15:26:50.574 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.673µs, plan took: 1.234749ms, traj size: 2, components: 1 
+15:26:50.576 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 11.87758ms, execute: 1.595266ms, cycle: 13.474005ms, avg cycle: 15.888409ms (n=36) 
+15:26:50.590 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.436µs, plan took: 1.327912ms, traj size: 2, components: 1 
+15:26:50.592 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 14.912138ms, execute: 1.348308ms, cycle: 16.261378ms, avg cycle: 15.898489ms (n=37) 
+15:26:50.608 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.832µs, plan took: 1.113902ms, traj size: 2, components: 1 
+15:26:50.609 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.791656ms, execute: 1.484653ms, cycle: 17.277969ms, avg cycle: 15.934791ms (n=38) 
+15:26:50.624 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.525µs, plan took: 826.735µs, traj size: 2, components: 1 
+15:26:50.625 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 14.78026ms, execute: 1.301982ms, cycle: 16.083655ms, avg cycle: 15.938608ms (n=39) 
+15:26:50.642 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.668µs, plan took: 1.395645ms, traj size: 2, components: 1 
+15:26:50.644 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 17.054081ms, execute: 1.234682ms, cycle: 18.28968ms, avg cycle: 15.997385ms (n=40) 
+15:26:50.660 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 861ns, plan took: 783.102µs, traj size: 2, components: 1 
+15:26:50.661 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.372583ms, execute: 1.118326ms, cycle: 17.491836ms, avg cycle: 16.033835ms (n=41) 
+15:26:50.674 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.586µs, plan took: 1.303116ms, traj size: 2, components: 1 
+15:26:50.676 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 13.419783ms, execute: 1.376448ms, cycle: 14.798259ms, avg cycle: 16.004416ms (n=42) 
+15:26:50.691 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.001µs, plan took: 1.164016ms, traj size: 2, components: 1 
+15:26:50.692 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 14.933174ms, execute: 1.560277ms, cycle: 16.494714ms, avg cycle: 16.015819ms (n=43) 
+15:26:50.707 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.024µs, plan took: 1.139635ms, traj size: 2, components: 1 
+15:26:50.708 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 14.488354ms, execute: 1.088533ms, cycle: 15.577664ms, avg cycle: 16.00586ms (n=44) 
+15:26:50.724 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.689µs, plan took: 1.410681ms, traj size: 2, components: 1 
+15:26:50.726 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.249028ms, execute: 1.273408ms, cycle: 17.523174ms, avg cycle: 16.039579ms (n=45) 
+15:26:50.742 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 665ns, plan took: 851.032µs, traj size: 2, components: 1 
+15:26:50.743 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.0843ms, execute: 1.38083ms, cycle: 17.465996ms, avg cycle: 16.070588ms (n=46) 
+15:26:50.760 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 905ns, plan took: 1.085373ms, traj size: 2, components: 1 
+15:26:50.761 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.641631ms, execute: 1.163126ms, cycle: 17.807091ms, avg cycle: 16.107534ms (n=47) 
+15:26:50.774 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 7.284µs, plan took: 1.324581ms, traj size: 2, components: 1 
+15:26:50.775 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 13.225724ms, execute: 1.28059ms, cycle: 14.507326ms, avg cycle: 16.074197ms (n=48) 
+15:26:50.790 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 597ns, plan took: 851.22µs, traj size: 2, components: 1 
+15:26:50.791 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 14.249492ms, execute: 1.069165ms, cycle: 15.319774ms, avg cycle: 16.0588ms (n=49) 
+15:26:50.807 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 885ns, plan took: 1.1639ms, traj size: 2, components: 1 
+15:26:50.808 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.523721ms, execute: 1.019351ms, cycle: 17.544708ms, avg cycle: 16.088519ms (n=50) 
+15:26:50.825 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 2.808µs, plan took: 1.40662ms, traj size: 2, components: 1 
+15:26:50.826 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.206465ms, execute: 1.362883ms, cycle: 17.571354ms, avg cycle: 16.117594ms (n=51) 
+15:26:50.843 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 2.74µs, plan took: 1.371735ms, traj size: 2, components: 1 
+15:26:50.844 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.873494ms, execute: 1.577584ms, cycle: 18.451858ms, avg cycle: 16.162483ms (n=52) 
+15:26:50.860 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 6.407µs, plan took: 905.091µs, traj size: 2, components: 1 
+15:26:50.861 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.874355ms, execute: 922.683µs, cycle: 16.797711ms, avg cycle: 16.174469ms (n=53) 
+15:26:50.874 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.682µs, plan took: 1.381359ms, traj size: 2, components: 1 
+15:26:50.875 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 12.304301ms, execute: 1.191612ms, cycle: 13.497007ms, avg cycle: 16.124886ms (n=54) 
+15:26:50.890 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.03µs, plan took: 1.340022ms, traj size: 2, components: 1 
+15:26:50.892 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.539989ms, execute: 1.420899ms, cycle: 16.96221ms, avg cycle: 16.14011ms (n=55) 
+15:26:50.907 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 791ns, plan took: 796.235µs, traj size: 2, components: 1 
+15:26:50.908 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.319534ms, execute: 1.097238ms, cycle: 16.41768ms, avg cycle: 16.145067ms (n=56) 
+15:26:50.923 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 5.729µs, plan took: 907.965µs, traj size: 2, components: 1 
+15:26:50.924 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.016362ms, execute: 1.049665ms, cycle: 16.066497ms, avg cycle: 16.143688ms (n=57) 
+15:26:50.941 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 693ns, plan took: 880.559µs, traj size: 2, components: 1 
+15:26:50.942 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.532399ms, execute: 1.040884ms, cycle: 17.573887ms, avg cycle: 16.168347ms (n=58) 
+15:26:50.959 info  viam_teleop.rdk:service:generic/teleop.m leader-follower pose [{"Type": 15.0, "String": "1794583609-1", "Integer": 0.0, "Key": "session"}, {"Interface": {"x": 150.7, "theta": 97.2, "oy": -0.0, "z": 172.4, "oz": -1.0, "ox": -0.0, "y": 0.3}, "String": "", "Integer": 0.0, "Key": "leader", "Type": 23.0}, {"Integer": 0.0, "String": "", "Key": "target", "Type": 23.0
+15:26:50.962 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 754ns, plan took: 1.087945ms, traj size: 2, components: 1 
+15:26:50.963 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 20.088534ms, execute: 1.27748ms, cycle: 21.366747ms, avg cycle: 16.256455ms (n=59) 
+15:26:50.974 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 976ns, plan took: 1.061448ms, traj size: 2, components: 1 
+15:26:50.976 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 10.907816ms, execute: 1.644373ms, cycle: 12.553011ms, avg cycle: 16.194731ms (n=60) 
+15:26:50.991 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 572ns, plan took: 798.544µs, traj size: 2, components: 1 
+15:26:50.992 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 14.832552ms, execute: 1.248193ms, cycle: 16.082635ms, avg cycle: 16.192894ms (n=61) 
+15:26:51.008 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.821µs, plan took: 1.454767ms, traj size: 2, components: 1 
+15:26:51.009 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.45426ms, execute: 1.20153ms, cycle: 16.657238ms, avg cycle: 16.200383ms (n=62) 
+15:26:51.024 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 14.724468ms, execute: 927.433µs, cycle: 15.653045ms, avg cycle: 16.191695ms (n=63) 
+15:26:51.024 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 2.863µs, plan took: 792.265µs, traj size: 2, components: 1 
+15:26:51.043 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 3.463µs, plan took: 1.370347ms, traj size: 2, components: 1 
+15:26:51.044 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 18.614286ms, execute: 1.090794ms, cycle: 19.706649ms, avg cycle: 16.246616ms (n=64) 
+15:26:51.061 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.525µs, plan took: 1.352972ms, traj size: 2, components: 1 
+15:26:51.062 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.794102ms, execute: 1.33092ms, cycle: 18.126142ms, avg cycle: 16.275532ms (n=65) 
+15:26:51.073 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.082µs, plan took: 1.101029ms, traj size: 2, components: 1 
+15:26:51.074 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 11.066287ms, execute: 936.259µs, cycle: 12.003137ms, avg cycle: 16.210799ms (n=66) 
+15:26:51.091 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 913ns, plan took: 1.168875ms, traj size: 2, components: 1 
+15:26:51.092 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.526287ms, execute: 1.077333ms, cycle: 17.604962ms, avg cycle: 16.231607ms (n=67) 
+15:26:51.107 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 848ns, plan took: 829.419µs, traj size: 2, components: 1 
+15:26:51.108 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.085864ms, execute: 1.091657ms, cycle: 16.178163ms, avg cycle: 16.230821ms (n=68) 
+15:26:51.124 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.606µs, plan took: 1.164412ms, traj size: 2, components: 1 
+15:26:51.125 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.944708ms, execute: 992.28µs, cycle: 16.93763ms, avg cycle: 16.241065ms (n=69) 
+15:26:51.142 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.922µs, plan took: 1.130398ms, traj size: 2, components: 1 
+15:26:51.143 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.913026ms, execute: 1.131295ms, cycle: 18.04504ms, avg cycle: 16.266836ms (n=70) 
+15:26:51.160 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 733ns, plan took: 839.805µs, traj size: 2, components: 1 
+15:26:51.161 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.559829ms, execute: 1.349715ms, cycle: 17.9105ms, avg cycle: 16.289986ms (n=71) 
+15:26:51.173 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 554ns, plan took: 792.126µs, traj size: 2, components: 1 
+15:26:51.175 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 12.241264ms, execute: 1.317431ms, cycle: 13.561282ms, avg cycle: 16.252088ms (n=72) 
+15:26:51.190 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 7.53µs, plan took: 865.684µs, traj size: 2, components: 1 
+15:26:51.191 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.205778ms, execute: 797.077µs, cycle: 16.003451ms, avg cycle: 16.248682ms (n=73) 
+15:26:51.207 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 634ns, plan took: 1.123685ms, traj size: 2, components: 1 
+15:26:51.208 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.084183ms, execute: 1.260725ms, cycle: 17.346022ms, avg cycle: 16.26351ms (n=74) 
+15:26:51.224 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 663ns, plan took: 747.051µs, traj size: 2, components: 1 
+15:26:51.225 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.47977ms, execute: 1.036938ms, cycle: 16.519067ms, avg cycle: 16.266918ms (n=75) 
+15:26:51.241 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 2.652µs, plan took: 1.158464ms, traj size: 2, components: 1 
+15:26:51.243 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.559379ms, execute: 1.341963ms, cycle: 17.902037ms, avg cycle: 16.288433ms (n=76) 
+15:26:51.261 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.309µs, plan took: 813.793µs, traj size: 2, components: 1 
+15:26:51.262 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 17.918205ms, execute: 961.616µs, cycle: 18.881707ms, avg cycle: 16.322111ms (n=77) 
+15:26:51.273 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 430ns, plan took: 746.928µs, traj size: 2, components: 1 
+15:26:51.274 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 11.531631ms, execute: 961.073µs, cycle: 12.49357ms, avg cycle: 16.273028ms (n=78) 
+15:26:51.292 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 2.307µs, plan took: 1.416143ms, traj size: 2, components: 1 
+15:26:51.293 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 17.559068ms, execute: 1.233357ms, cycle: 18.793607ms, avg cycle: 16.304934ms (n=79) 
+15:26:51.307 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 823ns, plan took: 1.127623ms, traj size: 2, components: 1 
+15:26:51.308 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 13.764476ms, execute: 943.689µs, cycle: 14.708861ms, avg cycle: 16.284983ms (n=80) 
+15:26:51.324 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.399µs, plan took: 1.17631ms, traj size: 2, components: 1 
+15:26:51.325 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.449837ms, execute: 1.330731ms, cycle: 17.781055ms, avg cycle: 16.303453ms (n=81) 
+15:26:51.342 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.524µs, plan took: 1.41548ms, traj size: 2, components: 1 
+15:26:51.343 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.185322ms, execute: 1.496905ms, cycle: 17.683017ms, avg cycle: 16.320277ms (n=82) 
+15:26:51.360 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.352µs, plan took: 1.12891ms, traj size: 2, components: 1 
+15:26:51.361 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.815914ms, execute: 1.298384ms, cycle: 18.115757ms, avg cycle: 16.341909ms (n=83) 
+15:26:51.374 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 701ns, plan took: 1.062912ms, traj size: 2, components: 1 
+15:26:51.375 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 12.527994ms, execute: 1.052796ms, cycle: 13.581887ms, avg cycle: 16.309052ms (n=84) 
+15:26:51.390 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.607µs, plan took: 1.098737ms, traj size: 2, components: 1 
+15:26:51.392 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.352471ms, execute: 1.37255ms, cycle: 16.72562ms, avg cycle: 16.313952ms (n=85) 
+15:26:51.407 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 715ns, plan took: 1.085043ms, traj size: 2, components: 1 
+15:26:51.408 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.301097ms, execute: 1.190772ms, cycle: 16.492441ms, avg cycle: 16.316028ms (n=86) 
+15:26:51.424 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 502ns, plan took: 1.156665ms, traj size: 2, components: 1 
+15:26:51.425 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.759065ms, execute: 1.481593ms, cycle: 17.242808ms, avg cycle: 16.32668ms (n=87) 
+15:26:51.443 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 2.605µs, plan took: 1.420816ms, traj size: 2, components: 1 
+15:26:51.444 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 17.465601ms, execute: 1.38547ms, cycle: 18.852347ms, avg cycle: 16.355381ms (n=88) 
+15:26:51.459 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 659ns, plan took: 745.777µs, traj size: 2, components: 1 
+15:26:51.460 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 14.928792ms, execute: 886.964µs, cycle: 15.81627ms, avg cycle: 16.349324ms (n=89) 
+15:26:51.474 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 777ns, plan took: 1.106192ms, traj size: 2, components: 1 
+15:26:51.475 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 13.426714ms, execute: 1.569804ms, cycle: 14.997326ms, avg cycle: 16.334302ms (n=90) 
+15:26:51.492 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.453µs, plan took: 1.852091ms, traj size: 2, components: 1 
+15:26:51.493 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.643524ms, execute: 1.521967ms, cycle: 18.167248ms, avg cycle: 16.354444ms (n=91) 
+15:26:51.507 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.02µs, plan took: 1.205722ms, traj size: 2, components: 1 
+15:26:51.509 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 14.034529ms, execute: 1.042979ms, cycle: 15.078396ms, avg cycle: 16.340574ms (n=92) 
+15:26:51.624 info  rdk.resource_manager.rdk:service:motion/ 	 subgoal 0 failed after 101.319297ms with: all IK solutions failed constraints. Failures: { self-collision constraint: violation between arm:link_base and gripper:claws geometries: 100.00% },  
+15:26:51.624 warn  rdk.resource_manager.rdk:service:motion/ teleop planner error (inputs: 583ns, plan: 101.476343ms): all IK solutions failed constraints. Failures: { self-collision constraint: violation between arm:link_base and gripper:claws geometries: 100.00% },  
+15:26:51.722 warn  viam_teleop.rdk:service:generic/teleop.m pipeline error: all IK solutions failed constraints. Failures: { self-collision constraint: violation between arm:link_base and gripper:claws geometries: 100.00% },  
+15:26:51.726 info  rdk.resource_manager.rdk:service:motion/ 	 subgoal 0 failed after 101.770172ms with: all IK solutions failed constraints. Failures: { self-collision constraint: violation between arm:link_base and gripper:claws geometries: 100.00% },  
+15:26:51.726 warn  rdk.resource_manager.rdk:service:motion/ teleop planner error (inputs: 1.776µs, plan: 101.918615ms): all IK solutions failed constraints. Failures: { self-collision constraint: violation between arm:link_base and gripper:claws geometries: 100.00% },  
+15:26:51.727 info  rdk.resource_manager.rdk:service:motion/ buildCache # of frames: 6 
+15:26:51.736 info  rdk.resource_manager.rdk:service:motion/ time to do raw building: 9.732877ms of 100793 entries (guess 100792) 
+15:26:51.738 error viam_teleop.rdk:service:generic/teleop.m leader-follower loop stopping (pipeline_error): all IK solutions failed constraints. Failures: { self-collision constraint: violation between arm:link_base and gripper:claws geometries: 100.00% }, ; removing the follower from the pipeline 
+15:26:51.752 info  rdk.resource_manager.rdk:service:motion/ findSeedsForFrame: arm goalPose: {X:210.413418 Y:-27.679041 Z:205.794332 OX:-0.885687 OY:0.005058 OZ:-0.464256 Theta:5.388317°} start: [-0.08, -0.46, -0.48, -0.08, -1.08,  0.09] norm: 295.62 maxNorm: 1291.25 
+15:26:51.752 info  rdk.resource_manager.rdk:service:motion/ time to buildInverseCache: 15.703171ms 
+15:26:51.753 info  rdk.resource_manager.rdk:service:motion/ 	 subgoal 0 failed after 26.901277ms with: context canceled 
+15:26:51.753 warn  rdk.resource_manager.rdk:service:motion/ teleop planner error (inputs: 880ns, plan: 27.01776ms): context canceled 
+15:26:51.921 info  viam_teleop.rdk:service:generic/teleop.m pipeline error cleared 
+15:27:14.036 warn  viam_teleop.rdk:service:generic/teleop.m Previous session ended on errors; releasing it before restarting 
+15:27:14.038 info  devrel_so101-arm.rdk:component:arm/leade manual mode exiting: SetManualMode(false) 
+15:27:14.217 warn  viam_teleop.rdk:service:generic/teleop.m leader align: no joint moved although joint 5 is 175.0 deg from its target. Either torque is off / a servo tripped overload, or the arm is already at its calibrated limits for this pose 
+15:27:14.480 info  viam_teleop.rdk:service:generic/teleop.m leader-follower align poses [{"Key": "session", "String": "1794583634-2", "Type": 15.0, "Integer": 0.0}, {"Key": "aligned", "String": "", "Type": 4.0, "Integer": 1.0}, {"Type": 23.0, "String": "", "Integer": 0.0, "Interface": {"x": 122.1, "theta": -174.6, "oy": 0.0, "z": 173.9, "oz": -0.5, "ox": -0.9, "y": -26.7}, "Key": "foll
+15:27:14.480 warn  viam_teleop.rdk:service:generic/teleop.m leader align is best effort: it maps 339 mm / 170 deg from the follower's pose; the gap is absorbed as a constant offset 
+15:27:14.484 info  viam_teleop.rdk:service:generic/teleop.m leader-follower started at 60 Hz; leader aligned to 338.9 mm / 170.0 deg of the follower 
+15:27:14.485 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.841µs, plan took: 928.976µs, traj size: 2, components: 1 
+15:27:14.487 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 957.997µs, execute: 1.50939ms (first move) 
+15:27:14.507 info  viam_teleop.rdk:service:generic/teleop.m leader-follower pose [{"Integer": 0.0, "String": "1794583634-2", "Key": "session", "Type": 15.0}, {"Key": "leader", "String": "", "Type": 23.0, "Interface": {"z": 96.6, "theta": -73.2, "oy": -0.0, "x": 145.3, "oz": -1.0, "ox": 0.2, "y": -3.3}, "Integer": 0.0}, {"Integer": 0.0, "String": "", "Key": "target", "Type": 23.0
+15:27:14.508 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 705ns, plan took: 1.132399ms, traj size: 2, components: 1 
+15:27:14.509 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 21.554051ms, execute: 1.242109ms, cycle: 22.797551ms, avg cycle: 22.797551ms (n=1) 
+15:27:15.523 info  viam_teleop.rdk:service:generic/teleop.m leader-follower pose [{"Integer": 0.0, "String": "1794583634-2", "Key": "session", "Type": 15.0}, {"Type": 23.0, "String": "", "Integer": 0.0, "Interface": {"x": 145.3, "theta": -73.3, "oy": -0.0, "z": 96.7, "oz": -1.0, "y": -3.3, "ox": 0.2}, "Key": "leader"}, {"Key": "target", "String": "", "Interface": {"z": 174.8, "t
+15:27:16.536 info  viam_teleop.rdk:service:generic/teleop.m leader-follower pose [{"Type": 15.0, "String": "1794583634-2", "Integer": 0.0, "Key": "session"}, {"Type": 23.0, "String": "", "Integer": 0.0, "Interface": {"x": 145.3, "theta": -73.3, "oy": -0.0, "z": 96.7, "oz": -1.0, "y": -3.3, "ox": 0.2}, "Key": "leader"}, {"Interface": {"x": 123.4, "theta": -174.7, "oy": 0.0, "z": 
+15:27:17.537 info  viam_teleop.rdk:service:generic/teleop.m leader-follower pose [{"Integer": 0.0, "String": "1794583634-2", "Key": "session", "Type": 15.0}, {"Key": "leader", "String": "", "Interface": {"x": 145.3, "theta": -73.3, "oy": -0.0, "z": 96.7, "oz": -1.0, "y": -3.3, "ox": 0.2}, "Integer": 0.0, "Type": 23.0}, {"Integer": 0.0, "String": "", "Key": "target", "Type": 23.0
+15:27:17.907 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.5µs, plan took: 1.174422ms, traj size: 2, components: 1 
+15:27:17.909 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 3.397362763s, execute: 1.789564ms, cycle: 3.399152987s, avg cycle: 1.710975269s (n=2) 
+15:27:17.938 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 2.701µs, plan took: 1.247389ms, traj size: 2, components: 1 
+15:27:17.939 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 29.419773ms, execute: 1.278099ms, cycle: 30.699214ms, avg cycle: 1.15088325s (n=3) 
+15:27:17.971 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.421µs, plan took: 1.108733ms, traj size: 2, components: 1 
+15:27:17.972 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 31.513982ms, execute: 1.097331ms, cycle: 32.611786ms, avg cycle: 871.315384ms (n=4) 
+15:27:18.007 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 2.976µs, plan took: 1.669146ms, traj size: 2, components: 1 
+15:27:18.009 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 35.162304ms, execute: 1.544698ms, cycle: 36.70806ms, avg cycle: 704.393919ms (n=5) 
+15:27:18.139 info  rdk.resource_manager.rdk:service:motion/ 	 subgoal 0 failed after 102.0032ms with: all IK solutions failed constraints. Failures: { self-collision constraint: violation between arm:link_base and gripper:claws geometries: 100.00% },  
+15:27:18.140 warn  rdk.resource_manager.rdk:service:motion/ teleop planner error (inputs: 4.092µs, plan: 102.275024ms): all IK solutions failed constraints. Failures: { self-collision constraint: violation between arm:link_base and gripper:claws geometries: 100.00% },  
+15:27:18.241 info  rdk.resource_manager.rdk:service:motion/ 	 subgoal 0 failed after 101.563499ms with: all IK solutions failed constraints. Failures: { self-collision constraint: violation between arm:link_base and gripper:claws geometries: 100.00% },  
+15:27:18.241 warn  rdk.resource_manager.rdk:service:motion/ teleop planner error (inputs: 729ns, plan: 101.711779ms): all IK solutions failed constraints. Failures: { self-collision constraint: violation between arm:link_base and gripper:claws geometries: 100.00% },  
+15:27:18.285 warn  viam_teleop.rdk:service:generic/teleop.m pipeline error: all IK solutions failed constraints. Failures: { self-collision constraint: violation between arm:link_base and gripper:claws geometries: 100.00% },  
+15:27:18.302 error viam_teleop.rdk:service:generic/teleop.m leader-follower loop stopping (pipeline_error): all IK solutions failed constraints. Failures: { self-collision constraint: violation between arm:link_base and gripper:claws geometries: 100.00% }, ; removing the follower from the pipeline 
+15:27:18.302 info  rdk.resource_manager.rdk:service:motion/ 	 subgoal 0 failed after 60.984853ms with: context canceled 
+15:27:18.302 warn  rdk.resource_manager.rdk:service:motion/ teleop planner error (inputs: 1.043µs, plan: 61.15848ms): context canceled 
+15:27:18.487 info  viam_teleop.rdk:service:generic/teleop.m pipeline error cleared 
+15:27:45.813 info  rdk.network-checks.health                network health [{"Integer": 0.0, "String": "good", "Key": "verdict", "Type": 15.0}, {"Key": "dns_status", "String": "ok", "Integer": 0.0, "Type": 15.0}, {"Type": 11.0, "String": "", "Integer": 4.0, "Key": "dns_connections_ok"}, {"Key": "dns_connections_total", "String": "", "Type": 11.0, "Integer": 4.0}, {"Integer
+15:29:36.708 info  devrel_so101-arm.rdk:component:arm/leade manual mode exiting: SetManualMode(false) 
+15:29:36.872 info  viam_teleop.rdk:service:generic/teleop.m leader-follower stopped 
+15:29:48.270 info  rdk.networking                           Diagnostic data for successful webrtc connection attempt [{"Integer": 0.0, "String": "PeerConnection-1794583788110548100", "Key": "conn_id", "Type": 15.0}, {"Key": "conn_local_candidates", "String": "", "Type": 23.0, "Interface": [{"IP": "172.16.0.182", "Port": 38383.0, "CandType": "host", "FoundAt": {}}, {"IP": "192.168.1.150", "CandType": "host", "Found
+15:30:00.319 info  rdk.networking                           connection state changed [{"Key": "conn_id", "String": "PeerConnection-1794583788110548100", "Integer": 0.0, "Type": 15.0}, {"Key": "conn_state", "String": "disconnected", "Type": 15.0, "Integer": 0.0}]
+15:30:49.611 info  rdk.networking                           Diagnostic data for successful webrtc connection attempt [{"Type": 15.0, "String": "PeerConnection-1794583849494774784", "Integer": 0.0, "Key": "conn_id"}, {"Interface": [{"IP": "71.183.14.3", "FoundAt": {}, "Port": 35301.0, "CandType": "server-reflexive"}, {"IP": "127.0.0.1", "Port": 43768.0, "CandType": "host", "FoundAt": {}}, {"IP": "172.16.0.182", "Po
+15:30:49.628 info  rdk                                      Adding video stream [{"Key": "name", "String": "cam", "Integer": 0.0, "Type": 15.0}, {"Type": 15.0, "String": "0x24a478e90008", "Integer": 0.0, "Key": "peerConn"}]
+15:30:49.628 info  rdk                                      Adding video stream [{"Key": "name", "String": "overview-cam", "Integer": 0.0, "Type": 15.0}, {"Type": 15.0, "String": "0x24a478e90008", "Integer": 0.0, "Key": "peerConn"}]
+15:30:49.629 info  rdk.cam                                  attempting to subscribe to rtp_passthrough 
+15:30:49.629 info  rdk.overview-cam                         attempting to subscribe to rtp_passthrough 
+15:30:49.629 warn  rdk                                      AddStream END cam 
+15:30:49.629 warn  rdk                                      AddStream END overview-cam 
+15:30:49.629 warn  rdk.cam                                  tick: rtp_passthrough not possible, falling back to GoStream [{"Integer": 0.0, "String": "SubscribeRTP failed: no PeerConnection", "Key": "err", "Type": 15.0, "Interface": {}}]
+15:30:49.629 warn  rdk.overview-cam                         tick: rtp_passthrough not possible, falling back to GoStream [{"Key": "err", "String": "stream does not support RTP passthrough", "Interface": {}, "Integer": 0.0, "Type": 15.0}]
+15:30:49.663 info  rdk                                      detected new image bounds [{"Key": "width", "String": "", "Integer": 640.0, "Type": 11.0}, {"Key": "height", "String": "", "Type": 11.0, "Integer": 480.0}]
+15:30:49.679 info  rdk                                      detected new image bounds [{"Integer": 640.0, "String": "", "Key": "width", "Type": 11.0}, {"Type": 11.0, "String": "", "Integer": 480.0, "Key": "height"}]
+15:32:46.325 info  rdk.network-checks.health                network health [{"Key": "verdict", "String": "good", "Integer": 0.0, "Type": 15.0}, {"Type": 15.0, "String": "ok", "Integer": 0.0, "Key": "dns_status"}, {"Type": 11.0, "String": "", "Integer": 4.0, "Key": "dns_connections_ok"}, {"Integer": 4.0, "String": "", "Key": "dns_connections_total", "Type": 11.0}, {"Integer
+15:33:04.933 info  rdk                                      Removing streams due to PeerConnection disconnect [{"Key": "state", "String": "", "Type": 25.0, "Interface": 6.0, "Integer": 0.0}]
+15:33:05.656 info  rdk.networking                           Diagnostic data for successful webrtc connection attempt [{"Integer": 0.0, "String": "PeerConnection-1794583985543610718", "Key": "conn_id", "Type": 15.0}, {"Type": 23.0, "String": "", "Integer": 0.0, "Interface": [{"IP": "127.0.0.1", "FoundAt": {}, "Port": 40042.0, "CandType": "host"}, {"IP": "192.168.1.150", "FoundAt": {}, "Port": 34749.0, "CandType": "
+15:33:05.675 info  rdk                                      Adding video stream [{"Integer": 0.0, "String": "overview-cam", "Key": "name", "Type": 15.0}, {"Type": 15.0, "String": "0x24a4765a7188", "Integer": 0.0, "Key": "peerConn"}]
+15:33:05.675 info  rdk.overview-cam                         attempting to subscribe to rtp_passthrough 
+15:33:05.675 warn  rdk                                      AddStream END overview-cam 
+15:33:05.675 warn  rdk.overview-cam                         tick: rtp_passthrough not possible, falling back to GoStream [{"Key": "err", "String": "stream does not support RTP passthrough", "Type": 15.0, "Interface": {}, "Integer": 0.0}]
+15:33:05.676 info  rdk                                      Adding video stream [{"Integer": 0.0, "String": "cam", "Key": "name", "Type": 15.0}, {"Type": 15.0, "String": "0x24a4765a7188", "Integer": 0.0, "Key": "peerConn"}]
+15:33:05.676 info  rdk.cam                                  attempting to subscribe to rtp_passthrough 
+15:33:05.676 warn  rdk                                      AddStream END cam 
+15:33:05.676 warn  rdk.cam                                  tick: rtp_passthrough not possible, falling back to GoStream [{"Integer": 0.0, "String": "SubscribeRTP failed: no PeerConnection", "Key": "err", "Type": 15.0, "Interface": {}}]
+15:33:05.708 info  rdk                                      detected new image bounds [{"Key": "width", "String": "", "Type": 11.0, "Integer": 640.0}, {"Integer": 480.0, "String": "", "Key": "height", "Type": 11.0}]
+15:33:05.727 info  rdk                                      detected new image bounds [{"Type": 11.0, "String": "", "Integer": 640.0, "Key": "width"}, {"Key": "height", "String": "", "Integer": 480.0, "Type": 11.0}]
+15:33:17.708 info  rdk                                      Removing streams due to PeerConnection disconnect [{"Key": "state", "String": "", "Type": 25.0, "Interface": 4.0, "Integer": 0.0}]
+15:33:17.708 info  rdk.networking                           connection state changed [{"Integer": 0.0, "String": "PeerConnection-1794583985543610718", "Key": "conn_id", "Type": 15.0}, {"Integer": 0.0, "String": "disconnected", "Key": "conn_state", "Type": 15.0}]
+15:33:17.934 info  rdk                                      Removing streams due to PeerConnection disconnect [{"Key": "state", "String": "", "Type": 25.0, "Interface": 6.0, "Integer": 0.0}]
+15:33:44.563 info  rdk.networking                           Diagnostic data for successful webrtc connection attempt [{"Type": 15.0, "String": "PeerConnection-1794584024229315615", "Integer": 0.0, "Key": "conn_id"}, {"Integer": 0.0, "String": "", "Key": "conn_local_candidates", "Type": 23.0, "Interface": [{"IP": "127.0.0.1", "CandType": "host", "FoundAt": {}, "Port": 47171.0}, {"IP": "71.183.14.3", "Port": 40771.0
+15:33:52.789 info  rdk.networking                           Diagnostic data for successful webrtc connection attempt [{"Integer": 0.0, "String": "PeerConnection-1794584032505480369", "Key": "conn_id", "Type": 15.0}, {"Key": "conn_local_candidates", "String": "", "Interface": [{"IP": "71.183.14.3", "CandType": "server-reflexive", "FoundAt": {}, "Port": 57560.0}, {"IP": "71.183.14.3", "CandType": "server-reflexive",
+15:34:04.876 info  rdk.networking                           Diagnostic data for successful webrtc connection attempt [{"Integer": 0.0, "String": "PeerConnection-1794584044307588558", "Key": "conn_id", "Type": 15.0}, {"Integer": 0.0, "String": "", "Key": "conn_local_candidates", "Type": 23.0, "Interface": [{"IP": "127.0.0.1", "Port": 32966.0, "CandType": "host", "FoundAt": {}}, {"IP": "71.183.14.3", "CandType": "se
+15:34:16.184 info  rdk.networking                           Diagnostic data for successful webrtc connection attempt [{"Key": "conn_id", "String": "PeerConnection-1794584055806357053", "Type": 15.0, "Integer": 0.0}, {"Integer": 0.0, "String": "", "Key": "conn_local_candidates", "Type": 23.0, "Interface": [{"IP": "172.16.0.182", "FoundAt": {}, "Port": 44032.0, "CandType": "host"}, {"IP": "71.183.14.3", "CandType": 
+15:34:17.722 info  rdk.networking                           Diagnostic data for successful webrtc connection attempt [{"Integer": 0.0, "String": "PeerConnection-1794584057259287545", "Key": "conn_id", "Type": 15.0}, {"Type": 23.0, "String": "", "Integer": 0.0, "Interface": [{"IP": "71.183.14.3", "Port": 50296.0, "CandType": "server-reflexive", "FoundAt": {}}, {"IP": "127.0.0.1", "FoundAt": {}, "Port": 41154.0, "Ca
+15:34:29.152 info  rdk.networking                           Diagnostic data for successful webrtc connection attempt [{"Key": "conn_id", "String": "PeerConnection-1794584068824662038", "Type": 15.0, "Integer": 0.0}, {"Key": "conn_local_candidates", "String": "", "Interface": [{"IP": "127.0.0.1", "Port": 42676.0, "CandType": "host", "FoundAt": {}}, {"IP": "71.183.14.3", "Port": 41192.0, "CandType": "server-reflexiv
+15:34:29.236 info  rdk                                      Adding video stream [{"Key": "name", "String": "overview-cam", "Integer": 0.0, "Type": 15.0}, {"Integer": 0.0, "String": "0x24a478966788", "Key": "peerConn", "Type": 15.0}]
+15:34:29.236 info  rdk                                      Adding video stream [{"Type": 15.0, "String": "cam", "Integer": 0.0, "Key": "name"}, {"Key": "peerConn", "String": "0x24a478966788", "Integer": 0.0, "Type": 15.0}]
+15:34:29.236 info  rdk.cam                                  attempting to subscribe to rtp_passthrough 
+15:34:29.236 info  rdk.overview-cam                         attempting to subscribe to rtp_passthrough 
+15:34:29.236 warn  rdk                                      AddStream END cam 
+15:34:29.236 warn  rdk                                      AddStream END overview-cam 
+15:34:29.236 warn  rdk.cam                                  tick: rtp_passthrough not possible, falling back to GoStream [{"Integer": 0.0, "String": "SubscribeRTP failed: no PeerConnection", "Key": "err", "Type": 15.0, "Interface": {}}]
+15:34:29.236 warn  rdk.overview-cam                         tick: rtp_passthrough not possible, falling back to GoStream [{"Interface": {}, "String": "stream does not support RTP passthrough", "Integer": 0.0, "Key": "err", "Type": 15.0}]
+15:34:29.270 info  rdk                                      detected new image bounds [{"Integer": 640.0, "String": "", "Key": "width", "Type": 11.0}, {"Type": 11.0, "String": "", "Integer": 480.0, "Key": "height"}]
+15:34:29.287 info  rdk                                      detected new image bounds [{"Key": "width", "String": "", "Integer": 640.0, "Type": 11.0}, {"Integer": 480.0, "String": "", "Key": "height", "Type": 11.0}]
+15:34:32.308 info  rdk.networking                           Diagnostic data for successful webrtc connection attempt [{"Integer": 0.0, "String": "PeerConnection-1794584071942803772", "Key": "conn_id", "Type": 15.0}, {"Integer": 0.0, "String": "", "Key": "conn_local_candidates", "Type": 23.0, "Interface": [{"IP": "71.183.14.3", "CandType": "server-reflexive", "FoundAt": {}, "Port": 51394.0}, {"IP": "172.16.0.182", 
+15:34:45.356 info  rdk                                      Removing streams due to PeerConnection disconnect [{"Type": 25.0, "String": "", "Integer": 0.0, "Interface": 4.0, "Key": "state"}]
+15:34:45.356 info  rdk.networking                           connection state changed [{"Type": 15.0, "String": "PeerConnection-1794584068824662038", "Integer": 0.0, "Key": "conn_id"}, {"Key": "conn_state", "String": "disconnected", "Type": 15.0, "Integer": 0.0}]
+15:34:45.933 info  rdk                                      Removing streams due to PeerConnection disconnect [{"Type": 25.0, "String": "", "Integer": 0.0, "Interface": 6.0, "Key": "state"}]
+15:34:47.251 info  rdk.networking                           Diagnostic data for successful webrtc connection attempt [{"Integer": 0.0, "String": "PeerConnection-1794584086973935221", "Key": "conn_id", "Type": 15.0}, {"Integer": 0.0, "String": "", "Key": "conn_local_candidates", "Type": 23.0, "Interface": [{"IP": "127.0.0.1", "CandType": "host", "FoundAt": {}, "Port": 36974.0}, {"IP": "71.183.14.3", "Port": 51606.0
+15:35:10.751 info  rdk.networking                           Diagnostic data for successful webrtc connection attempt [{"Integer": 0.0, "String": "PeerConnection-1794584110678494112", "Key": "conn_id", "Type": 15.0}, {"Integer": 0.0, "String": "", "Key": "conn_local_candidates", "Type": 23.0, "Interface": [{"IP": "71.183.14.3", "Port": 59467.0, "CandType": "server-reflexive", "FoundAt": {}}, {"IP": "127.0.0.1", "Ca
+15:35:21.113 info  rdk.networking                           Diagnostic data for successful webrtc connection attempt [{"Integer": 0.0, "String": "PeerConnection-1794584120722714506", "Key": "conn_id", "Type": 15.0}, {"Integer": 0.0, "String": "", "Key": "conn_local_candidates", "Type": 23.0, "Interface": [{"IP": "71.183.14.3", "Port": 41843.0, "CandType": "server-reflexive", "FoundAt": {}}, {"IP": "172.16.0.182", 
+15:37:46.840 info  rdk.network-checks.health                network health [{"Integer": 0.0, "String": "good", "Key": "verdict", "Type": 15.0}, {"Integer": 0.0, "String": "ok", "Key": "dns_status", "Type": 15.0}, {"Type": 11.0, "String": "", "Integer": 4.0, "Key": "dns_connections_ok"}, {"Type": 11.0, "String": "", "Integer": 4.0, "Key": "dns_connections_total"}, {"Integer
+15:38:02.041 info  rdk.networking                           Diagnostic data for successful webrtc connection attempt [{"Integer": 0.0, "String": "PeerConnection-1794584281780256870", "Key": "conn_id", "Type": 15.0}, {"Key": "conn_local_candidates", "String": "", "Type": 23.0, "Interface": [{"IP": "71.183.14.3", "FoundAt": {}, "Port": 34105.0, "CandType": "server-reflexive"}, {"IP": "127.0.0.1", "Port": 57631.0, "C
+15:38:02.143 warn  viam_ufactory.rdk:component:arm/arm      cleared controller error: xArm: Emergency Stop Button Pushed In (C1) 
+15:38:08.596 info  rdk.networking                           Diagnostic data for successful webrtc connection attempt [{"Type": 15.0, "String": "PeerConnection-1794584288262809547", "Integer": 0.0, "Key": "conn_id"}, {"Integer": 0.0, "String": "", "Key": "conn_local_candidates", "Type": 23.0, "Interface": [{"IP": "192.168.1.150", "FoundAt": {}, "Port": 33150.0, "CandType": "host"}, {"IP": "172.16.0.182", "CandType"
+15:38:38.003 info  rdk.networking                           Diagnostic data for successful webrtc connection attempt [{"Type": 15.0, "String": "PeerConnection-1794584317704172615", "Integer": 0.0, "Key": "conn_id"}, {"Integer": 0.0, "String": "", "Key": "conn_local_candidates", "Type": 23.0, "Interface": [{"IP": "71.183.14.3", "Port": 33806.0, "CandType": "server-reflexive", "FoundAt": {}}, {"IP": "172.16.0.182", 
+15:38:38.527 error viam_ufactory.rdk:component:arm/arm      motion not ready will enable it 
+15:38:46.814 info  rdk.activity                              [{"Integer": 0.0, "String": "liveness", "Key": "activity", "Type": 15.0}, {"Key": "event", "String": "expired", "Integer": 0.0, "Type": 15.0}, {"Integer": 0.0, "String": "a4e8e75f-c4f4-4099-9ea2-d36a959bb953", "Key": "session_id", "Type": 15.0}, {"Key": "connection_type", "String": "PEER_CONNECTION_
+15:38:55.688 info  rdk.networking                           Diagnostic data for successful webrtc connection attempt [{"Key": "conn_id", "String": "PeerConnection-1794584335615876421", "Type": 15.0, "Integer": 0.0}, {"Type": 23.0, "String": "", "Integer": 0.0, "Interface": [{"IP": "172.16.0.182", "CandType": "host", "FoundAt": {}, "Port": 42392.0}, {"IP": "71.183.14.3", "FoundAt": {}, "Port": 59984.0, "CandType": 
+15:39:05.445 info  rdk.networking                           Diagnostic data for successful webrtc connection attempt [{"Type": 15.0, "String": "PeerConnection-1794584345181679336", "Integer": 0.0, "Key": "conn_id"}, {"Key": "conn_local_candidates", "String": "", "Interface": [{"IP": "172.16.0.182", "Port": 43487.0, "CandType": "host", "FoundAt": {}}, {"IP": "127.0.0.1", "CandType": "host", "FoundAt": {}, "Port": 3
+15:40:19.463 info  devrel_so101-arm.rdk:service:discovery/d Starting SO-101 discovery 
+15:40:19.483 info  devrel_so101-arm.rdk:service:discovery/d Discovered 3 component configurations 
+15:40:19.483 info  devrel_so101-arm.rdk:service:discovery/d Discovered SO-101 on /dev/serial/by-id/usb-1a86_USB_Single_Serial_5B90100977-if00 (arm: true, gripper: true) 
+15:40:22.850 info  devrel_so101-arm.rdk:service:discovery/d Starting SO-101 discovery 
+15:40:22.871 info  devrel_so101-arm.rdk:service:discovery/d Discovered 3 component configurations 
+15:40:22.871 info  devrel_so101-arm.rdk:service:discovery/d Discovered SO-101 on /dev/serial/by-id/usb-1a86_USB_Single_Serial_5B90100977-if00 (arm: true, gripper: true) 
+15:40:25.033 info  rdk.activity                              [{"Key": "activity", "String": "reconfigure", "Integer": 0.0, "Type": 15.0}, {"Type": 15.0, "String": "start", "Integer": 0.0, "Key": "event"}, {"Key": "revision", "String": "1794584415512", "Type": 15.0, "Integer": 0.0}, {"Integer": 0.0, "String": "reconfiguration", "Key": "reconfigure_type", "Type
+15:40:25.035 info  rdk.activity                              [{"Key": "activity", "String": "resource_rebuild", "Type": 15.0, "Integer": 0.0}, {"Key": "event", "String": "start", "Integer": 0.0, "Type": 15.0}, {"Key": "resource", "String": "rdk:component:switch/leader-home", "Integer": 0.0, "Type": 15.0}, {"Integer": 0.0, "String": "erh:vmodutils:arm-position
+15:40:25.035 info  rdk.resource_manager                     Now rebuilding resource [{"Key": "resource", "String": "", "Type": 25.0, "Interface": {"Remote": "", "Name": "leader-home", "API": {"Type": {"namespace": "rdk", "type": "component"}, "subtype": "switch"}}, "Integer": 0.0}, {"Integer": 0.0, "String": "", "Key": "model", "Type": 25.0, "Interface": {"Family": {"namespace": "e
+15:40:25.035 info  rdk.resource_manager                     Now removing resource [{"Integer": 0.0, "String": "", "Key": "resource", "Type": 25.0, "Interface": {"Remote": "", "Name": "leader-home", "API": {"Type": {"namespace": "rdk", "type": "component"}, "subtype": "switch"}}}]
+15:40:25.036 info  rdk.modmanager.erh_vmodutils             Adding resource to module [{"Key": "resource", "String": "leader-home", "Integer": 0.0, "Type": 15.0}, {"Type": 15.0, "String": "erh_vmodutils", "Integer": 0.0, "Key": "module"}]
+15:40:25.036 info  rdk.modmanager.erh_vmodutils             Removing resource for module [{"Integer": 0.0, "String": "rdk:component:switch/leader-home", "Key": "resource", "Type": 15.0}, {"Type": 15.0, "String": "erh_vmodutils", "Integer": 0.0, "Key": "module"}]
+15:40:25.037 info  erh_vmodutils.rdk:component:switch/leade config: &touch.ArmPositionSaverConfig{Arm:"leader-arm", Joints:[]float64{0.006137421545474565, -0.7088721885023123, -0.2194128202507157, 1.6279510649371285, 1.621813643391654}, Motion:"", Point:r3.Vector{X:0, Y:0, Z:0}, Orientation:spatialmath.OrientationVectorDegrees{Theta:0, OX:0, OY:0, OZ:0}, VisionServices:[]string{}, Constraints:(*motionplan.Constraints)(0xc00152a720), Extra:map[string]interface {}{}, MaxSpeedDegsPerSec:0, MaxAccelerationDegsPerSec2:0} 
+15:40:25.037 info  rdk.activity                              [{"Type": 15.0, "String": "resource_rebuild", "Integer": 0.0, "Key": "activity"}, {"Key": "event", "String": "complete", "Type": 15.0, "Integer": 0.0}, {"Key": "resource", "String": "rdk:component:switch/leader-home", "Integer": 0.0, "Type": 15.0}, {"Integer": 0.0, "String": "erh:vmodutils:arm-posit
+15:40:25.038 info  rdk                                      Found optional dependencies for resource [{"Integer": 0.0, "String": "rdk:component:arm/arm", "Key": "resource", "Type": 15.0}, {"Integer": 0.0, "String": "", "Key": "dependencies", "Type": 1.0, "Interface": ["rdk:service:motion/builtin"]}]
+15:40:25.038 info  rdk                                      Found optional dependencies for resource [{"Integer": 0.0, "String": "rdk:service:data_manager/data_manager", "Key": "resource", "Type": 15.0}, {"Integer": 0.0, "String": "", "Key": "dependencies", "Type": 1.0, "Interface": ["rdk-internal:service:frame_system/$frame_system"]}]
+15:40:25.038 info  rdk                                      Found optional dependencies for resource [{"Key": "resource", "String": "rdk:component:arm/leader-arm", "Integer": 0.0, "Type": 15.0}, {"Type": 1.0, "String": "", "Integer": 0.0, "Interface": ["rdk:service:motion/builtin"], "Key": "dependencies"}]
+15:40:25.038 info  rdk                                      handling weak/optional update for resource [{"Type": 25.0, "String": "", "Integer": 0.0, "Interface": {"Remote": "", "Name": "builtin", "API": {"Type": {"namespace": "rdk", "type": "service"}, "subtype": "motion"}}, "Key": "resource"}]
+15:40:25.038 info  rdk                                      handling weak/optional update for resource [{"Type": 25.0, "String": "", "Integer": 0.0, "Interface": {"Remote": "", "Name": "data_manager", "API": {"Type": {"namespace": "rdk", "type": "service"}, "subtype": "data_manager"}}, "Key": "resource"}]
+15:40:25.038 info  rdk.resource_manager.rdk:service:data_ma Capture Disabled 
+15:40:25.038 info  rdk.resource_manager.rdk:service:data_ma Reconfigure END 
+15:40:25.038 info  rdk.resource_manager.rdk:service:data_ma Reconfigure START 
+15:40:25.040 info  rdk.activity                              [{"Key": "activity", "String": "reconfigure", "Integer": 0.0, "Type": 15.0}, {"Integer": 0.0, "String": "complete", "Key": "event", "Type": 15.0}, {"Integer": 0.0, "String": "1794584415512", "Key": "revision", "Type": 15.0}, {"Key": "reconfigure_type", "String": "reconfiguration", "Type": 15.0, "Int
+15:41:40.560 info  devrel_so101-arm.rdk:service:discovery/d Starting SO-101 discovery 
+15:41:40.580 info  devrel_so101-arm.rdk:service:discovery/d Discovered 3 component configurations 
+15:41:40.580 info  devrel_so101-arm.rdk:service:discovery/d Discovered SO-101 on /dev/serial/by-id/usb-1a86_USB_Single_Serial_5B90100977-if00 (arm: true, gripper: true) 
+15:41:44.957 info  rdk.networking                           Diagnostic data for successful webrtc connection attempt [{"Key": "conn_id", "String": "PeerConnection-1794584504619485334", "Type": 15.0, "Integer": 0.0}, {"Interface": [{"IP": "192.168.1.150", "Port": 56248.0, "CandType": "host", "FoundAt": {}}, {"IP": "71.183.14.3", "CandType": "server-reflexive", "FoundAt": {}, "Port": 38000.0}, {"IP": "172.16.0.182",
+15:41:56.394 info  devrel_so101-arm.rdk:service:discovery/d Starting SO-101 discovery 
+15:41:56.414 info  devrel_so101-arm.rdk:service:discovery/d Discovered 3 component configurations 
+15:41:56.414 info  devrel_so101-arm.rdk:service:discovery/d Discovered SO-101 on /dev/serial/by-id/usb-1a86_USB_Single_Serial_5B90100977-if00 (arm: true, gripper: true) 
+15:41:58.732 info  rdk.networking                           Diagnostic data for successful webrtc connection attempt [{"Key": "conn_id", "String": "PeerConnection-1794584518586323178", "Type": 15.0, "Integer": 0.0}, {"Key": "conn_local_candidates", "String": "", "Interface": [{"IP": "71.183.14.3", "FoundAt": {}, "Port": 38123.0, "CandType": "server-reflexive"}, {"IP": "127.0.0.1", "CandType": "host", "FoundAt": {}
+15:41:58.747 info  rdk                                      Adding video stream [{"Key": "name", "String": "overview-cam", "Integer": 0.0, "Type": 15.0}, {"Type": 15.0, "String": "0x24a475974f08", "Integer": 0.0, "Key": "peerConn"}]
+15:41:58.747 info  rdk.overview-cam                         attempting to subscribe to rtp_passthrough 
+15:41:58.747 warn  rdk                                      AddStream END overview-cam 
+15:41:58.747 warn  rdk.overview-cam                         tick: rtp_passthrough not possible, falling back to GoStream [{"Type": 15.0, "String": "stream does not support RTP passthrough", "Integer": 0.0, "Interface": {}, "Key": "err"}]
+15:41:58.748 info  rdk                                      Adding video stream [{"Type": 15.0, "String": "cam", "Integer": 0.0, "Key": "name"}, {"Key": "peerConn", "String": "0x24a475974f08", "Integer": 0.0, "Type": 15.0}]
+15:41:58.748 info  rdk.cam                                  attempting to subscribe to rtp_passthrough 
+15:41:58.748 warn  rdk                                      AddStream END cam 
+15:41:58.748 warn  rdk.cam                                  tick: rtp_passthrough not possible, falling back to GoStream [{"Integer": 0.0, "String": "SubscribeRTP failed: no PeerConnection", "Key": "err", "Type": 15.0, "Interface": {}}]
+15:41:58.781 info  rdk                                      detected new image bounds [{"Integer": 640.0, "String": "", "Key": "width", "Type": 11.0}, {"Key": "height", "String": "", "Integer": 480.0, "Type": 11.0}]
+15:41:58.798 info  rdk                                      detected new image bounds [{"Integer": 640.0, "String": "", "Key": "width", "Type": 11.0}, {"Integer": 480.0, "String": "", "Key": "height", "Type": 11.0}]
+15:42:10.275 info  devrel_so101-arm.rdk:service:discovery/d Starting SO-101 discovery 
+15:42:10.295 info  devrel_so101-arm.rdk:service:discovery/d Discovered 3 component configurations 
+15:42:10.295 info  devrel_so101-arm.rdk:service:discovery/d Discovered SO-101 on /dev/serial/by-id/usb-1a86_USB_Single_Serial_5B90100977-if00 (arm: true, gripper: true) 
+15:42:10.780 info  rdk                                      Removing streams due to PeerConnection disconnect [{"Type": 25.0, "String": "", "Integer": 0.0, "Interface": 4.0, "Key": "state"}]
+15:42:10.780 info  rdk.networking                           connection state changed [{"Key": "conn_id", "String": "PeerConnection-1794584518586323178", "Integer": 0.0, "Type": 15.0}, {"Key": "conn_state", "String": "disconnected", "Type": 15.0, "Integer": 0.0}]
+15:42:10.933 info  rdk                                      Removing streams due to PeerConnection disconnect [{"Integer": 0.0, "String": "", "Key": "state", "Type": 25.0, "Interface": 6.0}]
+15:42:22.352 info  rdk.networking                           Diagnostic data for successful webrtc connection attempt [{"Key": "conn_id", "String": "PeerConnection-1794584542172142368", "Integer": 0.0, "Type": 15.0}, {"Key": "conn_local_candidates", "String": "", "Type": 23.0, "Interface": [{"IP": "71.183.14.3", "Port": 34827.0, "CandType": "server-reflexive", "FoundAt": {}}, {"IP": "127.0.0.1", "Port": 44721.0, "C
+15:42:22.709 info  devrel_so101-arm.rdk:service:discovery/d Message logged 3 times; suppressing for rest of window (1m0s): Starting SO-101 discovery 
+15:42:22.709 info  devrel_so101-arm.rdk:service:discovery/d Message logged 4 times in past 1m0s: Starting SO-101 discovery 
+15:42:22.729 info  devrel_so101-arm.rdk:service:discovery/d Message logged 3 times; suppressing for rest of window (1m0s): Discovered SO-101 on /dev/serial/by-id/usb-1a86_USB_Single_Serial_5B90100977-if00 (arm: true, gripper: true) 
+15:42:22.729 info  devrel_so101-arm.rdk:service:discovery/d Message logged 4 times in past 1m0s: Discovered SO-101 on /dev/serial/by-id/usb-1a86_USB_Single_Serial_5B90100977-if00 (arm: true, gripper: true) 
+15:42:22.730 info  devrel_so101-arm.rdk:service:discovery/d Message logged 3 times; suppressing for rest of window (1m0s): Discovered 3 component configurations 
+15:42:22.730 info  devrel_so101-arm.rdk:service:discovery/d Message logged 4 times in past 1m0s: Discovered 3 component configurations 
+15:42:47.371 info  rdk.network-checks.health                network health [{"Type": 15.0, "String": "good", "Integer": 0.0, "Key": "verdict"}, {"Key": "dns_status", "String": "ok", "Type": 15.0, "Integer": 0.0}, {"Key": "dns_connections_ok", "String": "", "Type": 11.0, "Integer": 4.0}, {"Integer": 4.0, "String": "", "Key": "dns_connections_total", "Type": 11.0}, {"Integer
+15:42:55.098 info  devrel_so101-arm.rdk:service:discovery/d Starting SO-101 discovery 
+15:42:55.118 info  devrel_so101-arm.rdk:service:discovery/d Discovered SO-101 on /dev/serial/by-id/usb-1a86_USB_Single_Serial_5B90100977-if00 (arm: true, gripper: true) 
+15:42:55.119 info  devrel_so101-arm.rdk:service:discovery/d Discovered 3 component configurations 
+15:43:26.732 info  devrel_so101-arm.rdk:service:discovery/d Starting SO-101 discovery 
+15:43:26.753 info  devrel_so101-arm.rdk:service:discovery/d Discovered 3 component configurations 
+15:43:26.753 info  devrel_so101-arm.rdk:service:discovery/d Discovered SO-101 on /dev/serial/by-id/usb-1a86_USB_Single_Serial_5B90100977-if00 (arm: true, gripper: true) 
+15:44:11.658 info  rdk.activity                              [{"Integer": 0.0, "String": "reconfigure", "Key": "activity", "Type": 15.0}, {"Type": 15.0, "String": "start", "Integer": 0.0, "Key": "event"}, {"Integer": 0.0, "String": "1794584642095", "Key": "revision", "Type": 15.0}, {"Integer": 0.0, "String": "reconfiguration", "Key": "reconfigure_type", "Type
+15:44:11.661 info  rdk.activity                              [{"Integer": 0.0, "String": "resource_rebuild", "Key": "activity", "Type": 15.0}, {"Key": "event", "String": "start", "Type": 15.0, "Integer": 0.0}, {"Type": 15.0, "String": "rdk:component:switch/leader-home", "Integer": 0.0, "Key": "resource"}, {"Key": "model", "String": "erh:vmodutils:arm-position
+15:44:11.661 info  rdk.resource_manager                     Now rebuilding resource [{"Key": "resource", "String": "", "Interface": {"Remote": "", "Name": "leader-home", "API": {"Type": {"namespace": "rdk", "type": "component"}, "subtype": "switch"}}, "Integer": 0.0, "Type": 25.0}, {"Integer": 0.0, "String": "", "Key": "model", "Type": 25.0, "Interface": {"Family": {"namespace": "e
+15:44:11.662 info  rdk.modmanager.erh_vmodutils             Adding resource to module [{"Key": "resource", "String": "leader-home", "Type": 15.0, "Integer": 0.0}, {"Integer": 0.0, "String": "erh_vmodutils", "Key": "module", "Type": 15.0}]
+15:44:11.662 info  rdk.modmanager.erh_vmodutils             Removing resource for module [{"Integer": 0.0, "String": "rdk:component:switch/leader-home", "Key": "resource", "Type": 15.0}, {"Type": 15.0, "String": "erh_vmodutils", "Integer": 0.0, "Key": "module"}]
+15:44:11.662 info  rdk.resource_manager                     Now removing resource [{"Interface": {"Remote": "", "Name": "leader-home", "API": {"Type": {"namespace": "rdk", "type": "component"}, "subtype": "switch"}}, "String": "", "Integer": 0.0, "Key": "resource", "Type": 25.0}]
+15:44:11.663 info  erh_vmodutils.rdk:component:switch/leade config: &touch.ArmPositionSaverConfig{Arm:"leader-arm", Joints:[]float64{-0.0015343553863686413, -0.7073378331159438, -0.2178784648643471, 1.6279510649371285, 1.624882354164391}, Motion:"", Point:r3.Vector{X:0, Y:0, Z:0}, Orientation:spatialmath.OrientationVectorDegrees{Theta:0, OX:0, OY:0, OZ:0}, VisionServices:[]string{}, Constraints:(*motionplan.Constraints)(0xc001936f60), Extra:map[string]interface {}{}, MaxSpeedDegsPerSec:0, MaxAccelerationDegsPerSec2:0} 
+15:44:11.663 info  rdk.activity                              [{"Key": "activity", "String": "resource_rebuild", "Type": 15.0, "Integer": 0.0}, {"Integer": 0.0, "String": "complete", "Key": "event", "Type": 15.0}, {"Integer": 0.0, "String": "rdk:component:switch/leader-home", "Key": "resource", "Type": 15.0}, {"Key": "model", "String": "erh:vmodutils:arm-posit
+15:44:11.664 info  rdk                                      Found optional dependencies for resource [{"Integer": 0.0, "String": "rdk:component:arm/arm", "Key": "resource", "Type": 15.0}, {"Type": 1.0, "String": "", "Integer": 0.0, "Interface": ["rdk:service:motion/builtin"], "Key": "dependencies"}]
+15:44:11.664 info  rdk                                      Found optional dependencies for resource [{"Integer": 0.0, "String": "rdk:component:arm/leader-arm", "Key": "resource", "Type": 15.0}, {"Integer": 0.0, "String": "", "Key": "dependencies", "Type": 1.0, "Interface": ["rdk:service:motion/builtin"]}]
+15:44:11.664 info  rdk                                      handling weak/optional update for resource [{"Type": 25.0, "String": "", "Integer": 0.0, "Interface": {"Remote": "", "Name": "builtin", "API": {"Type": {"namespace": "rdk", "type": "service"}, "subtype": "motion"}}, "Key": "resource"}]
+15:44:11.665 info  rdk                                      Found optional dependencies for resource [{"Integer": 0.0, "String": "rdk:service:data_manager/data_manager", "Key": "resource", "Type": 15.0}, {"Interface": ["rdk-internal:service:frame_system/$frame_system"], "String": "", "Integer": 0.0, "Key": "dependencies", "Type": 1.0}]
+15:44:11.665 info  rdk                                      handling weak/optional update for resource [{"Integer": 0.0, "String": "", "Key": "resource", "Type": 25.0, "Interface": {"Remote": "", "Name": "data_manager", "API": {"Type": {"namespace": "rdk", "type": "service"}, "subtype": "data_manager"}}}]
+15:44:11.665 info  rdk.resource_manager.rdk:service:data_ma Capture Disabled 
+15:44:11.665 info  rdk.resource_manager.rdk:service:data_ma Reconfigure END 
+15:44:11.665 info  rdk.resource_manager.rdk:service:data_ma Reconfigure START 
+15:44:11.666 info  rdk.activity                              [{"Key": "activity", "String": "reconfigure", "Type": 15.0, "Integer": 0.0}, {"Integer": 0.0, "String": "complete", "Key": "event", "Type": 15.0}, {"Integer": 0.0, "String": "1794584642095", "Key": "revision", "Type": 15.0}, {"Integer": 0.0, "String": "reconfiguration", "Key": "reconfigure_type", "T
+15:44:17.822 info  rdk.networking                           Diagnostic data for successful webrtc connection attempt [{"Key": "conn_id", "String": "PeerConnection-1794584657491849499", "Integer": 0.0, "Type": 15.0}, {"Key": "conn_local_candidates", "String": "", "Interface": [{"IP": "192.168.1.150", "FoundAt": {}, "Port": 59303.0, "CandType": "host"}, {"IP": "71.183.14.3", "FoundAt": {}, "Port": 60917.0, "CandType
+15:45:31.823 info  rdk.networking                           Diagnostic data for successful webrtc connection attempt [{"Integer": 0.0, "String": "PeerConnection-1794584730993116609", "Key": "conn_id", "Type": 15.0}, {"Key": "conn_local_candidates", "String": "", "Interface": [{"IP": "127.0.0.1", "FoundAt": {}, "Port": 58048.0, "CandType": "host"}, {"IP": "71.183.14.3", "FoundAt": {}, "Port": 35722.0, "CandType": "
+15:45:46.893 info  devrel_so101-arm.rdk:service:discovery/d Starting SO-101 discovery 
+15:45:47.414 info  devrel_so101-arm.rdk:service:discovery/d Discovered SO-101 on /dev/serial/by-id/usb-1a86_USB_Single_Serial_5B90100977-if00 (arm: true, gripper: false) 
+15:45:47.415 info  devrel_so101-arm.rdk:service:discovery/d Discovered 2 component configurations 
+15:45:58.881 warn  viam_teleop.rdk:service:generic/teleop.m leader align: no joint moved although joint 5 is 182.9 deg from its target. Either torque is off / a servo tripped overload, or the arm is already at its calibrated limits for this pose 
+15:45:59.152 info  viam_teleop.rdk:service:generic/teleop.m leader-follower align poses [{"Key": "session", "String": "1794584758-3", "Integer": 0.0, "Type": 15.0}, {"Integer": 1.0, "String": "", "Key": "aligned", "Type": 4.0}, {"Type": 23.0, "String": "", "Integer": 0.0, "Interface": {"x": 298.2, "theta": -179.8, "oy": -0.0, "z": 504.7, "oz": -1.0, "y": -0.0, "ox": -0.0}, "Key": "foll
+15:45:59.152 warn  viam_teleop.rdk:service:generic/teleop.m leader align is best effort: it maps 236 mm / 173 deg from the follower's pose; the gap is absorbed as a constant offset 
+15:45:59.156 info  viam_teleop.rdk:service:generic/teleop.m leader-follower started at 60 Hz; leader aligned to 236.3 mm / 173.3 deg of the follower 
+15:45:59.157 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 2.722µs, plan took: 996.364µs, traj size: 2, components: 1 
+15:45:59.158 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 1.040471ms, execute: 1.505495ms (first move) 
+15:45:59.176 info  viam_teleop.rdk:service:generic/teleop.m leader-follower pose [{"Integer": 0.0, "String": "1794584758-3", "Key": "session", "Type": 15.0}, {"Type": 23.0, "String": "", "Integer": 0.0, "Interface": {"z": 278.3, "theta": -82.7, "oy": -0.0, "x": 145.6, "oz": -0.7, "ox": 0.7, "y": -0.3}, "Key": "leader"}, {"Interface": {"x": 297.3, "theta": 177.9, "oy": 0.0, "z": 
+15:45:59.177 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.778µs, plan took: 924.462µs, traj size: 2, components: 1 
+15:45:59.179 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 18.851983ms, execute: 1.494354ms, cycle: 20.347338ms, avg cycle: 20.347338ms (n=1) 
+15:45:59.195 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.319µs, plan took: 959.186µs, traj size: 2, components: 1 
+15:45:59.196 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.547911ms, execute: 1.095619ms, cycle: 17.644493ms, avg cycle: 18.995915ms (n=2) 
+15:45:59.213 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 912ns, plan took: 601.889µs, traj size: 2, components: 1 
+15:45:59.214 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.497417ms, execute: 1.007225ms, cycle: 17.505586ms, avg cycle: 18.499139ms (n=3) 
+15:45:59.226 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.021µs, plan took: 831.228µs, traj size: 2, components: 1 
+15:45:59.227 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 11.70775ms, execute: 1.408036ms, cycle: 13.116543ms, avg cycle: 17.15349ms (n=4) 
+15:45:59.243 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.212µs, plan took: 682.919µs, traj size: 2, components: 1 
+15:45:59.244 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.65991ms, execute: 963.52µs, cycle: 16.6238ms, avg cycle: 17.047552ms (n=5) 
+15:45:59.259 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 766ns, plan took: 883.418µs, traj size: 2, components: 1 
+15:45:59.261 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.548667ms, execute: 1.314371ms, cycle: 16.863345ms, avg cycle: 17.01685ms (n=6) 
+15:45:59.277 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 717ns, plan took: 654.566µs, traj size: 2, components: 1 
+15:45:59.278 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.087169ms, execute: 1.308408ms, cycle: 17.396353ms, avg cycle: 17.071065ms (n=7) 
+15:45:59.294 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 674ns, plan took: 879.462µs, traj size: 2, components: 1 
+15:45:59.296 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.303909ms, execute: 1.119079ms, cycle: 17.425014ms, avg cycle: 17.115309ms (n=8) 
+15:45:59.313 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 835ns, plan took: 1.010521ms, traj size: 2, components: 1 
+15:45:59.314 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 17.645484ms, execute: 1.185638ms, cycle: 18.832515ms, avg cycle: 17.306109ms (n=9) 
+15:45:59.327 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.864µs, plan took: 1.092983ms, traj size: 2, components: 1 
+15:45:59.328 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 12.214069ms, execute: 1.509659ms, cycle: 13.724562ms, avg cycle: 16.947954ms (n=10) 
+15:45:59.343 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.955µs, plan took: 1.262407ms, traj size: 2, components: 1 
+15:45:59.344 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 14.958051ms, execute: 1.198292ms, cycle: 16.157349ms, avg cycle: 16.876081ms (n=11) 
+15:45:59.360 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 960ns, plan took: 1.047986ms, traj size: 2, components: 1 
+15:45:59.361 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.322447ms, execute: 1.021196ms, cycle: 16.34442ms, avg cycle: 16.831776ms (n=12) 
+15:45:59.379 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 2.461µs, plan took: 1.178187ms, traj size: 2, components: 1 
+15:45:59.380 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 18.17061ms, execute: 1.265642ms, cycle: 19.437766ms, avg cycle: 17.032237ms (n=13) 
+15:45:59.396 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 3.185µs, plan took: 1.140069ms, traj size: 2, components: 1 
+15:45:59.398 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.231752ms, execute: 1.026895ms, cycle: 17.259891ms, avg cycle: 17.048498ms (n=14) 
+15:45:59.414 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.711µs, plan took: 1.12392ms, traj size: 2, components: 1 
+15:45:59.416 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.590769ms, execute: 1.649096ms, cycle: 18.24155ms, avg cycle: 17.128035ms (n=15) 
+15:45:59.427 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.01µs, plan took: 719.061µs, traj size: 2, components: 1 
+15:45:59.428 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 10.898356ms, execute: 1.075292ms, cycle: 11.975839ms, avg cycle: 16.806022ms (n=16) 
+15:45:59.443 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.168µs, plan took: 1.067691ms, traj size: 2, components: 1 
+15:45:59.444 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.488896ms, execute: 1.057865ms, cycle: 16.549313ms, avg cycle: 16.790922ms (n=17) 
+15:45:59.459 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.086µs, plan took: 900.726µs, traj size: 2, components: 1 
+15:45:59.460 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 14.847358ms, execute: 874.235µs, cycle: 15.722645ms, avg cycle: 16.731573ms (n=18) 
+15:45:59.478 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.716µs, plan took: 1.408187ms, traj size: 2, components: 1 
+15:45:59.480 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 18.20895ms, execute: 1.697402ms, cycle: 19.907261ms, avg cycle: 16.898714ms (n=19) 
+15:45:59.496 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.443µs, plan took: 1.010704ms, traj size: 2, components: 1 
+15:45:59.497 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.852731ms, execute: 1.303325ms, cycle: 17.156711ms, avg cycle: 16.911614ms (n=20) 
+15:45:59.513 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.792µs, plan took: 1.318059ms, traj size: 2, components: 1 
+15:45:59.515 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.956627ms, execute: 1.490916ms, cycle: 17.448395ms, avg cycle: 16.937175ms (n=21) 
+15:45:59.527 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 11.755136ms, execute: 917.265µs, cycle: 12.67298ms, avg cycle: 16.743348ms (n=22) 
+15:45:59.527 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.723µs, plan took: 1.003481ms, traj size: 2, components: 1 
+15:45:59.543 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 7.188µs, plan took: 888.741µs, traj size: 2, components: 1 
+15:45:59.544 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.485347ms, execute: 1.206087ms, cycle: 16.692084ms, avg cycle: 16.741119ms (n=23) 
+15:45:59.561 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 2.227µs, plan took: 1.337619ms, traj size: 2, components: 1 
+15:45:59.562 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.372864ms, execute: 1.335922ms, cycle: 17.709885ms, avg cycle: 16.781484ms (n=24) 
+15:45:59.577 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.236µs, plan took: 1.15388ms, traj size: 2, components: 1 
+15:45:59.578 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 14.744987ms, execute: 1.402532ms, cycle: 16.148495ms, avg cycle: 16.756165ms (n=25) 
+15:45:59.596 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 978ns, plan took: 733.602µs, traj size: 2, components: 1 
+15:45:59.597 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 17.646451ms, execute: 1.376262ms, cycle: 19.024416ms, avg cycle: 16.843405ms (n=26) 
+15:45:59.613 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 638ns, plan took: 650.148µs, traj size: 2, components: 1 
+15:45:59.614 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.403249ms, execute: 960.758µs, cycle: 16.365838ms, avg cycle: 16.825718ms (n=27) 
+15:45:59.626 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 727ns, plan took: 927.897µs, traj size: 2, components: 1 
+15:45:59.627 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 12.091211ms, execute: 892.799µs, cycle: 12.984691ms, avg cycle: 16.688538ms (n=28) 
+15:45:59.642 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 787ns, plan took: 965.331µs, traj size: 2, components: 1 
+15:45:59.643 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.526334ms, execute: 1.310809ms, cycle: 16.838116ms, avg cycle: 16.693696ms (n=29) 
+15:45:59.659 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 635ns, plan took: 1.057383ms, traj size: 2, components: 1 
+15:45:59.660 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.818651ms, execute: 961.856µs, cycle: 16.781769ms, avg cycle: 16.696632ms (n=30) 
+15:45:59.676 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 2.29µs, plan took: 1.25765ms, traj size: 2, components: 1 
+15:45:59.678 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.193355ms, execute: 1.393633ms, cycle: 17.588604ms, avg cycle: 16.725405ms (n=31) 
+15:45:59.695 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.595µs, plan took: 1.132062ms, traj size: 2, components: 1 
+15:45:59.696 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 17.474038ms, execute: 921.674µs, cycle: 18.396394ms, avg cycle: 16.777623ms (n=32) 
+15:45:59.714 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.581µs, plan took: 1.411554ms, traj size: 2, components: 1 
+15:45:59.715 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 17.354484ms, execute: 1.252852ms, cycle: 18.608525ms, avg cycle: 16.833105ms (n=33) 
+15:45:59.725 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 932ns, plan took: 983.473µs, traj size: 2, components: 1 
+15:45:59.727 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 10.453999ms, execute: 1.343823ms, cycle: 11.798473ms, avg cycle: 16.685028ms (n=34) 
+15:45:59.743 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 674ns, plan took: 1.065676ms, traj size: 2, components: 1 
+15:45:59.745 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.464093ms, execute: 1.283057ms, cycle: 17.747787ms, avg cycle: 16.715392ms (n=35) 
+15:45:59.760 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 2.406µs, plan took: 1.331318ms, traj size: 2, components: 1 
+15:45:59.762 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.915063ms, execute: 1.122116ms, cycle: 17.038092ms, avg cycle: 16.724356ms (n=36) 
+15:45:59.777 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 961ns, plan took: 1.073578ms, traj size: 2, components: 1 
+15:45:59.778 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.386765ms, execute: 1.051914ms, cycle: 16.439347ms, avg cycle: 16.716653ms (n=37) 
+15:45:59.795 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 2.079µs, plan took: 1.362117ms, traj size: 2, components: 1 
+15:45:59.797 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 17.386871ms, execute: 1.445504ms, cycle: 18.833425ms, avg cycle: 16.772358ms (n=38) 
+15:45:59.814 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.868µs, plan took: 1.16003ms, traj size: 2, components: 1 
+15:45:59.815 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 17.041813ms, execute: 1.308443ms, cycle: 18.350803ms, avg cycle: 16.812831ms (n=39) 
+15:45:59.827 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.329µs, plan took: 1.012067ms, traj size: 2, components: 1 
+15:45:59.828 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 11.315442ms, execute: 908.179µs, cycle: 12.223993ms, avg cycle: 16.69811ms (n=40) 
+15:45:59.844 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.686µs, plan took: 1.380134ms, traj size: 2, components: 1 
+15:45:59.845 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.433137ms, execute: 1.338956ms, cycle: 17.772629ms, avg cycle: 16.724317ms (n=41) 
+15:45:59.860 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.543µs, plan took: 1.201199ms, traj size: 2, components: 1 
+15:45:59.861 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 14.446024ms, execute: 1.075817ms, cycle: 15.52239ms, avg cycle: 16.6957ms (n=42) 
+15:45:59.877 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.699µs, plan took: 1.356904ms, traj size: 2, components: 1 
+15:45:59.879 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.592304ms, execute: 1.480757ms, cycle: 18.073928ms, avg cycle: 16.727752ms (n=43) 
+15:45:59.896 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 6.076µs, plan took: 920.414µs, traj size: 2, components: 1 
+15:45:59.897 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 17.115484ms, execute: 853.738µs, cycle: 17.969708ms, avg cycle: 16.755978ms (n=44) 
+15:45:59.914 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 3.168µs, plan took: 1.390402ms, traj size: 2, components: 1 
+15:45:59.916 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 17.108931ms, execute: 1.738257ms, cycle: 18.847895ms, avg cycle: 16.802465ms (n=45) 
+15:45:59.926 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 5.599µs, plan took: 798.676µs, traj size: 2, components: 1 
+15:45:59.927 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 10.184829ms, execute: 953.352µs, cycle: 11.138758ms, avg cycle: 16.679341ms (n=46) 
+15:45:59.943 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 504ns, plan took: 739.97µs, traj size: 2, components: 1 
+15:45:59.944 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.794206ms, execute: 828.39µs, cycle: 16.623751ms, avg cycle: 16.678158ms (n=47) 
+15:45:59.960 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 392ns, plan took: 875.032µs, traj size: 2, components: 1 
+15:45:59.961 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.046314ms, execute: 921.634µs, cycle: 16.968979ms, avg cycle: 16.684217ms (n=48) 
+15:45:59.977 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 3.22µs, plan took: 1.544115ms, traj size: 2, components: 1 
+15:45:59.979 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.441016ms, execute: 1.604694ms, cycle: 18.046676ms, avg cycle: 16.712022ms (n=49) 
+15:45:59.996 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 10.595µs, plan took: 813.265µs, traj size: 2, components: 1 
+15:45:59.997 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 17.204968ms, execute: 1.029341ms, cycle: 18.234937ms, avg cycle: 16.742481ms (n=50) 
+15:46:00.014 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 4.265µs, plan took: 1.422173ms, traj size: 2, components: 1 
+15:46:00.015 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.651155ms, execute: 1.404626ms, cycle: 18.05731ms, avg cycle: 16.768262ms (n=51) 
+15:46:00.026 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.037µs, plan took: 1.089725ms, traj size: 2, components: 1 
+15:46:00.027 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 10.629776ms, execute: 960.611µs, cycle: 11.590983ms, avg cycle: 16.668699ms (n=52) 
+15:46:00.042 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 893ns, plan took: 847.581µs, traj size: 2, components: 1 
+15:46:00.044 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.691003ms, execute: 1.19171ms, cycle: 16.883347ms, avg cycle: 16.672749ms (n=53) 
+15:46:00.059 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 662ns, plan took: 1.123543ms, traj size: 2, components: 1 
+15:46:00.061 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.855425ms, execute: 1.054462ms, cycle: 16.910419ms, avg cycle: 16.67715ms (n=54) 
+15:46:00.078 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.896µs, plan took: 1.259298ms, traj size: 2, components: 1 
+15:46:00.079 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 17.036398ms, execute: 1.010531ms, cycle: 18.047568ms, avg cycle: 16.702066ms (n=55) 
+15:46:00.095 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 587ns, plan took: 1.088382ms, traj size: 2, components: 1 
+15:46:00.097 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.825532ms, execute: 1.167917ms, cycle: 17.993915ms, avg cycle: 16.725135ms (n=56) 
+15:46:00.114 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.989µs, plan took: 871.132µs, traj size: 2, components: 1 
+15:46:00.115 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.99915ms, execute: 902.119µs, cycle: 17.902067ms, avg cycle: 16.745783ms (n=57) 
+15:46:00.126 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.212µs, plan took: 766.686µs, traj size: 2, components: 1 
+15:46:00.128 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 11.5504ms, execute: 1.501143ms, cycle: 13.052499ms, avg cycle: 16.682106ms (n=58) 
+15:46:00.143 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 702ns, plan took: 843.085µs, traj size: 2, components: 1 
+15:46:00.144 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.282342ms, execute: 1.016367ms, cycle: 16.300643ms, avg cycle: 16.67564ms (n=59) 
+15:46:00.161 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 3.525µs, plan took: 1.478881ms, traj size: 2, components: 1 
+15:46:00.162 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.796622ms, execute: 1.43446ms, cycle: 18.232425ms, avg cycle: 16.701587ms (n=60) 
+15:46:00.176 info  viam_teleop.rdk:service:generic/teleop.m leader-follower pose [{"Type": 15.0, "String": "1794584758-3", "Integer": 0.0, "Key": "session"}, {"Key": "leader", "String": "", "Type": 23.0, "Interface": {"x": 151.6, "theta": -82.6, "oy": -0.0, "z": 176.1, "oz": -1.0, "y": -0.4, "ox": 0.0}, "Integer": 0.0}, {"Interface": {"z": 177.1, "theta": 179.9, "oy": 0.0, "x": 
+15:46:00.178 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 990ns, plan took: 841.419µs, traj size: 2, components: 1 
+15:46:00.179 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.441478ms, execute: 1.003348ms, cycle: 16.446568ms, avg cycle: 16.697406ms (n=61) 
+15:46:00.196 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 771ns, plan took: 1.070442ms, traj size: 2, components: 1 
+15:46:00.197 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 17.586635ms, execute: 1.126489ms, cycle: 18.714229ms, avg cycle: 16.729935ms (n=62) 
+15:46:00.213 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 2.895µs, plan took: 1.46179ms, traj size: 2, components: 1 
+15:46:00.215 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.88792ms, execute: 1.559991ms, cycle: 17.448656ms, avg cycle: 16.741344ms (n=63) 
+15:46:00.227 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 864ns, plan took: 1.030437ms, traj size: 2, components: 1 
+15:46:00.228 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 11.643032ms, execute: 1.170662ms, cycle: 12.814345ms, avg cycle: 16.679984ms (n=64) 
+15:46:00.243 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 898ns, plan took: 1.112148ms, traj size: 2, components: 1 
+15:46:00.244 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.497015ms, execute: 1.155125ms, cycle: 16.653033ms, avg cycle: 16.67957ms (n=65) 
+15:46:00.259 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 926ns, plan took: 824.402µs, traj size: 2, components: 1 
+15:46:00.260 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 14.492945ms, execute: 1.218236ms, cycle: 15.712998ms, avg cycle: 16.664925ms (n=66) 
+15:46:00.276 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 10.215µs, plan took: 1.144624ms, traj size: 2, components: 1 
+15:46:00.277 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.251454ms, execute: 1.037048ms, cycle: 17.288838ms, avg cycle: 16.674237ms (n=67) 
+15:46:00.296 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.132µs, plan took: 1.080575ms, traj size: 2, components: 1 
+15:46:00.297 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 18.551429ms, execute: 1.189004ms, cycle: 19.740979ms, avg cycle: 16.719336ms (n=68) 
+15:46:00.315 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 840ns, plan took: 822.477µs, traj size: 2, components: 1 
+15:46:00.316 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 17.508223ms, execute: 1.023937ms, cycle: 18.53283ms, avg cycle: 16.745618ms (n=69) 
+15:46:00.326 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 865ns, plan took: 1.045699ms, traj size: 2, components: 1 
+15:46:00.327 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 10.194132ms, execute: 933.293µs, cycle: 11.128147ms, avg cycle: 16.665369ms (n=70) 
+15:46:00.344 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.689µs, plan took: 1.48362ms, traj size: 2, components: 1 
+15:46:00.346 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 17.343969ms, execute: 1.420712ms, cycle: 18.765492ms, avg cycle: 16.694948ms (n=71) 
+15:46:00.359 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 2.244µs, plan took: 1.170177ms, traj size: 2, components: 1 
+15:46:00.360 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 13.59664ms, execute: 1.081795ms, cycle: 14.679452ms, avg cycle: 16.666955ms (n=72) 
+15:46:00.379 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 717ns, plan took: 1.114695ms, traj size: 2, components: 1 
+15:46:00.380 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 18.106195ms, execute: 961.529µs, cycle: 19.068304ms, avg cycle: 16.69985ms (n=73) 
+15:46:00.397 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.162µs, plan took: 1.418752ms, traj size: 2, components: 1 
+15:46:00.398 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.995565ms, execute: 1.437032ms, cycle: 18.433277ms, avg cycle: 16.723275ms (n=74) 
+15:46:00.414 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.939µs, plan took: 1.668925ms, traj size: 2, components: 1 
+15:46:00.415 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.182888ms, execute: 1.31811ms, cycle: 17.501564ms, avg cycle: 16.733652ms (n=75) 
+15:46:00.427 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.3µs, plan took: 1.234787ms, traj size: 2, components: 1 
+15:46:00.428 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 11.075744ms, execute: 978.283µs, cycle: 12.055367ms, avg cycle: 16.672096ms (n=76) 
+15:46:00.444 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 2.01µs, plan took: 1.520851ms, traj size: 2, components: 1 
+15:46:00.446 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.930714ms, execute: 1.308455ms, cycle: 18.240329ms, avg cycle: 16.692462ms (n=77) 
+15:46:00.459 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.082µs, plan took: 914.596µs, traj size: 2, components: 1 
+15:46:00.460 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 13.360983ms, execute: 1.009581ms, cycle: 14.371299ms, avg cycle: 16.662704ms (n=78) 
+15:46:00.481 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.801µs, plan took: 1.484282ms, traj size: 2, components: 1 
+15:46:00.483 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 21.078471ms, execute: 1.248787ms, cycle: 22.328207ms, avg cycle: 16.734419ms (n=79) 
+15:46:00.496 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 2.898µs, plan took: 1.299652ms, traj size: 2, components: 1 
+15:46:00.497 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 13.15315ms, execute: 1.255882ms, cycle: 14.410542ms, avg cycle: 16.705371ms (n=80) 
+15:46:00.514 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 2.2µs, plan took: 1.373651ms, traj size: 2, components: 1 
+15:46:00.515 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.68031ms, execute: 1.158564ms, cycle: 17.8406ms, avg cycle: 16.719386ms (n=81) 
+15:46:00.526 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 994ns, plan took: 940.849µs, traj size: 2, components: 1 
+15:46:00.527 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 11.302576ms, execute: 955.393µs, cycle: 12.259262ms, avg cycle: 16.664994ms (n=82) 
+15:46:00.543 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 732ns, plan took: 801.117µs, traj size: 2, components: 1 
+15:46:00.544 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.704177ms, execute: 1.160705ms, cycle: 16.86564ms, avg cycle: 16.667411ms (n=83) 
+15:46:00.560 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 621ns, plan took: 1.223454ms, traj size: 2, components: 1 
+15:46:00.561 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.88685ms, execute: 915.772µs, cycle: 16.803403ms, avg cycle: 16.66903ms (n=84) 
+15:46:00.576 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 790ns, plan took: 1.133437ms, traj size: 2, components: 1 
+15:46:00.578 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.610931ms, execute: 1.10244ms, cycle: 16.713873ms, avg cycle: 16.669558ms (n=85) 
+15:46:00.596 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.019µs, plan took: 1.14751ms, traj size: 2, components: 1 
+15:46:00.597 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 18.010625ms, execute: 914.089µs, cycle: 18.925117ms, avg cycle: 16.695785ms (n=86) 
+15:46:00.613 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.789µs, plan took: 1.363139ms, traj size: 2, components: 1 
+15:46:00.614 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.839255ms, execute: 1.076528ms, cycle: 17.916414ms, avg cycle: 16.709816ms (n=87) 
+15:46:00.627 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 2.009µs, plan took: 1.440135ms, traj size: 2, components: 1 
+15:46:00.628 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 12.376149ms, execute: 1.266442ms, cycle: 13.643255ms, avg cycle: 16.674968ms (n=88) 
+15:46:00.643 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 861ns, plan took: 1.215004ms, traj size: 2, components: 1 
+15:46:00.644 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.156178ms, execute: 975.062µs, cycle: 16.13294ms, avg cycle: 16.668878ms (n=89) 
+15:46:00.660 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.005µs, plan took: 1.163476ms, traj size: 2, components: 1 
+15:46:00.661 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.318035ms, execute: 1.371874ms, cycle: 16.691491ms, avg cycle: 16.669129ms (n=90) 
+15:46:00.678 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.024µs, plan took: 1.251841ms, traj size: 2, components: 1 
+15:46:00.679 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.547148ms, execute: 921.414µs, cycle: 17.469918ms, avg cycle: 16.677929ms (n=91) 
+15:46:00.696 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 574ns, plan took: 948.194µs, traj size: 2, components: 1 
+15:46:00.697 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 17.042341ms, execute: 1.352834ms, cycle: 18.395713ms, avg cycle: 16.696601ms (n=92) 
+15:46:00.713 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 4.996µs, plan took: 1.576824ms, traj size: 2, components: 1 
+15:46:00.715 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.373317ms, execute: 1.341352ms, cycle: 17.715503ms, avg cycle: 16.707557ms (n=93) 
+15:46:00.728 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 12.786123ms, execute: 915.509µs, cycle: 13.702135ms, avg cycle: 16.675584ms (n=94) 
+15:46:00.728 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 6.133µs, plan took: 928.752µs, traj size: 2, components: 1 
+15:46:00.743 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 586ns, plan took: 1.148201ms, traj size: 2, components: 1 
+15:46:00.744 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 14.620754ms, execute: 1.008495ms, cycle: 15.630046ms, avg cycle: 16.664578ms (n=95) 
+15:46:00.760 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 732ns, plan took: 1.415596ms, traj size: 2, components: 1 
+15:46:00.762 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 16.349718ms, execute: 1.074406ms, cycle: 17.426102ms, avg cycle: 16.672511ms (n=96) 
+15:46:00.877 info  rdk.resource_manager.rdk:service:motion/ 	 subgoal 0 failed after 101.297223ms with: all IK solutions failed constraints. Failures: { self-collision constraint: violation between arm:link_base and gripper:claws geometries: 100.00% },  
+15:46:00.877 warn  rdk.resource_manager.rdk:service:motion/ teleop planner error (inputs: 509ns, plan: 101.41715ms): all IK solutions failed constraints. Failures: { self-collision constraint: violation between arm:link_base and gripper:claws geometries: 100.00% },  
+15:46:00.958 warn  viam_teleop.rdk:service:generic/teleop.m pipeline error: all IK solutions failed constraints. Failures: { self-collision constraint: violation between arm:link_base and gripper:claws geometries: 100.00% },  
+15:46:00.974 error viam_teleop.rdk:service:generic/teleop.m leader-follower loop stopping (pipeline_error): all IK solutions failed constraints. Failures: { self-collision constraint: violation between arm:link_base and gripper:claws geometries: 100.00% }, ; removing the follower from the pipeline 
+15:46:00.975 info  rdk.resource_manager.rdk:service:motion/ 	 subgoal 0 failed after 97.184473ms with: context canceled 
+15:46:00.975 warn  rdk.resource_manager.rdk:service:motion/ teleop planner error (inputs: 1.156µs, plan: 97.328697ms): context canceled 
+15:46:01.158 info  viam_teleop.rdk:service:generic/teleop.m pipeline error cleared 
+15:46:32.697 info  devrel_so101-arm.rdk:service:discovery/d Starting SO-101 discovery 
+15:46:32.718 info  devrel_so101-arm.rdk:service:discovery/d Discovered 3 component configurations 
+15:46:32.718 info  devrel_so101-arm.rdk:service:discovery/d Discovered SO-101 on /dev/serial/by-id/usb-1a86_USB_Single_Serial_5B90100977-if00 (arm: true, gripper: true) 
+15:47:09.046 info  devrel_so101-arm.rdk:service:discovery/d Starting SO-101 discovery 
+15:47:09.068 info  devrel_so101-arm.rdk:service:discovery/d Discovered SO-101 on /dev/serial/by-id/usb-1a86_USB_Single_Serial_5B90100977-if00 (arm: true, gripper: false) 
+15:47:09.069 info  devrel_so101-arm.rdk:service:discovery/d Discovered 2 component configurations 
+15:47:41.235 info  rdk.networking                           Diagnostic data for successful webrtc connection attempt [{"Integer": 0.0, "String": "PeerConnection-1794584860619665429", "Key": "conn_id", "Type": 15.0}, {"Integer": 0.0, "String": "", "Key": "conn_local_candidates", "Type": 23.0, "Interface": [{"IP": "127.0.0.1", "Port": 59734.0, "CandType": "host", "FoundAt": {}}, {"IP": "71.183.14.3", "Port": 44112.0
+15:47:47.951 info  rdk.network-checks.health                network health [{"Integer": 0.0, "String": "good", "Key": "verdict", "Type": 15.0}, {"Type": 15.0, "String": "ok", "Integer": 0.0, "Key": "dns_status"}, {"Integer": 4.0, "String": "", "Key": "dns_connections_ok", "Type": 11.0}, {"Integer": 4.0, "String": "", "Key": "dns_connections_total", "Type": 11.0}, {"Type": 
+15:48:15.321 info  devrel_so101-arm.rdk:service:discovery/d Starting SO-101 discovery 
+15:48:15.343 info  devrel_so101-arm.rdk:service:discovery/d Discovered 3 component configurations 
+15:48:15.343 info  devrel_so101-arm.rdk:service:discovery/d Discovered SO-101 on /dev/serial/by-id/usb-1a86_USB_Single_Serial_5B90100977-if00 (arm: true, gripper: true) 
+15:48:40.807 info  devrel_so101-arm.rdk:service:discovery/d Starting SO-101 discovery 
+15:48:41.328 info  devrel_so101-arm.rdk:service:discovery/d Discovered SO-101 on /dev/serial/by-id/usb-1a86_USB_Single_Serial_5B90100977-if00 (arm: true, gripper: false) 
+15:48:41.329 info  devrel_so101-arm.rdk:service:discovery/d Discovered 2 component configurations 
+15:48:41.828 warn  devrel_so101-arm.rdk:component:arm/leade manual mode tick error (1): failed to get raw positions for servos: communication error during sync_read: communication timeout: read 38 of 48 expected bytes 
+15:49:34.869 info  devrel_so101-arm.rdk:service:discovery/d Starting SO-101 discovery 
+15:49:35.888 warn  devrel_so101-arm.rdk:component:arm/leade manual mode tick error (1): failed to get raw positions for servos: communication error during sync_read: communication timeout: read 45 of 48 expected bytes 
+15:49:36.391 info  devrel_so101-arm.rdk:service:discovery/d No SO-101 arms discovered 
+15:49:36.890 warn  devrel_so101-arm.rdk:component:arm/leade manual mode tick error (2): failed to get raw positions for servos: communication error during sync_read: communication timeout: read 38 of 48 expected bytes 
+15:49:49.891 info  devrel_so101-arm.rdk:service:discovery/d Starting SO-101 discovery 
+15:49:50.908 warn  devrel_so101-arm.rdk:component:arm/leade manual mode tick error (1): failed to get raw positions for servos: communication error during sync_read: communication timeout: read 12 of 48 expected bytes 
+15:49:51.411 info  devrel_so101-arm.rdk:service:discovery/d No SO-101 arms discovered 
+15:49:51.910 warn  devrel_so101-arm.rdk:component:arm/leade manual mode tick error (2): failed to get raw positions for servos: communication error during sync_read: communication timeout: read 38 of 48 expected bytes 
+15:50:00.288 info  devrel_so101-arm.rdk:component:arm/leade manual mode exiting: SetManualMode(false) 
+15:50:00.464 info  viam_teleop.rdk:service:generic/teleop.m leader-follower stopped 
+15:50:09.904 warn  viam_teleop.rdk:service:generic/teleop.m leader align: joint 5 stopped 136.4 deg short of its target (calibrated limit or droop); compensating with the residual 
+15:50:09.922 warn  devrel_so101-arm.rdk:component:arm/leade manual mode: failed to apply compliance: read torque_limit servo 4: servo status error: [voltage] 
+15:50:09.925 warn  viam_teleop.rdk:service:generic/teleop.m leader align is best effort: it maps 656 mm / 150 deg from the follower's pose; the gap is absorbed as a constant offset 
+15:50:09.926 info  viam_teleop.rdk:service:generic/teleop.m leader-follower align poses [{"Integer": 0.0, "String": "1794585006-4", "Key": "session", "Type": 15.0}, {"Key": "aligned", "String": "", "Type": 4.0, "Integer": 1.0}, {"Integer": 0.0, "String": "", "Key": "follower_pose", "Type": 23.0, "Interface": {"x": 122.1, "theta": 179.9, "oy": 0.0, "z": 174.7, "oz": -0.5, "ox": -0.9, "y
+15:50:09.931 info  viam_teleop.rdk:service:generic/teleop.m leader-follower started at 60 Hz; leader aligned to 656.3 mm / 150.0 deg of the follower 
+15:50:09.932 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 2.742µs, plan took: 1.044997ms, traj size: 2, components: 1 
+15:50:09.933 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 1.108204ms, execute: 1.247149ms (first move) 
+15:50:09.951 info  viam_teleop.rdk:service:generic/teleop.m leader-follower pose [{"Key": "session", "String": "1794585006-4", "Type": 15.0, "Integer": 0.0}, {"Type": 23.0, "String": "", "Integer": 0.0, "Interface": {"x": 239.1, "theta": -46.4, "oy": -0.0, "z": 178.0, "oz": -0.7, "y": -14.3, "ox": 0.7}, "Key": "leader"}, {"Integer": 0.0, "String": "", "Key": "target", "Type": 23
+15:50:09.952 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 3.557µs, plan took: 1.092387ms, traj size: 2, components: 1 
+15:50:09.954 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 19.57321ms, execute: 1.366429ms, cycle: 20.940628ms, avg cycle: 20.940628ms (n=1) 
+15:50:10.053 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 7.027µs, plan took: 804.211µs, traj size: 2, components: 1 
+15:50:10.055 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 99.216646ms, execute: 1.671726ms, cycle: 100.889617ms, avg cycle: 60.915122ms (n=2) 
+15:50:10.085 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.495µs, plan took: 1.101272ms, traj size: 2, components: 1 
+15:50:10.086 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 29.806013ms, execute: 1.444131ms, cycle: 31.251242ms, avg cycle: 51.027162ms (n=3) 
+15:50:10.117 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.706µs, plan took: 938.697µs, traj size: 2, components: 1 
+15:50:10.119 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 30.981077ms, execute: 1.67477ms, cycle: 32.657917ms, avg cycle: 46.434851ms (n=4) 
+15:50:10.151 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 561ns, plan took: 687.992µs, traj size: 2, components: 1 
+15:50:10.152 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 31.917438ms, execute: 1.277398ms, cycle: 33.196234ms, avg cycle: 43.787127ms (n=5) 
+15:50:10.203 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 934ns, plan took: 868.079µs, traj size: 2, components: 1 
+15:50:10.204 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 50.770081ms, execute: 1.33348ms, cycle: 52.103964ms, avg cycle: 45.173267ms (n=6) 
+15:50:10.271 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 728ns, plan took: 913.898µs, traj size: 2, components: 1 
+15:50:10.272 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 66.471658ms, execute: 1.189881ms, cycle: 67.6622ms, avg cycle: 48.385971ms (n=7) 
+15:50:10.301 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 1.744µs, plan took: 904.223µs, traj size: 2, components: 1 
+15:50:10.302 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 29.047727ms, execute: 1.190515ms, cycle: 30.238937ms, avg cycle: 46.117592ms (n=8) 
+15:50:10.318 info  rdk.resource_manager.rdk:service:motion/ teleop planner: inputs took: 758ns, plan took: 1.111326ms, traj size: 2, components: 1 
+15:50:10.319 info  rdk.resource_manager.rdk:service:motion/ teleop executor: wait: 15.472671ms, execute: 1.531988ms, cycle: 17.005693ms, avg cycle: 42.882936ms (n=9) 
+15:50:10.435 info  rdk.resource_manager.rdk:service:motion/ 	 subgoal 0 failed after 101.37814ms with: all IK solutions failed constraints. Failures: { self-collision constraint: violation between arm:link_base and gripper:claws geometries: 100.00% },  
+15:50:10.435 warn  rdk.resource_manager.rdk:service:motion/ teleop planner error (inputs: 775ns, plan: 101.490581ms): all IK solutions failed constraints. Failures: { self-collision constraint: violation between arm:link_base and gripper:claws geometries: 100.00% },  
+15:50:10.532 warn  viam_teleop.rdk:service:generic/teleop.m pipeline error: all IK solutions failed constraints. Failures: { self-collision constraint: violation between arm:link_base and gripper:claws geometries: 100.00% },  
+15:50:10.536 info  rdk.resource_manager.rdk:service:motion/ 	 subgoal 0 failed after 101.504484ms with: all IK solutions failed constraints. Failures: { self-collision constraint: violation between arm:link_base and gripper:claws geometries: 100.00% },  
+15:50:10.536 warn  rdk.resource_manager.rdk:service:motion/ teleop planner error (inputs: 809ns, plan: 101.649545ms): all IK solutions failed constraints. Failures: { self-collision constraint: violation between arm:link_base and gripper:claws geometries: 100.00% },  
+15:50:10.548 error viam_teleop.rdk:service:generic/teleop.m leader-follower loop stopping (pipeline_error): all IK solutions failed constraints. Failures: { self-collision constraint: violation between arm:link_base and gripper:claws geometries: 100.00% }, ; removing the follower from the pipeline 
+15:50:10.548 info  rdk.resource_manager.rdk:service:motion/ 	 subgoal 0 failed after 11.913763ms with: context canceled 
+15:50:10.549 warn  rdk.resource_manager.rdk:service:motion/ teleop planner error (inputs: 774ns, plan: 12.05419ms): context canceled 
+15:50:10.733 info  viam_teleop.rdk:service:generic/teleop.m pipeline error cleared 
+15:50:35.630 info  devrel_so101-arm.rdk:service:discovery/d Starting SO-101 discovery 
+15:50:36.163 info  devrel_so101-arm.rdk:service:discovery/d No SO-101 arms discovered 
+15:50:37.164 warn  devrel_so101-arm.rdk:component:arm/leade manual mode tick error (1): failed to get raw positions for servos: communication error during sync_read: communication timeout: read 40 of 48 expected bytes 

@@ -1,0 +1,71 @@
+{
+  "openvino": "2026.4.1-22982-e213a147257-releases/2026/4",
+  "devices": [
+    [
+      "CPU",
+      "Apple M2"
+    ]
+  ],
+  "rows": [
+    {
+      "model": "patchcore_bottle_c001",
+      "device": "CPU",
+      "precision": "default",
+      "compile_cold_ms": 2075,
+      "compile_warm_ms": 957,
+      "exec_precision": "f16",
+      "infer_p50_ms": 152.75,
+      "infer_p95_ms": 176.14,
+      "e2e_p50_ms": 156.31,
+      "score": 0.9941,
+      "fps": 6.4,
+      "nireq": 6,
+      "status": "ok"
+    },
+    {
+      "model": "patchcore_bottlef",
+      "device": "CPU",
+      "precision": "default",
+      "compile_cold_ms": 151,
+      "compile_warm_ms": 148,
+      "exec_precision": "f16",
+      "infer_p50_ms": 72.9,
+      "infer_p95_ms": 81.84,
+      "e2e_p50_ms": 79.21,
+      "score": 0.9609,
+      "fps": 13.3,
+      "nireq": 6,
+      "status": "ok"
+    },
+    {
+      "model": "padim_bottlef",
+      "device": "CPU",
+      "precision": "default",
+      "compile_cold_ms": 841,
+      "compile_warm_ms": 778,
+      "exec_precision": "f16",
+      "infer_p50_ms": 81.87,
+      "infer_p95_ms": 91.27,
+      "e2e_p50_ms": 80.0,
+      "score": 0.8174,
+      "fps": 12.0,
+      "nireq": 6,
+      "status": "ok"
+    },
+    {
+      "model": "efficientad_bottlef",
+      "device": "CPU",
+      "precision": "default",
+      "compile_cold_ms": 234,
+      "compile_warm_ms": 220,
+      "exec_precision": "f16",
+      "infer_p50_ms": 249.18,
+      "infer_p95_ms": 259.95,
+      "e2e_p50_ms": 258.43,
+      "score": 0.5029,
+      "fps": 4.0,
+      "nireq": 2,
+      "status": "ok"
+    }
+  ]
+}

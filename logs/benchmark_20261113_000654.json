@@ -1,0 +1,26 @@
+{
+  "openvino": "2026.4.1-22982-e213a147257-releases/2026/4",
+  "devices": [
+    [
+      "CPU",
+      "Apple M2"
+    ]
+  ],
+  "rows": [
+    {
+      "model": "patchcore_bottle_c001",
+      "device": "CPU",
+      "precision": "default",
+      "compile_cold_ms": 1543,
+      "compile_warm_ms": 1366,
+      "exec_precision": "f16",
+      "infer_p50_ms": 181.37,
+      "infer_p95_ms": 199.39,
+      "first_q_ms": 170.27,
+      "last_q_ms": 179.73,
+      "e2e_p50_ms": 200.55,
+      "score": 0.9941,
+      "status": "ok"
+    }
+  ]
+}

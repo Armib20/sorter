@@ -1,0 +1,6 @@
+{"ts": "23:56:14", "t": 1794545774.5357969, "level": "warning", "msg": "item 1 view 0: sharpness 0.247 vs train 1.92\u00b10.32 (z=-5.3): blurrier than training: motion blur (raise SETTLE_S) or focus", "item": 1}
+{"ts": "23:56:14", "t": 1794545774.7027562, "level": "warning", "msg": "item 2 view 0: brightness 0.294 vs train 0.535\u00b10.0054 (z=-9.0): darker than training: lighting/exposure changed?", "item": 2}
+{"ts": "23:56:14", "t": 1794545774.702826, "level": "warning", "msg": "item 2 view 0: contrast 0.201 vs train 0.364\u00b10.0021 (z=-8.9): flatter than training: lighting or background changed?", "item": 2}
+{"ts": "23:56:14", "t": 1794545774.7029068, "level": "warning", "msg": "item 2 view 0: clipped 0 vs train 0.35\u00b10.0036 (z=-20.0): fewer clipped pixels than training", "item": 2}
+{"ts": "23:56:14", "t": 1794545774.901911, "level": "warning", "msg": "item 3 view 0: brightness 0.682 vs train 0.535\u00b10.0054 (z=+5.5): brighter than training: lighting/exposure changed?", "item": 3}
+{"ts": "23:56:14", "t": 1794545774.901999, "level": "warning", "msg": "item 3 view 0: sharpness 5.42 vs train 1.92\u00b10.32 (z=+11.0): sharper/noisier than training: different zoom, texture or noise", "item": 3}
