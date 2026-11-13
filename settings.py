@@ -25,7 +25,7 @@ ROBOT_ADDRESS = ""                     # overrides the address in api-key.json w
 # --- Component names (must match the machine config in the Viam app) -------
 ARM_NAME = "arm"
 GRIPPER_NAME = "gripper"
-CAMERA_NAME = "camera"
+CAMERA_NAME = "cam"            # wrist depth camera (color + depth); "overview-cam" = fixed side view
 CAMERA_SOURCE = "color"   # NamedImage source to use from get_images(); "" = first decodable image
 MOTION_NAME = "builtin"   # motion service; only used when USE_MOTION_SERVICE
 USE_MOTION_SERVICE = False  # False: arm.move_to_position (simple); True: motion.move (collision-aware)

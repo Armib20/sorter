@@ -186,11 +186,12 @@ def check_decider(rep: Report, run_vlm=False):
                     f"on {settings.VLM_DEVICE}: {vlm.last_reason[:60]}")
 
 
-async def check_robot(rep: Report, robot, det, out_dir: Path):
+async def check_robot(rep: Report, robot, det, out_dir: Path, header=True):
     """Robot checks on an attached/connected Robot (read-only)."""
     from diagnostics import Trace, render_overlay
 
-    rep.section("Robot")
+    if header:
+        rep.section("Robot")
     names = sorted(f"{r.subtype}:{r.name}" for r in robot.machine.resource_names)
     rep.add("robot", "resources", "info", ", ".join(names)[:160])
     for label, comp, name in [("arm", robot.arm, settings.ARM_NAME), ("gripper", robot.gripper, settings.GRIPPER_NAME),
@@ -263,7 +264,7 @@ async def check_robot_connect(rep: Report, det, out_dir, address=None):
         return
     rep.add("robot", "connect", "ok", f"{creds['address']} in {(time.perf_counter() - t0) * 1000:.0f} ms")
     try:
-        await check_robot(rep, robot, det, out_dir)
+        await check_robot(rep, robot, det, out_dir, header=False)
     finally:
         await robot.close()
 

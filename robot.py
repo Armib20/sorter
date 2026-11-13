@@ -91,6 +91,12 @@ class Robot:
             log.info("no robot address: running fully offline (dry run)")
             self.dry_run = True
             return self
+        # Import component APIs BEFORE dialing: RobotClient only builds clients for resource
+        # types registered at connect time (otherwise from_robot raises ResourceNotFoundError).
+        import viam.components.arm  # noqa: F401
+        import viam.components.camera  # noqa: F401
+        import viam.components.gripper  # noqa: F401
+        import viam.services.motion  # noqa: F401
         from viam.robot.client import RobotClient
 
         if not (self.creds.get("api_key") and self.creds.get("api_key_id")):
@@ -108,10 +114,10 @@ class Robot:
         from viam.components.gripper import Gripper
 
         self.machine = machine
-        names = {r.name for r in machine.resource_names}
+        names = {(r.subtype, r.name) for r in machine.resource_names}
 
         def get(cls, name):
-            return cls.from_robot(machine, name) if name in names else None
+            return cls.from_robot(machine, name) if (cls.API.resource_subtype, name) in names else None
 
         self.arm = get(Arm, settings.ARM_NAME)
         self.gripper = get(Gripper, settings.GRIPPER_NAME)
@@ -122,7 +128,7 @@ class Robot:
         missing = [n for n, c in [(settings.ARM_NAME, self.arm), (settings.GRIPPER_NAME, self.gripper),
                                   (settings.CAMERA_NAME, self.camera)] if c is None]
         if missing:
-            log.warning("not found on machine: %s (available: %s)", missing, sorted(names))
+            log.warning("not found on machine: %s (available: %s)", missing, sorted(f"{t}:{n}" for t, n in names))
         return self
 
     async def close(self):
