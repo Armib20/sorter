@@ -36,7 +36,8 @@ def parse_args():
     p.add_argument("--data", default="datasets/MVTecAD/bottle", help="dataset folder (see layouts above)")
     p.add_argument("--name", default=None, help="run name (default: <model>_<dataset folder name>)")
     p.add_argument("--image-size", type=int, nargs="+", default=[256], help="H [W] fed to the model")
-    p.add_argument("--coreset-ratio", type=float, default=0.1, help="PatchCore memory-bank fraction; lower = faster")
+    p.add_argument("--coreset-ratio", type=float, default=0.01,
+                   help="PatchCore memory-bank fraction. 0.01: 7 min fit, 227 ms; 0.1: 20 min, 835 ms (M2 CPU), same AUROC")
     p.add_argument("--backbone", default=None, help="override backbone (patchcore/padim), e.g. resnet18")
     p.add_argument("--epochs", type=int, default=20, help="EfficientAD epochs (PatchCore/PaDiM always use 1)")
     p.add_argument("--efficientad-size", choices=("small", "medium"), default="small")
@@ -49,6 +50,8 @@ def parse_args():
     p.add_argument("--workers", type=int, default=4)
     p.add_argument("--models-dir", default="models")
     p.add_argument("--no-test", action="store_true", help="skip engine.test (faster)")
+    p.add_argument("--from-ckpt", default=None,
+                   help="skip training: load this Lightning checkpoint and only (re-)export it")
     return p.parse_args()
 
 
@@ -120,19 +123,22 @@ def main():
     out_dir = Path(args.models_dir) / name
 
     datamodule, layout = build_datamodule(args, data)
-    model = build_model(args, hw)
 
     engine_kw = dict(accelerator=args.accelerator, devices=1, default_root_dir="./results")
     if args.model == "efficientad":
         engine_kw["max_epochs"] = args.epochs
     engine = Engine(**engine_kw)
 
-    t0 = time.time()
-    engine.fit(model=model, datamodule=datamodule)
-    fit_s = time.time() - t0
+    metrics, fit_s = {}, 0.0
+    if args.from_ckpt:
+        model = type(build_model(args, hw)).load_from_checkpoint(args.from_ckpt, map_location="cpu")
+    else:
+        model = build_model(args, hw)
+        t0 = time.time()
+        engine.fit(model=model, datamodule=datamodule)
+        fit_s = time.time() - t0
 
-    metrics = {}
-    if not args.no_test:
+    if not args.no_test and not args.from_ckpt:
         results = engine.test(model=model, datamodule=datamodule)
         metrics = {k: float(v) for k, v in (results[0] if results else {}).items()}
 
@@ -158,6 +164,7 @@ def main():
         "model": args.model, "dataset": str(data), "layout": layout, "image_size": list(hw),
         "coreset_ratio": args.coreset_ratio if args.model == "patchcore" else None,
         "compression": args.compression, "fit_seconds": round(fit_s, 1), "metrics": metrics,
+        "checkpoint": str(args.from_ckpt or engine.best_model_path or ""),
         "created": time.strftime("%Y-%m-%d %H:%M:%S"),
         "note": "pred_score is normalized: 0.5 == threshold fitted on the validation split",
     }

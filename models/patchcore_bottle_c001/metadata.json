@@ -1,0 +1,16 @@
+{
+  "model": "patchcore",
+  "dataset": "/Users/alirizwan/Projects/Misc/sorter/datasets/MVTecAD/bottle",
+  "layout": "mvtec",
+  "image_size": [
+    256,
+    256
+  ],
+  "coreset_ratio": 0.01,
+  "compression": "none",
+  "fit_seconds": 0.0,
+  "metrics": {},
+  "checkpoint": "results/Patchcore/MVTecAD/bottle/v1/weights/lightning/model.ckpt",
+  "created": "2026-11-12 22:51:27",
+  "note": "pred_score is normalized: 0.5 == threshold fitted on the validation split"
+}

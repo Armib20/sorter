@@ -52,9 +52,13 @@ NUM_VIEWS = 1             # how many of VIEW_OFFSETS to capture per item
 SETTLE_S = 0.3            # wait after a move before grabbing a frame (motion blur / exposure)
 
 # --- Detector ---------------------------------------------------------------
-MODEL_PATH = ROOT / "models" / "patchcore_bottle" / "model.xml"
+MODEL_PATH = ROOT / "models" / "patchcore_bottle_c001" / "model.xml"
 DEVICE = "CPU"            # CPU | GPU | NPU | AUTO  (see benchmark.py)
 PERFORMANCE_HINT = "LATENCY"
+# "" = device default (GPU/NPU and ARM CPUs run f16; Intel CPUs f32). "f32" reproduces
+# Anomalib's torch scores exactly on CPU/GPU; f16 shifts scores by ~0.01-0.07, so
+# calibrate THRESHOLD on the device you deploy on (evaluate.py --suggest-threshold).
+INFERENCE_PRECISION = ""
 CACHE_DIR = ROOT / "openvino_cache"   # compiled-model cache: makes GPU/NPU startup fast after the first run
 CROP = None               # optional (x0, y0, x1, y1) region of interest in camera pixels, applied before scoring
 
