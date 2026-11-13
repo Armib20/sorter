@@ -43,7 +43,7 @@ class Detector:
 
         self.model_path = Path(model_path or settings.MODEL_PATH)
         self.device = (device or settings.DEVICE).upper()
-        self.crop = crop if crop is not None else settings.CROP
+        self.crop = crop  # usually None: live frames are cropped by Robot.get_image (settings.CROP)
         meta_file = self.model_path.with_name("metadata.json")
         self.meta = json.loads(meta_file.read_text()) if meta_file.exists() else {}
 

@@ -216,7 +216,10 @@ class Robot:
             images, _ = await self.camera.get_images()
         for img in images:  # first colour image; depth frames are skipped
             if img.mime_type in (CameraMimeType.JPEG, CameraMimeType.PNG):
-                return Image.open(io.BytesIO(img.data)).convert("RGB")
+                frame = Image.open(io.BytesIO(img.data)).convert("RGB")
+                # crop live frames only: datasets are saved already cropped, so
+                # training, offline runs and the live loop all see the same pixels
+                return frame.crop(tuple(settings.CROP)) if settings.CROP else frame
         raise RuntimeError(f"no JPEG/PNG image from camera; got {[(i.name, i.mime_type) for i in images]}")
 
     async def capture(self, views=None) -> list[Image.Image]:

@@ -60,7 +60,8 @@ PERFORMANCE_HINT = "LATENCY"
 # calibrate THRESHOLD on the device you deploy on (evaluate.py --suggest-threshold).
 INFERENCE_PRECISION = ""
 CACHE_DIR = ROOT / "openvino_cache"   # compiled-model cache: makes GPU/NPU startup fast after the first run
-CROP = None               # optional (x0, y0, x1, y1) region of interest in camera pixels, applied before scoring
+CROP = None               # optional (x0, y0, x1, y1) region of interest in camera pixels; applied to live
+                          # frames in Robot.get_image, so capture_tool datasets are saved already cropped
 
 # --- Decision ---------------------------------------------------------------
 THRESHOLD = 0.5           # on the normalized score; 0.5 == threshold Anomalib fitted at training time

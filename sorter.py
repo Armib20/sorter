@@ -59,9 +59,10 @@ def overlay(image: Image.Image, amap, score, text=""):
 
 
 class Sorter:
-    def __init__(self, robot: Robot, detector: Detector, decider, log_path=None, viz_dir=None, pick=True):
+    def __init__(self, robot: Robot, detector: Detector, decider, log_path=None, viz_dir=None, pick=True,
+                 recheck=True):
         self.robot, self.detector, self.decider = robot, detector, decider
-        self.pick = pick
+        self.pick, self.recheck = pick, recheck
         self.log_path = Path(log_path) if log_path else None
         self.viz_dir = Path(viz_dir) if viz_dir else None
         for d in (self.log_path.parent if self.log_path else None, self.viz_dir):
@@ -102,7 +103,7 @@ class Sorter:
 
         # Low confidence and spare viewpoints: look again before committing.
         extra = settings.VIEW_OFFSETS[views:]
-        if is_uncertain(confidence) and extra:
+        if self.recheck and is_uncertain(confidence) and extra:
             t0 = time.perf_counter()
             more = await self.robot.capture(extra)
             more_results = [self.detector.score(img) for img in more]
@@ -214,7 +215,8 @@ async def verb_offline(args):
         items = items[:: max(1, len(items) // args.limit)][: args.limit]
     robot = Robot(dry_run=True, connect=False)
     await robot.connect()
-    sorter = Sorter(robot, det, decider, log_path, viz_dir, pick=True)
+    # offline every "view" is the same file, so re-checking only adds latency
+    sorter = Sorter(robot, det, decider, log_path, viz_dir, pick=True, recheck=args.recheck)
     logging.getLogger("robot").setLevel(logging.WARNING)  # hide per-move dry-run chatter
     for path, y in items:
         robot.set_frames([path])  # every view of this item = this file
@@ -255,6 +257,7 @@ def main():
     p = common(sub.add_parser("offline", help="run the loop on a folder of images (robot dry-run)"))
     p.add_argument("--images", default=str(settings.TEST_IMAGES), help="folder with good/ and defect subfolders")
     p.add_argument("--limit", type=int, default=None, help="evenly sample this many images")
+    p.add_argument("--recheck", action="store_true", help="exercise the uncertain-item recheck path")
 
     args = ap.parse_args()
     asyncio.run(globals()[f"verb_{args.verb}"](args))
