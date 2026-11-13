@@ -18,7 +18,9 @@ Team of 4. Sources: the event slides, the reference sheet (version 2026-11-13 08
 
 ## What we have
 
-- **Station `armfarm04b`:** xArm6 with a two-finger claw `gripper` (`vacuum-gripper` exists but is disabled); `cam` = RealSense on the wrist, 640×480 color + depth; `overview-cam` = webcam on the stand.
+- **Station `armfarm04b`** (probed read-only, details in `ARCHITECTURE.md`): **xArm850** (not xArm6) with a two-finger claw `gripper` (`IsHoldingSomething` works; `vacuum-gripper` exists but is disabled); `cam` = RealSense D435 on the wrist, 640×480 color + aligned depth, already placed in the frame system; `overview-cam` = webcam on the stand. A shell service is configured, so code can run on the station. No OpenVINO services yet.
+- **Obstacles are off:** the table/walls/ceiling are disabled by our fragment mods, so planned motion can go through the table until we fix it.
+- **Reference data:** `fastener-anomaly` dataset (`6af5edb82deac4224da1b4cd`, 169 normal + 83 anomalous). The machine key can't read it; export with `viam dataset export` from a logged-in account.
 - **Items:** fasteners; the known defect is blue tape. From the photo analysis:
   - Good parts are also bluish (zinc plating, hue ≈ 200°); tape is ≈ 230° and matte. Only hue separates them.
   - Tape can be tiny or on the hidden side, so multiple views matter.
