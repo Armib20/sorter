@@ -103,6 +103,15 @@ The camera measures where the part is; the motion service computes the joints. N
 3. **Grasp pose:** straight down (`o = (0, 0, −1)`), position = part center, fingertips a few mm above the table. `theta` = jaws across the part's short side (bolt: across the shank; nut: across the flats). Pin down the theta ↔ jaw direction convention once with a hover test.
 4. **Motion:** `motion.move(component_name="gripper", destination=PoseInFrame("world", pre_grasp), world_state=obstacles)`. The planner solves the arm's joint angles for the gripper tip (the 150 mm tool offset is in the frame config). Then a straight 60–80 mm descent, `gripper.grab()`, `is_holding_something()`, lift, place.
 
+**Survey pose = `home-pose`** (checked from home, read-only):
+- The camera looks straight down from z ≈ 636 mm and covers world x 112–619, y −297…383 (about 50 × 68 cm).
+- At the table that's **1.06 mm/px**: enough to find parts and their yaw, too coarse to see tape detail, hence the close-up inspect pose.
+- Locating there uses a ray / table-plane intersection (table z ≈ −4 mm). At 64 cm, depth noise is about the height of a fastener, so depth isn't needed.
+- First segmentation pass on the real scene (`/tmp/eoi_probe/survey_locate.py`) found every zinc part. To fix:
+  - Shiny stainless screws and washers are partly missed (low saturation, table-like brightness). Add an edge/gradient cue.
+  - Touching parts merge into one blob. A blob bigger than any single part → move closer or pick the most isolated end.
+  - The gripper finger is always in the bottom-right of the frame. Mask it.
+
 State machine per item:
 
 ```
