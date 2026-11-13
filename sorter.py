@@ -236,7 +236,7 @@ def main():
         if model:
             p.add_argument("--model-path", default=None)
             p.add_argument("--device", default=None, help="CPU | GPU | NPU | AUTO")
-            p.add_argument("--decider", default="rule", choices=("rule", "vlm", "hybrid"))
+            p.add_argument("--decider", default=settings.DECIDER, choices=("rule", "vlm", "hybrid"))
             p.add_argument("--save-viz", action="store_true", help="save heatmap overlays per item")
         p.add_argument("--views", type=int, default=None, help=f"views per item (default {settings.NUM_VIEWS})")
         return p

@@ -69,6 +69,11 @@ UNCERTAIN_MARGIN = 0.1    # |score - THRESHOLD| below this -> low confidence (De
 VIEW_AGGREGATE = "max"    # how per-view scores combine: max (strict) | mean
 ACTIONS = ["box", "reject"]           # every action the Decider may return; each must be a key in POSES
 ACTION_FOR = {"good": "box", "defect": "reject"}
+DECIDER = "rule"          # rule | vlm | hybrid (VLM only for uncertain scores)
+VLM_PATH = ROOT / "models" / "vlm-internvl2-1b"   # OpenVINO GenAI VLM folder
+VLM_DEVICE = "GPU"        # keep the VLM off the device running the anomaly model
+VLM_MODE = "yesno"        # yesno (robust with small VLMs) | choose (pick from ACTIONS; use 4B+)
+VLM_DEFECT_HINT = ""      # e.g. "cracks, chips, missing cap, dirt" once the scenario is known
 
 # --- Data / logs ------------------------------------------------------------
 DATASET_DIR = ROOT / "datasets" / "custom"   # capture_tool.py writes <DATASET_DIR>/<name>/{train,test}/...

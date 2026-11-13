@@ -56,51 +56,71 @@ class RuleDecider(Decider):
 
 
 class VLMDecider(Decider):
-    """Vision-language model via OpenVINO GenAI. NOT YET TESTED end to end.
+    """Vision-language model via OpenVINO GenAI.
 
-    Setup (once, before the event if possible - models are 1-5 GB):
-        pip install openvino-genai==<same minor as openvino>
-        optimum-cli export openvino --model <hf-vlm-id> --weight-format int4 models/vlm
-      or download a pre-converted OpenVINO IR from huggingface.co/OpenVINO.
+    mode="yesno"  (default) ask "is this item defective?" -> ACTION_FOR[good|defect].
+                  Small VLMs (1-2B) answer yes/no far more reliably than they pick
+                  from a list.
+    mode="choose" ask the VLM to pick one of settings.ACTIONS (for richer action
+                  sets, e.g. rework vs scrap); needs a stronger model (4B+).
+
+    Setup:
+        pip install openvino-genai==2026.4.1          # same version as openvino
+        hf download OpenVINO/InternVL2-1B-int4-ov --local-dir models/vlm-internvl2-1b   # 0.8 GB, fast
+        hf download OpenVINO/Qwen3-VL-4B-Instruct-int4-ov --local-dir models/vlm-qwen3-4b  # 3.1 GB, smarter
     Run it on GPU so the NPU/CPU stay free for the anomaly model.
     """
 
-    def __init__(self, model_dir="models/vlm", device="GPU", max_new_tokens=24, fallback=None):
+    def __init__(self, model_dir=None, device=None, mode=None, max_new_tokens=None, image_side=448,
+                 defect_hint=None, fallback=None):
         import openvino_genai  # lazy: only needed when this decider is used
 
-        self.genai = openvino_genai
+        model_dir = model_dir or settings.VLM_PATH
+        device = device or settings.VLM_DEVICE
+        self.mode = mode or settings.VLM_MODE
+        self.image_side = image_side
+        self.defect_hint = defect_hint if defect_hint is not None else settings.VLM_DEFECT_HINT
         props = {"CACHE_DIR": str(settings.CACHE_DIR / "vlm")} if device == "GPU" else {}
         self.pipe = openvino_genai.VLMPipeline(str(model_dir), device, **props)
         self.config = openvino_genai.GenerationConfig()
-        self.config.max_new_tokens = max_new_tokens
+        self.config.max_new_tokens = max_new_tokens or (4 if self.mode == "yesno" else 24)
         self.fallback = fallback or RuleDecider()
 
     def prompt(self, score):
+        hint = f" Defects look like: {self.defect_hint}." if self.defect_hint else ""
+        if self.mode == "yesno":
+            return (f"You are a quality inspector.{hint} Is this item defective? "
+                    "Answer with one word: yes or no.")
         actions = ", ".join(settings.ACTIONS)
-        return (
-            "You are a quality inspector on a sorting line. An anomaly detector scored this item "
-            f"{score:.2f} (0 = normal, 1 = defective, threshold {settings.THRESHOLD}). "
-            f"Look at the item and choose exactly one action from: {actions}. "
-            "Reply in the form: ACTION: <action>; CONFIDENCE: <0-1>; REASON: <few words>"
-        )
+        return (f"You are a quality inspector on a sorting line.{hint} An anomaly detector scored this item "
+                f"{score:.2f} (0 = normal, 1 = defective, threshold {settings.THRESHOLD}). "
+                f"Choose exactly one action from: {actions}. Answer with the action name only.")
 
     def decide(self, image, score):
         from openvino import Tensor
+
         from detector import load_image
 
-        rgb = np.asarray(load_image(image), dtype=np.uint8)
+        img = load_image(image)
+        img.thumbnail((self.image_side, self.image_side))  # 1 tile instead of up to 12: ~10x faster
+        rgb = np.asarray(img, dtype=np.uint8)
         text = self.pipe.generate(self.prompt(score), images=[Tensor(rgb)], generation_config=self.config).texts[0]
-        action, confidence = self.parse(text)
+        action, confidence = self.parse(text, self.mode)
         if action is None:  # unparseable answer: never let the VLM stall the line
             action, confidence = self.fallback.decide(image, score)
-            self.last_reason = f"VLM unparseable ({text!r}); {self.fallback.last_reason}"
+            self.last_reason = f"VLM unparseable ({text.strip()[:60]!r}); {self.fallback.last_reason}"
         else:
-            self.last_reason = f"VLM: {text.strip()}"
+            self.last_reason = f"VLM: {text.strip()[:80]}"
         return action, confidence
 
     @staticmethod
-    def parse(text):
+    def parse(text, mode="choose"):
         lowered = text.lower()
+        if mode == "yesno":
+            m = re.search(r"\b(yes|no)\b", lowered)
+            if not m:
+                return None, 0.5
+            return settings.ACTION_FOR["defect" if m.group(1) == "yes" else "good"], 0.8
         action = next((a for a in settings.ACTIONS if re.search(rf"\b{re.escape(a.lower())}\b", lowered)), None)
         m = re.search(r"confidence\W+([01](?:\.\d+)?)", lowered)
         confidence = float(m.group(1)) if m else 0.75
@@ -143,6 +163,9 @@ def main():
         print(f"score={s:.2f} -> {action:7} confidence={conf:.3f} uncertain={is_uncertain(conf)}  ({d.last_reason})")
     assert VLMDecider.parse("ACTION: reject; CONFIDENCE: 0.9; REASON: crack") == ("reject", 0.9)
     assert VLMDecider.parse("I would box it")[0] == "box"
+    assert VLMDecider.parse("Yes.", "yesno")[0] == settings.ACTION_FOR["defect"]
+    assert VLMDecider.parse("No", "yesno")[0] == settings.ACTION_FOR["good"]
+    assert VLMDecider.parse("hmm", "yesno")[0] is None
     print("parser self-test ok")
 
 
