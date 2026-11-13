@@ -191,7 +191,7 @@ def render_overlay(frame: Image.Image, amap, info: dict) -> Image.Image:
     if m.get("bbox"):
         x0, y0, x1, y1 = m["bbox"]
         draw.rectangle((x0 * W, y0 * H, x1 * W, y1 * H), outline=(255, 255, 255), width=lw)
-    if m.get("peak_xy"):
+    if m.get("peak_xy") and m.get("peak", 0) >= thr - settings.UNCERTAIN_MARGIN:  # only when it matters
         px, py = m["peak_xy"][0] * W, m["peak_xy"][1] * H
         r = max(8, W // 60)
         draw.line((px - r, py, px + r, py), fill=(255, 255, 255), width=lw)

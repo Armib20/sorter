@@ -9,6 +9,8 @@ Per model x device x precision:
   compile_cold  first compile with an empty cache (what a fresh boot costs)
   compile_warm  compile again from the cache (what every later start costs)
   infer p50/p95 synchronous batch-1 latency (the sorter's case)
+  first/last_q  median of the first vs last quarter of iterations: a big gap = boost then
+                throttling, so trust last_q for sustained sorting (raise --iters to see it)
   e2e p50       Detector.score on a real image incl. resize/normalise
   fps           async throughput (--throughput)
 Failures (e.g. an op the NPU can't compile) are reported, not fatal.
@@ -83,6 +85,10 @@ def bench_one(core_factory, xml, device, precision, iters, warmup, image, throug
             times.append((time.perf_counter() - t0) * 1000)
         row["infer_p50_ms"] = round(float(np.median(times)), 2)
         row["infer_p95_ms"] = round(float(np.percentile(times, 95)), 2)
+        # boost vs sustained: laptops/NUCs boost briefly, then settle (the M2 goes ~85 -> ~180 ms)
+        q = max(1, len(times) // 4)
+        row["first_q_ms"] = round(float(np.median(times[:q])), 2)
+        row["last_q_ms"] = round(float(np.median(times[-q:])), 2)
 
         if image is not None:
             det = Detector(xml, device, warmup=warmup, precision=precision or "")
@@ -145,7 +151,7 @@ def main():
                 rows.append(bench_one(ov.Core, xml, device, prec, args.iters, args.warmup, image, args.throughput))
 
     cols = ["model", "device", "precision", "exec_precision", "compile_cold_ms", "compile_warm_ms",
-            "infer_p50_ms", "infer_p95_ms", "e2e_p50_ms", "fps", "score", "status"]
+            "infer_p50_ms", "infer_p95_ms", "first_q_ms", "last_q_ms", "e2e_p50_ms", "fps", "score", "status"]
     cols = [c for c in cols if any(c in r for r in rows)]
     print("\n" + tabulate([[r.get(c, "") for c in cols] for r in rows], headers=cols, tablefmt="simple"))
 
