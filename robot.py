@@ -32,6 +32,7 @@ from pathlib import Path
 from PIL import Image
 
 import settings
+from diagnostics import maybe_span
 
 log = logging.getLogger("robot")
 
@@ -78,6 +79,7 @@ class Robot:
         # offline frames: an iterable of paths / PIL images, cycled
         self._frames = itertools.cycle(list(image_source)) if image_source else None
         self.holding = False
+        self.trace = None  # diagnostics.Trace for the current item (set by Sorter); spans per call
 
     # ---------------------------------------------------------------- lifecycle
     @property
@@ -135,51 +137,61 @@ class Robot:
         await self.close()
 
     # ----------------------------------------------------------------- motion
-    async def move_to(self, pose):
+    def _span(self, name, **attrs):
+        return maybe_span(self.trace, name, **attrs)
+
+    async def move_to(self, pose, label=None):
+        label = label or (pose if isinstance(pose, str) else "custom")
         pose = resolve_pose(pose)
-        if self.dry_run or self.arm is None:
-            log.info("DRY-RUN move_to %s", pose)
-            return
-        from viam.proto.common import Pose, PoseInFrame
-        from viam.proto.component.arm import JointPositions
+        mode = "joints" if "joints" in pose else ("motion" if self.motion is not None else "cartesian")
+        with self._span("move", target=label, mode=mode, dry_run=self.dry_run or self.arm is None):
+            if self.dry_run or self.arm is None:
+                log.info("DRY-RUN move_to %s %s", label, pose)
+                return
+            from viam.proto.common import Pose, PoseInFrame
+            from viam.proto.component.arm import JointPositions
 
-        if "joints" in pose:
-            await self.arm.move_to_joint_positions(JointPositions(values=pose["joints"]))
-        elif self.motion is not None:
-            target = settings.GRIPPER_NAME if self.gripper is not None else settings.ARM_NAME
-            await self.motion.move(component_name=target,
-                                   destination=PoseInFrame(reference_frame=settings.POSE_FRAME, pose=Pose(**pose)))
-        else:
-            await self.arm.move_to_position(Pose(**pose))
+            if mode == "joints":
+                await self.arm.move_to_joint_positions(JointPositions(values=pose["joints"]))
+            elif mode == "motion":
+                target = settings.GRIPPER_NAME if self.gripper is not None else settings.ARM_NAME
+                await self.motion.move(component_name=target,
+                                       destination=PoseInFrame(reference_frame=settings.POSE_FRAME, pose=Pose(**pose)))
+            else:
+                await self.arm.move_to_position(Pose(**pose))
 
-    async def _approach(self, pose):
+    async def _approach(self, pose, label):
         """Hover APPROACH_MM above a Cartesian pose; joint poses go direct."""
         if "joints" not in pose and settings.APPROACH_MM:
-            await self.move_to(offset_pose(pose, {"z": settings.APPROACH_MM}))
+            await self.move_to(offset_pose(pose, {"z": settings.APPROACH_MM}), label=f"{label}+approach")
 
     async def open_gripper(self):
-        if self.dry_run or self.gripper is None:
-            log.info("DRY-RUN gripper open")
-        else:
-            await self.gripper.open()
+        with self._span("gripper.open", dry_run=self.dry_run or self.gripper is None):
+            if self.dry_run or self.gripper is None:
+                log.info("DRY-RUN gripper open")
+            else:
+                await self.gripper.open()
         self.holding = False
 
     async def grab(self) -> bool:
-        if self.dry_run or self.gripper is None:
-            log.info("DRY-RUN gripper grab")
-            self.holding = True
-        else:
-            self.holding = bool(await self.gripper.grab())
+        with self._span("gripper.grab", dry_run=self.dry_run or self.gripper is None) as attrs:
+            if self.dry_run or self.gripper is None:
+                log.info("DRY-RUN gripper grab")
+                self.holding = True
+            else:
+                self.holding = bool(await self.gripper.grab())
+            attrs["holding"] = self.holding
         return self.holding
 
     async def pick(self, pose="pick") -> bool:
         """Open, approach from above, descend, grab, lift. Returns whether something was grabbed."""
+        label = pose if isinstance(pose, str) else "pick"
         pose = resolve_pose(pose)
         await self.open_gripper()
-        await self._approach(pose)
-        await self.move_to(pose)
+        await self._approach(pose, label)
+        await self.move_to(pose, label=label)
         grabbed = await self.grab()
-        await self._approach(pose)
+        await self._approach(pose, label)
         if not grabbed:
             log.warning("grab reported nothing held at %s", pose)
         return grabbed
@@ -187,10 +199,10 @@ class Robot:
     async def place(self, name):
         """Carry the held item to POSES[name] (e.g. "box" or "reject"), release, retreat."""
         pose = resolve_pose(name)
-        await self._approach(pose)
-        await self.move_to(pose)
+        await self._approach(pose, name)
+        await self.move_to(pose, label=name)
         await self.open_gripper()
-        await self._approach(pose)
+        await self._approach(pose, name)
 
     async def stop(self):
         if self.arm is not None and not self.dry_run:
@@ -202,25 +214,40 @@ class Robot:
         self._frames = itertools.cycle(list(frames))
 
     async def get_image(self) -> Image.Image:
-        if self.camera is None:
-            if self._frames is None:
-                raise RuntimeError("no camera and no offline image_source")
-            frame = next(self._frames)
-            return frame if isinstance(frame, Image.Image) else Image.open(frame).convert("RGB")
+        with self._span("camera", source="offline" if self.camera is None else settings.CAMERA_NAME) as attrs:
+            if self.camera is None:
+                if self._frames is None:
+                    raise RuntimeError("no camera and no offline image_source")
+                frame = next(self._frames)
+                img = frame if isinstance(frame, Image.Image) else Image.open(frame).convert("RGB")
+                attrs["size"] = list(img.size)
+                if not isinstance(frame, Image.Image):
+                    attrs["file"] = Path(frame).name
+                return img
 
-        from viam.media.video import CameraMimeType
+            from viam.media.video import CameraMimeType
 
-        kw = {"filter_source_names": [settings.CAMERA_SOURCE]} if settings.CAMERA_SOURCE else {}
-        images, _ = await self.camera.get_images(**kw)
-        if not images and kw:  # source name wrong: fall back to everything
-            images, _ = await self.camera.get_images()
-        for img in images:  # first colour image; depth frames are skipped
-            if img.mime_type in (CameraMimeType.JPEG, CameraMimeType.PNG):
-                frame = Image.open(io.BytesIO(img.data)).convert("RGB")
-                # crop live frames only: datasets are saved already cropped, so
-                # training, offline runs and the live loop all see the same pixels
-                return frame.crop(tuple(settings.CROP)) if settings.CROP else frame
-        raise RuntimeError(f"no JPEG/PNG image from camera; got {[(i.name, i.mime_type) for i in images]}")
+            kw = {"filter_source_names": [settings.CAMERA_SOURCE]} if settings.CAMERA_SOURCE else {}
+            t0 = time.perf_counter()
+            images, _ = await self.camera.get_images(**kw)
+            if not images and kw:  # source name wrong: fall back to everything
+                attrs["source_fallback"] = True
+                images, _ = await self.camera.get_images()
+            attrs["rpc_ms"] = round((time.perf_counter() - t0) * 1000, 2)
+            attrs["sources"] = [f"{i.name}:{i.mime_type}" for i in images]
+            for img in images:  # first colour image; depth frames are skipped
+                if img.mime_type in (CameraMimeType.JPEG, CameraMimeType.PNG):
+                    t0 = time.perf_counter()
+                    frame = Image.open(io.BytesIO(img.data)).convert("RGB")
+                    attrs.update(used=img.name, bytes=len(img.data), size=list(frame.size),
+                                 decode_ms=round((time.perf_counter() - t0) * 1000, 2))
+                    # crop live frames only: datasets are saved already cropped, so
+                    # training, offline runs and the live loop all see the same pixels
+                    if settings.CROP:
+                        frame = frame.crop(tuple(settings.CROP))
+                        attrs["crop"] = list(settings.CROP)
+                    return frame
+            raise RuntimeError(f"no JPEG/PNG image from camera; got {attrs['sources']}")
 
     async def capture(self, views=None) -> list[Image.Image]:
         """One frame per view. views: int (first N of settings.VIEW_OFFSETS) or a list of offsets.
@@ -230,9 +257,10 @@ class Robot:
         frames = []
         for i, off in enumerate(offsets):
             if len(offsets) > 1 or off:
-                await self.move_to(offset_pose(resolve_pose("inspect"), off))
+                await self.move_to(offset_pose(resolve_pose("inspect"), off), label=f"inspect{off or ''}")
                 if self.connected and not self.dry_run and settings.SETTLE_S:
-                    await asyncio.sleep(settings.SETTLE_S)
+                    with self._span("settle", s=settings.SETTLE_S):
+                        await asyncio.sleep(settings.SETTLE_S)
             frames.append(await self.get_image())
         return frames
 

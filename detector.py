@@ -17,12 +17,37 @@ CLI:
 import argparse
 import json
 import time
+from dataclasses import dataclass, field
 from pathlib import Path
 
 import numpy as np
 from PIL import Image
 
 import settings
+from diagnostics import drift_warnings, frame_stats, map_stats, summarize_stats, zscores
+
+
+@dataclass
+class Analysis:
+    """Everything Detector learned about one frame."""
+    score: float
+    anomaly_map: np.ndarray | None
+    ms: float                     # preprocess + inference (what score() reports)
+    preprocess_ms: float
+    infer_ms: float
+    diag_ms: float = 0.0          # frame/map statistics, measured separately
+    frame_size: tuple = ()
+    stats: dict = field(default_factory=dict)
+    z: dict = field(default_factory=dict)
+    map: dict = field(default_factory=dict)
+    warnings: list = field(default_factory=list)
+
+    def info(self):
+        """JSON-friendly summary (no arrays)."""
+        return {"score": round(self.score, 4), "ms": round(self.ms, 2), "preprocess_ms": round(self.preprocess_ms, 2),
+                "infer_ms": round(self.infer_ms, 2), "diag_ms": round(self.diag_ms, 2),
+                "frame_size": list(self.frame_size), "stats": self.stats, "z": self.z, "map": self.map,
+                "warnings": self.warnings}
 
 
 def load_image(image, crop=None) -> Image.Image:
@@ -46,6 +71,7 @@ class Detector:
         self.crop = crop  # usually None: live frames are cropped by Robot.get_image (settings.CROP)
         meta_file = self.model_path.with_name("metadata.json")
         self.meta = json.loads(meta_file.read_text()) if meta_file.exists() else {}
+        self.ref_stats = self.meta.get("image_stats")  # training-image quality stats (drift checks)
 
         self.precision = precision if precision is not None else settings.INFERENCE_PRECISION
         core = ov.Core()
@@ -82,24 +108,42 @@ class Detector:
             self.request.infer({0: dummy})
 
     def preprocess(self, image) -> np.ndarray:
-        img = load_image(image, self.crop)
+        return self._prepare(load_image(image, self.crop))
+
+    def _prepare(self, img: Image.Image) -> np.ndarray:
         h, w = self.input_hw
         if img.size != (w, h):
-            # PIL bilinear is antialiased, matching torchvision Resize(antialias=True)
+            # PIL bilinear is antialiased, matching torchvision Resize(antialias=True) used in training.
+            # The exported graph's own Resize has antialias off, so never feed it raw large frames.
             img = img.resize((w, h), Image.BILINEAR)
         x = np.asarray(img, dtype=np.float32) / 255.0
         return np.ascontiguousarray(x.transpose(2, 0, 1)[None])
 
-    def score(self, image):
-        """Return (score, anomaly_map HxW float32, milliseconds incl. preprocessing)."""
+    def analyze(self, image, diagnostics=True) -> Analysis:
+        """Score one frame; with diagnostics also frame-quality stats, drift warnings, anomaly region."""
         t0 = time.perf_counter()
-        x = self.preprocess(image)
+        img = load_image(image, self.crop)
+        x = self._prepare(img)
+        t1 = time.perf_counter()
         self.request.infer({0: x})
         score = float(self.request.get_tensor(self.outputs["pred_score"]).data.reshape(-1)[0])
         amap = None
         if "anomaly_map" in self.outputs:
             amap = self.request.get_tensor(self.outputs["anomaly_map"]).data.reshape(self.input_hw).copy()
-        return score, amap, (time.perf_counter() - t0) * 1000
+        t2 = time.perf_counter()
+        a = Analysis(score, amap, (t2 - t0) * 1000, (t1 - t0) * 1000, (t2 - t1) * 1000, frame_size=img.size)
+        if diagnostics:
+            a.stats = frame_stats(x)
+            a.z = zscores(a.stats, self.ref_stats)
+            a.warnings = drift_warnings(a.stats, self.ref_stats)
+            a.map = map_stats(amap)
+            a.diag_ms = (time.perf_counter() - t2) * 1000
+        return a
+
+    def score(self, image):
+        """Return (score, anomaly_map HxW float32, milliseconds incl. preprocessing)."""
+        a = self.analyze(image, diagnostics=False)
+        return a.score, a.anomaly_map, a.ms
 
     def __repr__(self):
         prec = self.precision or "default"
@@ -113,6 +157,33 @@ def test_images(folder):
     exts = {".png", ".jpg", ".jpeg", ".bmp"}
     return [(p, 0 if p.parent.name == "good" else 1)
             for p in sorted(folder.rglob("*")) if p.suffix.lower() in exts]
+
+
+def reference_stats(paths, input_hw, crop=None):
+    """Quality stats of training images at model-input size: the baseline for drift warnings."""
+    h, w = input_hw
+    stats = []
+    for p in paths:
+        img = load_image(p, crop)
+        img = img.resize((w, h), Image.BILINEAR) if img.size != (w, h) else img
+        x = (np.asarray(img, dtype=np.float32) / 255.0).transpose(2, 0, 1)[None]
+        stats.append(frame_stats(x))
+    return summarize_stats(stats)
+
+
+def calibrate_stats(model_path, folder=None):
+    """Compute reference stats from the training images and store them in metadata.json."""
+    model_path = Path(model_path)
+    meta_file = model_path.with_name("metadata.json")
+    meta = json.loads(meta_file.read_text()) if meta_file.exists() else {}
+    folder = Path(folder) if folder else Path(meta.get("dataset", "")) / "train" / "good"
+    paths = [p for p in sorted(folder.rglob("*")) if p.suffix.lower() in {".png", ".jpg", ".jpeg", ".bmp"}]
+    if not paths:
+        raise SystemExit(f"no images in {folder}")
+    meta["image_stats"] = reference_stats(paths, meta.get("image_size", [256, 256]))
+    meta["image_stats"]["source"] = str(folder)
+    meta_file.write_text(json.dumps(meta, indent=2))
+    return meta["image_stats"]
 
 
 def find_checkpoint(meta):
@@ -176,7 +247,14 @@ def main():
     ap.add_argument("--verify", action="store_true", help="compare with the Anomalib torch model")
     ap.add_argument("--ckpt", default=None, help="Lightning checkpoint for --verify (default: from metadata.json)")
     ap.add_argument("--precision", default=None, help="INFERENCE_PRECISION_HINT, e.g. f32 or f16")
+    ap.add_argument("--calibrate-stats", nargs="?", const="", default=None, metavar="TRAIN_GOOD_DIR",
+                    help="store training-image quality stats in metadata.json (default: <dataset>/train/good)")
     args = ap.parse_args()
+
+    if args.calibrate_stats is not None:
+        st = calibrate_stats(args.model_path or settings.MODEL_PATH, args.calibrate_stats or None)
+        print(json.dumps(st, indent=2))
+        return
 
     det = Detector(args.model_path, args.device, precision=args.precision)
     print(det)
@@ -185,8 +263,12 @@ def main():
         return
     items = test_images(args.images)
     for path, label in items[:: max(1, len(items) // 8)]:
-        s, _, ms = det.score(path)
-        print(f"{path.parent.name:>14}/{path.name}  score={s:.3f}  {'DEFECT' if s >= settings.THRESHOLD else 'good':6}  {ms:6.1f} ms")
+        a = det.analyze(path)
+        print(f"{path.parent.name:>14}/{path.name}  score={a.score:.3f}  {'DEFECT' if a.score >= settings.THRESHOLD else 'good':6}"
+              f"  pre {a.preprocess_ms:5.1f} + infer {a.infer_ms:6.1f} ms (+diag {a.diag_ms:.1f})"
+              f"  area {a.map.get('area', 0):.1%}  z={a.z}")
+        for w in a.warnings:
+            print(f"      ! {w}")
 
 
 if __name__ == "__main__":

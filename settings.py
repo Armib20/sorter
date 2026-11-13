@@ -75,6 +75,12 @@ VLM_DEVICE = "GPU"        # keep the VLM off the device running the anomaly mode
 VLM_MODE = "yesno"        # yesno (robust with small VLMs) | choose (pick from ACTIONS; use 4B+)
 VLM_DEFECT_HINT = ""      # e.g. "cracks, chips, missing cap, dirt" once the scenario is known
 
+# --- Diagnostics ------------------------------------------------------------
+DRIFT_Z = 4.0             # warn when a frame's brightness/contrast/sharpness/glare is this many std
+                          # away from the training images (lighting changed, blur, glare...)
+SAVE_ARTIFACTS = True     # save frames/overlays/anomaly maps per item (background thread, no added latency)
+DASHBOARD_PORT = 8765
+
 # --- Data / logs ------------------------------------------------------------
 DATASET_DIR = ROOT / "datasets" / "custom"   # capture_tool.py writes <DATASET_DIR>/<name>/{train,test}/...
 LOG_DIR = ROOT / "logs"

@@ -1,6 +1,6 @@
 """Turn sorter JSONL logs into an accuracy table and per-stage latency (median / p95).
 
-    python evaluate.py logs/offline_20261113_101500.jsonl
+    python evaluate.py logs/offline_20261113_101500          # a run folder (or its items.jsonl)
     python evaluate.py logs/*.jsonl --group device        # compare runs (CPU vs GPU vs NPU ...)
     python evaluate.py LOG --suggest-threshold            # best THRESHOLD for this model+device
     python evaluate.py LOG --markdown > results.md        # paste into the design write-up
@@ -20,18 +20,37 @@ from tabulate import tabulate
 
 import settings
 
-STAGES = ["pick", "capture", "detect", "infer_per_view", "decide", "recheck", "place", "total"]
+STAGES = ["pick", "capture", "detect", "preprocess_per_view", "infer_per_view", "diag_per_view", "decide",
+          "recheck", "place", "total"]
 
 
 def load(paths):
     rows = []
-    for p in paths:
-        for line in Path(p).read_text().splitlines():
+    for p in map(Path, paths):
+        name = p.name
+        if p.is_dir():
+            p = p / "items.jsonl"
+        if not p.exists():
+            print(f"skip {p}: not found")
+            continue
+        for line in p.read_text().splitlines():
             if line.strip():
                 r = json.loads(line)
-                r["_log"] = Path(p).name
+                r["_log"] = name
                 rows.append(r)
     return rows
+
+
+def warnings_table(rows, fmt):
+    errors = [r for r in rows if r.get("status") == "error"]
+    warned = [r for r in rows if r.get("warnings")]
+    kinds = Counter(w.split(": ", 1)[1].split()[0] if ": " in w else w for r in warned for w in r["warnings"])
+    out = [f"{len(errors)} error item(s), {len(warned)} item(s) with frame warnings"]
+    if kinds:
+        out.append(tabulate(sorted(kinds.items(), key=lambda kv: -kv[1]), headers=["warning", "count"], tablefmt=fmt))
+    for r in errors[:5]:
+        out.append(f"  item {r['item']}: {r.get('error')}")
+    return "\n".join(out) + "\n"
 
 
 def defect_type(r):
@@ -41,7 +60,7 @@ def defect_type(r):
 
 
 def accuracy_tables(rows, fmt):
-    labelled = [r for r in rows if r.get("label") in ("good", "defect")]
+    labelled = [r for r in rows if r.get("label") in ("good", "defect") and r.get("status", "ok") == "ok"]
     if not labelled:
         return "no ground-truth labels in these logs (latency only)\n"
     good_a, bad_a = settings.ACTION_FOR["good"], settings.ACTION_FOR["defect"]
@@ -98,7 +117,7 @@ def latency_table(rows, fmt, group=None):
 
 
 def suggest_threshold(rows):
-    labelled = [r for r in rows if r.get("label") in ("good", "defect")]
+    labelled = [r for r in rows if r.get("label") in ("good", "defect") and r.get("status", "ok") == "ok"]
     if not labelled:
         return "need labelled rows to suggest a threshold\n"
     y = np.array([r["label"] == "defect" for r in labelled])
@@ -143,6 +162,7 @@ def main():
     print(f"{len(rows)} items from {len(args.logs)} log(s); model/device: {dict(models)}\n")
     print("## Accuracy\n" + accuracy_tables(rows, fmt))
     print("## Latency\n" + latency_table(rows, fmt, args.group))
+    print("## Health\n" + warnings_table(rows, fmt))
     if args.suggest_threshold:
         print("## Threshold\n" + suggest_threshold(rows))
 

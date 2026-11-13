@@ -168,6 +168,11 @@ def main():
         "created": time.strftime("%Y-%m-%d %H:%M:%S"),
         "note": "pred_score is normalized: 0.5 == threshold fitted on the validation split",
     }
+    # training-image quality stats: the baseline for runtime drift warnings (lighting, blur, glare)
+    from detector import reference_stats
+    good = sorted(p for p in (data / "train" / "good").rglob("*") if p.suffix.lower() in {".png", ".jpg", ".jpeg", ".bmp"})
+    if good:
+        meta["image_stats"] = {**reference_stats(good, hw), "source": str(data / "train" / "good")}
     (out_dir / "metadata.json").write_text(json.dumps(meta, indent=2))
     print(f"\nExported {out_dir / 'model.xml'}\n{json.dumps(meta, indent=2)}")
 
