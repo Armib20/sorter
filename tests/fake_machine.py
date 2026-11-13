@@ -117,9 +117,10 @@ async def _selftest():
         for c, m, a, k in calls:
             k = {kk: v for kk, v in k.items() if kk != "metadata"}
             print(f"  {c:8} {m:24} {' '.join(str(a).split())} {k or ''}"[:150])
-        assert ("gripper", "grab") in methods and ("gripper", "open") in methods
-        assert methods.count(("camera", "get_images")) == 2
-        assert ("arm", "move_to_joint_positions") in methods
+        g, c, a = settings.GRIPPER_NAME, settings.CAMERA_NAME, settings.ARM_NAME
+        assert (g, "grab") in methods and (g, "open") in methods
+        assert methods.count((c, "get_images")) == 2
+        assert (a, "move_to_joint_positions") in methods
         last_pose = [a for c, m, a, k in calls if m == "move_to_position"][-1][0]
         reject = settings.POSES["reject"]
         assert abs(last_pose.z - (reject["z"] + settings.APPROACH_MM)) < 1e-6, "place should retreat above the bin"
