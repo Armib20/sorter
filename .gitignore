@@ -21,3 +21,4 @@ results/
 openvino_cache/
 logs/
 models/vlm-*/
+config_backups/
