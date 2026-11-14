@@ -1,6 +1,6 @@
 # Collection and model iteration MVP
 
-Status: proposed scope; no runtime implementation or remote operations performed.
+Status (2026-11-13 evening): proposed scope, pending team review. Nothing here is implemented yet: no code has changed since commit `c4d18f9`, and the smoke-test model is still the default. Collection, logging and model runs currently happen on a laptop and are moving to the Intel station.
 
 ## Decisions and boundaries
 
@@ -30,9 +30,7 @@ Recommended, pending review:
 
 ## Compute and connection evidence
 
-User-provided sources:
-- `/Users/alirizwan/Downloads/[Edge of Intelligence] Viam Overview.pdf`
-- `/Users/alirizwan/Downloads/Edge of Intelligence - reference sheet.pdf`
+Sources: the event PDFs `[Edge of Intelligence] Viam Overview.pdf` and `Edge of Intelligence - reference sheet.pdf` (not in the repo; ask Ali for a copy).
 
 The PDFs identify the Intel edge box as an ASUS NUC or AAEON station with Arc iGPU, accessed through the Viam machine in hackathons / Arm Farm. They do not supply SSH credentials or an address for a separate Intel training host.
 
@@ -84,7 +82,7 @@ Primary measures:
 - Defect recall / false-accept rate; good-part false-reject rate.
 - Precision, confusion matrix, AUROC and average precision where both classes exist.
 - Counts and metrics per category, defect family, surface and session, plus macro summaries so large categories cannot hide failures.
-- Reacquire/hold rate, invalid-image/error rate, and coverage. Do not exclude failures from operational totals or disguise all-hold behavior as high detection recall.
+- Reacquire/hold rate (at this event, hold = the reject bin: count "uncertain → reject" separately from confident rejects), invalid-image/error rate, and coverage. Do not exclude failures from operational totals or disguise all-hold behavior as high detection recall.
 - Confidence intervals based on independent specimens; repeated views do not increase the effective sample size.
 
 Report detector predictions separately from final destination/hold decisions and physical placement success. A hold is not evidence that the defect detector correctly identified a defect. Model anomaly scores/threshold distance are not calibrated defect probabilities.

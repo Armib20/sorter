@@ -11,7 +11,7 @@ What the station really is (probed read-only on 2026-11-13 ~11:10 through the SD
 | Arm | **`viam:ufactory:xArm850`** (not xArm6), 6 joints, `use_urdfs`, 60 deg/s, `collision_sensitivity` 0. From fragment `SF-xarm850-realsense-gripper` | Arm card / `motion.move` work as for any arm. Collision detection off on the controller: our obstacles matter |
 | Gripper | `viam:ufactory:gripper`, frame = arm + 150 mm, rotated 180°. `DoCommand {"get":true}` → `pos` 0–850 (857 = open). **`IsHoldingSomething` works** (meta `position`, `status`) | Grasp verification for recovery is free. `{"set": N}` opens only as wide as needed (faster than full open) |
 | `cam` | `viam:camera:realsense` D435, 640×480 (fragment default 1280×720, overridden by a mod), color + aligned depth, `supports_pcd`, intrinsics fx 605 fy 605 cx 338 cy 247. **Frame: child of `arm`**, translation (67.5, −23.1, 17.5), rotated 90° about z | Pixel + depth → world XYZ through the frame system works today. The extrinsic is a nominal fragment value, not a per-station calibration: verify it (§5) |
-| Depth | At ~17 cm from the table: 67% valid pixels, bolt top read 12 mm above the table (163 vs 175 mm) | Depth sees fasteners but sits at the D435 minimum range. Survey from ≥ 25 cm |
+| Depth | At ~17 cm from the table: 67% valid pixels, bolt top read 12 mm above the table (163 vs 175 mm) | Depth sees fasteners but sits at the D435 minimum range. Not needed to locate from the survey pose (§3b: table-plane intersection); at most a Z sanity check close up |
 | Scene | White, uniform table. Wrist view shows soft shadows | Background segmentation by color is easy and robust |
 | `overview-cam` | Webcam on a stand, 640×480, side view of the cell; items are tiny in it | Watching / demo video, not inspection (unless we move the stand) |
 | Obstacles | `table`, `wall-front`, `wall-side`, `ceiling` exist in fragment `armfarm-workcell-obstacles` but are **disabled by our fragment mods** | `motion.move` currently has nothing stopping it planning through the table. Fix before any planned motion (§5) |
@@ -36,37 +36,39 @@ What the station really is (probed read-only on 2026-11-13 ~11:10 through the SD
 | `viam:obstacles-pointcloud` 0.2.1 (`obstacles-depth`) | Plane removal + clustering → `GetDetections3D` / object point clouds | Optional 3D locator (§3, plan B) |
 | `viam:detections-to-segments` 1.4.0 | 2D detector boxes + depth → 3D segments | Only if we add a 2D detector |
 | `viam-labs:grasp-pose` 0.1.0 | From `GetDetections3D`: ranked top-down parallel-jaw grasps (world pose, width) + fitted object boxes as obstacles | Optional grasp planner; we compute the same thing from our 2D blob (§3) |
-| `erh:vmodutils` | `obstacle`, `obstacle-open-box` (box/bin as obstacles), `arm-position-saver`, `multi-arm-position-switch`, `pc-crop-camera` | Box, reject bin and hold area as `obstacle-open-box` so placing is collision-aware |
+| `erh:vmodutils` | `obstacle`, `obstacle-open-box` (box/bin as obstacles), `arm-position-saver`, `multi-arm-position-switch`, `pc-crop-camera` | Box and reject bin as `obstacle-open-box` so placing is collision-aware |
 | `viam:camera-calibration` | ChArUco `eye_in_hand` hand-eye calibration | Only if the touch test (§5) shows more than ~3 mm error |
 
 ## 3. The architecture
 
-**Idea: the arm parks at a survey pose and every decision comes from one wrist-camera frame, scored on a canonical crop of the object. Accelerators run only the models; everything geometric is cheap CPU code. Recovery comes from always re-looking before acting.**
+**Idea: the arm parks high at a survey pose (`home-pose`) to find parts, moves above one for a close-up, and decides from a canonical crop of that close-up. Accelerators run only the models; everything geometric is cheap CPU code. Recovery comes from always re-looking before acting.** Details and measurements are in §3b.
 
 ```
-                SURVEY pose (arm parked, cam ≥ 25 cm above the intake zone, white table)
-                   │ color + depth frame                                   [CPU]
+                SURVEY = home-pose (arm parked, cam ≈ 64 cm above the white table, 1.06 mm/px)
+                   │ color frame                                           [CPU]
                    ▼
  1 LOCATE      background segmentation (not-white, shadow-tolerant) → blobs
-               blob → px box, long-axis yaw (minAreaRect), median depth
-               → world XYZ via intrinsics + frame system              [CPU, ~5 ms]
+               blob → px box, long-axis yaw (minAreaRect)
+               → world XY via ray ∩ table plane (z ≈ −4 mm)            [CPU, ~5 ms]
                    │ per object: item #, t_seen
                    ▼
- 2 CANONICALIZE crop around blob, rotate long axis horizontal, pad to the model's
+ 2 INSPECT     move straight above the part at a fixed height   ← t_first_motion (latency stops here)
+               close-up frame → refined XY (±2 mm) + yaw
+                   ▼
+ 3 CANONICALIZE crop around blob, rotate long axis horizontal, pad to the model's
                input size (256×256), same code for training and runtime  [CPU, ~2 ms]
                    ▼
- 3 SCORE       ov-anomaly PatchCore, GPU f32  ──┐  (optional, parallel) second model
+ 4 SCORE       ov-anomaly PatchCore, GPU f32  ──┐  (optional, parallel) second model
                pred_score + anomaly_map         │   PaDiM/EfficientAD on NPU
                    ▼                            ┘   [GPU ~25 ms]
- 4 DECIDE      good / known defect / novel or uncertain        [CPU, ~1 ms]
+ 5 DECIDE      good / known defect / novel or uncertain        [CPU, ~1 ms]
                known-defect check = tape-blue hue fraction inside the anomaly region
-               → box | reject | hold, confidence      → judge log line, t_decided
+               → box | reject, confidence      → judge log line, t_decided
                    ▼
- 5 ACT         motion.move to pre-grasp above the object (t_first_motion)
-               re-check it's still there → descend → grab → IsHoldingSomething?
-               → place in box / reject / hold (open-box obstacles) → back to SURVEY
+ 6 ACT         pre-grasp 80 mm above → descend → grab → IsHoldingSomething?
+               → place in box / reject (open-box obstacles) → back to SURVEY
                    ▼ (after motion has started; never delays it)
- 6 EXPLAIN     VLM on GPU names the defect for the dashboard and the pitch
+ 7 EXPLAIN     VLM on GPU names the defect for the dashboard and the pitch
 ```
 
 **The decision layer.** The anomaly model can catch defects it has never seen; a known-defect check names the ones it has:
@@ -81,17 +83,17 @@ The tape-hue check stays as an explanation and a confidence boost ("known defect
 
 Confidence = distance from the threshold, scaled by the spread of good-item scores on the validation set. Calibrate on the deploy device (f32 GPU).
 
-**Why canonical crops.** PatchCore compares patches with memory from training. Training on whole frames makes it learn background, position and orientation. Training on object-centered, orientation-normalized crops at a fixed scale (fixed survey height) means a few dozen good examples per fastener type are enough, and the score reacts to the part, not to where it lies. With crops exactly at input size, the exported graph's resize becomes a no-op, so laptop, `ov-anomaly` and the cloud-trained model give the same scores.
+**Why canonical crops.** PatchCore compares patches with memory from training. Training on whole frames makes it learn background, position and orientation. Training on object-centered, orientation-normalized crops at a fixed scale (fixed inspect height) means a few dozen good examples per fastener type are enough, and the score reacts to the part, not to where it lies. With crops exactly at input size, the exported graph's resize becomes a no-op, so laptop, `ov-anomaly` and the cloud-trained model give the same scores.
 
 **Why the 2D locate is primary.** Fasteners are 5–15 mm tall, near the depth noise at survey distance. On a white table, color segmentation finds every part, gives the grasp yaw directly, and produces the crop for scoring in the same step. Depth is only for Z sanity and the table height. `obstacles-depth` → `grasp-pose` is plan B for B to try in under an hour.
 
 **Recovery (judge moves an item).**
-- Positions are never trusted from the first look: re-survey before each grasp (we're already at the survey pose, ~30 ms).
+- Positions are never trusted from the first look: the close-up at the inspect pose re-locates the part right before the grasp.
 - After grabbing, `IsHoldingSomething`. Empty → back to survey, re-locate, retry (max 2), then log and move on.
 - Item identity across looks: nearest blob with matching size/aspect, so the log keeps the same item number.
 - The motion service with `stop_on_error`-style handling of our own: any failed move → stop, home, re-survey.
 
-**Multiple views.** Tape can be on the hidden side. The first view decides when confident. The uncertain band triggers a second view: a lower, closer pose, or an oblique pose from the side. Optional: while carrying the part, show it to `overview-cam` for a bottom view. That only helps if the staff confirm the logged decision can be the final one after a second look.
+**Multiple views.** Tape can be on the hidden side. The close-up from the inspect pose decides when confident. The uncertain band triggers a second view (lower, or oblique from the side); still unsure → reject. Optional: while carrying the part, show it to `overview-cam` for a bottom view. That only helps if the staff confirm the logged decision can be the final one after a second look.
 
 ## 3b. How the arm gets to the item and picks it (no learning involved)
 
@@ -141,18 +143,18 @@ SURVEY (parked high, wide view) ──part seen──▶ INSPECT: move straight 
 - **Orchestrator (`sorter.py`): develop on the laptop, run the judged run on the station.** From the laptop each RPC costs 85–230 ms and an RGBD frame 1.1–1.3 s, which lands straight in the latency score. On the station these are local calls. The shell service is already configured; `setup_nuc.sh` builds the torch-free runtime there.
 - **Stretch:** wrap the loop as a Viam generic service module (start/stop/status DoCommands), so it runs under viam-server with no SSH session.
 
-Latency budget on the station (item seen → arm moves): frame ~30 ms + locate 5 + crop 2 + score 25–30 + decide 1 + motion start ~50–100 ≈ **0.15–0.2 s**. From the laptop: +0.5–1.5 s.
+Latency budget on the station (item seen → arm moves): the response is the inspect move, so only frame ~30 ms + locate 5 + motion start ~50–100 ≈ **0.1–0.15 s**. Crop, score and decide (~30 ms) happen after the arm starts moving. From the laptop, add a network color frame (15–85 ms) and a motion RPC (85–230 ms).
 
 ## 5. Must-do safety and calibration before planned motion
 
-1. **Turn the obstacles back on** with a correct table height: remove the `disabled` mods, or set `table-translation` so the box top equals the measured table surface. Add box / reject / hold as `obstacle-open-box`. Until then, only joint moves to taught poses (`home.py`, arm card).
+1. **Turn the obstacles back on** with a correct table height: remove the `disabled` mods, or set `table-translation` so the box top equals the measured table surface. Add the box and reject bin as `obstacle-open-box`. Until then, only joint moves to taught poses (`home.py`, arm card).
 2. **Measure the table height** in the arm frame: jog the gripper tips to touch, read `get_end_position`, minus the 150 mm tool offset already in the frame.
 3. **Touch test the camera extrinsic:** locate a part from the survey pose, move the tips 20 mm above the computed XY, measure the error. Correct a constant offset if needed; ChArUco `eye_in_hand` if it varies across the zone.
 4. One driver at a time. E-stop within reach.
 
 ## 6. The log the judges score
 
-One line per item, written the moment the decision is made, then updated when the motion starts:
+One line per item, written the moment the decision is made. `t_first_motion` (the inspect move) is already known by then:
 
 ```json
 {"item": 3, "decision": "reject", "confidence": 0.93, "timestamp": "2026-11-14T15:41:07.412-07:00",
@@ -172,9 +174,9 @@ Timestamps in ms, with time zone. Keep the rich per-item run folder (`logs/<run>
 ## 8. Build order (maps to PLAN.md people)
 
 1. **C:** `ov-diag` → `list_devices`; `ov-anomaly` with `fastener-patchcore` on GPU f32; `anomaly` vision service; benchmark CPU/GPU/NPU.
-2. **B:** obstacles on; table height; survey pose 25–35 cm above the intake zone, plus box / reject / hold poses; first manual grasps of each fastener type.
-3. **A:** export the `fastener-anomaly` dataset; locate + canonicalize on those frames and live frames; capture good crops at the survey pose; train (local 1 min, cloud 10 min); threshold on f32.
-4. **D:** judge log + ms timestamps + hold; wire LOCATE → SCORE (`ov-anomaly`) → DECIDE in `sorter.py` with motion dry-run; then real motion from B.
+2. **B:** obstacles on; table height; survey pose = `home-pose` (done); inspect height, box and reject poses; first manual grasps of each fastener type.
+3. **A:** export the `fastener-anomaly` dataset; locate + canonicalize on those frames and live frames; capture good crops at the inspect pose; train (local 1 min, cloud 10 min); threshold on f32.
+4. **D:** judge log + ms timestamps + `t_first_motion`; wire LOCATE → INSPECT → SCORE (`ov-anomaly`) → DECIDE in `sorter.py` with motion dry-run; then real motion from B.
 5. **All:** fixed-position loop → re-survey and recovery → run on the station → rehearse five-minute runs with a teammate playing judge.
 
 ## Open questions for staff (also in PLAN.md)

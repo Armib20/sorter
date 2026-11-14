@@ -4,7 +4,8 @@
 #   ./setup_nuc.sh            # runtime only (OpenVINO + GenAI + Viam): ~1 min, no torch
 #   ./setup_nuc.sh --train    # + CPU-only torch/anomalib so you can also train on the NUC
 #
-# Then copy models/<name>/ over (scp -r models/<name> nuc:~/sorter/models/) and run
+# It ends by running ./fetch_models.sh (smoke-test model from the GitHub release; add --vlm for the VLM).
+# Your own trained models: scp -r models/<name> nuc:~/sorter/models/, then
 #   python benchmark.py --models models/*/model.xml
 set -euo pipefail
 cd "$(dirname "$0")"
@@ -35,6 +36,8 @@ if missing:
     print("missing:", missing, "-> GPU needs intel-opencl-icd/level-zero, NPU needs the intel NPU driver;"
           " ask a mentor, the provided pipeline image should have them")
 EOF
+echo
+./fetch_models.sh
 echo
 [ -f api-key.json ] || echo 'next: create api-key.json  {"address": "...", "api_key": "...", "api_key_id": "..."}'
 echo "next: python sorter.py resources"

@@ -21,3 +21,6 @@ results/
 openvino_cache/
 models/vlm-*/
 config_backups/
+
+# local agent tooling state
+.pi/
